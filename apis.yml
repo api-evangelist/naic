@@ -1,0 +1,95 @@
+aid: naic
+url: https://raw.githubusercontent.com/api-evangelist/naic/refs/heads/main/apis.yml
+name: NAIC
+kind: company
+description: 'The National Association of Insurance Commissioners (NAIC) is the U.S. standard-setting
+  and regulatory support organization created and governed by the chief insurance regulators
+  of the 50 states, the District of Columbia and five territories. It is not a carrier and
+  not a federal regulator - under the McCarran-Ferguson settlement the United States has no
+  national insurance supervisor, so the NAIC is the coordinating body through which state-based
+  regulation is made uniform. It writes the model laws, accounting practices and Annual Statement
+  Blanks that every admitted insurer files against, operates the Financial Data Repository
+  behind those filings, and runs the market infrastructure the industry actually transacts
+  on: SERFF for electronic rate and form filing, State Based Systems (SBS) for producer and
+  company licensing in roughly thirty jurisdictions, iSite+ and myNAIC for regulator analytics,
+  OPTins for premium tax, and consumer-facing lookups such as the Consumer Information Source
+  and the Life Insurance Policy Locator. Its lines of business span property and casualty,
+  life and annuity, health, title and fraternal across the United States. Its API posture
+  is partner-gated and closed: there is no developer portal at developer/developers/docs.naic.org
+  (all NXDOMAIN), no documented self-serve API, and no downloadable OpenAPI anywhere on naic.org
+  or serff.com. SERFF does operate real integration services - Legacy SPI (two-way PUSH/PULL),
+  Legacy SIS (one-way PULL) and a Modernized Data API (one-way PULL), in PROD and BETA - but
+  they are named only on a support checklist, provisioned by emailing wsrequest@naic.org,
+  and fronted by Okta login walls. Bulk regulatory data is licensed by contract through idp@naic.org
+  rather than served over an API.'
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- United States
+- Regulator
+- Market Infrastructure
+- Insurance Regulation
+- Property and Casualty
+- Life Insurance
+- Health Insurance
+- Producer Licensing
+- Rate and Form Filing
+- Regulatory Reporting
+- Standards Body
+created: '2026-07-25'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis:
+- aid: naic:serff-web-services
+  name: SERFF Web Services
+  description: 'The NAIC-operated SERFF (System for Electronic Rates & Forms Filing) platform
+    exposes machine integration services to filers, state regulators and filing vendors. The
+    SERFF Technical Support Checklist published at serff.com names three services by name
+    - Legacy SPI (two-way PUSH/PULL), Legacy SIS (one-way PULL), and a Modernized Data API
+    (one-way PULL) - each available in PROD and BETA environments. There is NO public reference
+    documentation, no OpenAPI or WSDL, and no self-serve signup: access is provisioned by
+    request to wsrequest@naic.org and the service hosts are credential-gated (services.serff.com
+    returned HTTP 403 anonymously; services-beta.serff.com returned HTTP 200 but serves only
+    an NAIC/NIPR landing page). Recorded here as a real but partner-gated surface, not a public
+    API.'
+  humanURL: https://www.serff.com/
+  tags:
+  - Insurance
+  - Rate and Form Filing
+  - Regulatory Reporting
+  - Partner Gated
+  properties:
+  - type: Documentation
+    url: https://www.serff.com/
+  - type: Documentation
+    url: https://www.serff.com/documents/serff-services-support-checklist.pdf
+  - type: Documentation
+    url: https://www.serff.com/serff_modernization.htm
+common:
+- type: Website
+  url: https://content.naic.org/
+- type: About
+  url: https://content.naic.org/about
+- type: Blog
+  url: https://content.naic.org/newsroom
+- type: Documentation
+  url: https://content.naic.org/insurance-topics
+- type: Publications
+  url: https://content.naic.org/publications
+- type: Portal
+  url: https://www.serff.com/
+- type: Portal
+  url: https://sbs.naic.org/
+- type: Portal
+  url: https://isiteplus.naic.org/iSiteUI/faces/pages/Home.xhtml
+- type: Portal
+  url: https://insdata.naic.org/
+- type: Documentation
+  url: https://content.naic.org/insurance-topics/financial-data-repository
+- type: Documentation
+  url: https://content.naic.org/cis_consumer_information.htm
+- type: Documentation
+  url: https://content.naic.org/sites/default/files/naic-technology-services-products-catalog.pdf
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

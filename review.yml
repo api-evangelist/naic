@@ -1,0 +1,277 @@
+aid: naic
+name: NAIC
+homeMarket: United States
+tier: market-infrastructure
+review:
+  question: Does the NAIC publish a public, self-serve developer portal or documented
+    API over its registers, filing systems, or statistical data?
+  answer: false
+  date: '2026-07-25'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    The National Association of Insurance Commissioners is the U.S. market body
+    for state-based insurance regulation — a standard-setter and shared-services
+    operator, not a carrier and not a federal supervisor. It publishes NO public
+    developer portal and NO documented self-serve API. Every candidate developer
+    hostname was probed on 2026-07-25 and none exists: developer.naic.org,
+    developers.naic.org and docs.naic.org are all NXDOMAIN. api.naic.org DOES
+    resolve and answers over HTTP/2, but every probed path (/, /openapi.json,
+    /swagger.json, /api-docs, /v1, /docs, /health, /swagger-ui.html, /actuator)
+    returns a bare HTTP 404 with `content-type: text/plain` and the nine-byte body
+    "Not Found" — an internal gateway with no public surface, not a portal.
+    content.naic.org/developers, /api, /apis, /developer, /developer-resources,
+    /web-services and /data all return 404.
+
+    The real integration surface is SERFF, the NAIC-operated System for Electronic
+    Rates & Forms Filing. serff.com carries a "Web Services" support block whose
+    published Technical Support Checklist PDF names three actual services —
+    "Legacy SPI (two-way PUSH/PULL)", "Legacy SIS (one-way PULL)" and "Modernized
+    Data API (one-way PULL)" — each with PROD and BETA environments. That is the
+    only place the NAIC names an API-shaped product in public. There is no
+    reference documentation, no endpoint list, no OpenAPI and no WSDL behind it:
+    the checklist exists so an already-provisioned integrator can report a
+    failure, and access is requested by email to wsrequest@naic.org. The PROD
+    host services.serff.com resolves and returns HTTP 403 anonymously;
+    services-beta.serff.com returns HTTP 200 but serves only an NAIC/NIPR landing
+    page, and /openapi.json, /swagger.json, /api-docs, /v1/openapi.json, /spec,
+    /services and /api all 404 there. This is a partner-gated B2B filing pipe, not
+    a developer platform.
+
+    Everything else in the NAIC estate is an Okta-fronted web application. myNAIC,
+    iSite+ (isiteplus.naic.org), SBS (sbs.naic.org, HTTP 403 at the root prelogin
+    path), OPTins and SERFF Login all sit behind login.  eapps.naic.org returns
+    HTTP 200 for /.well-known/openid-configuration and
+    /.well-known/oauth-authorization-server, but both responses are
+    `text/html;charset=utf-8` pages rendering the Okta Sign-In Widget 7.35.3 — a
+    catch-all login route, NOT an OIDC discovery document. No anonymous OAuth
+    metadata is served anywhere on the estate.
+
+    Public data is distributed as documents and licensed files rather than as an
+    API. InsData (insdata.naic.org) sells individual company financial statements
+    as PDFs. The Financial Data Repository — the warehouse behind annual and
+    quarterly statutory statements covering 98%+ of U.S. written premium — is a
+    regulator-facing system, with bulk CSV extracts obtained by completing a data
+    request form and contacting idp@naic.org. The Consumer Information Source
+    (content.naic.org/cis_consumer_information.htm, HTTP 200) and the SBS external
+    Licensee/Company Lookup (sbs.naic.org/solar-external-lookup/, HTTP 200,
+    an Angular SPA) are consumer web lookups with no documented API contract; the
+    published bundle exposed no documented endpoints and none are recorded here.
+
+    Note the adjacency worth not confusing: NIPR (nipr.com), the National
+    Insurance Producer Registry, is a separate legal entity from the NAIC even
+    though the two share systems and branding on services-beta.serff.com. Any
+    producer-licensing API activity belongs on the NIPR record, not this one.
+  developerPortal:
+    url: ''
+    confirmed: false
+    classification: none — no first-party developer portal exists in any form
+    probes:
+    - url: https://naic.org
+      status: 200
+      note: redirects to https://content.naic.org/ — marketing/regulatory content site
+    - url: https://content.naic.org/developers
+      status: 404
+    - url: https://developer.naic.org
+      status: 0
+      note: NXDOMAIN
+    - url: https://developers.naic.org
+      status: 0
+      note: NXDOMAIN
+    - url: https://docs.naic.org
+      status: 0
+      note: NXDOMAIN
+    - url: https://api.naic.org/
+      status: 404
+      note: host resolves and answers HTTP/2; text/plain "Not Found" on every probed
+        path — internal gateway, no public docs
+    - url: https://naic.org/developers
+      status: 200
+      note: served as content.naic.org/404 error page
+    - url: https://content.naic.org/api
+      status: 404
+    - url: https://content.naic.org/web-services
+      status: 404
+    - url: https://services.naic.org/
+      status: 200
+      note: 200 at root only; /openapi.json /swagger.json /api-docs /docs /wsdl all 404
+    - url: https://www.serff.com/
+      status: 200
+      note: names "Web Services" and routes requests to wsrequest@naic.org — intake
+        form, not a portal
+    - url: https://services.serff.com/
+      status: 403
+      note: SERFF PROD web-services host; credential-gated
+    - url: https://services-beta.serff.com/
+      status: 200
+      note: SERFF BETA host; NAIC/NIPR landing page only, no spec at any probed path
+    - url: https://sbs.naic.org/
+      status: 200
+      note: State Based Systems login shell; /prelogin/ returns 403
+    - url: https://sbs.naic.org/solar-external-lookup/
+      status: 200
+      note: public consumer Licensee/Company Lookup SPA; no documented API
+    - url: https://insdata.naic.org/
+      status: 200
+      note: paid PDF financial-statement storefront
+  specs:
+    openapiHarvested: false
+    count: 0
+    provenance: []
+    note: No OpenAPI, Swagger, WSDL, RAML or AsyncAPI document was found anywhere on
+      naic.org, serff.com, sbs.naic.org, services.naic.org or api.naic.org. Every
+      candidate spec path probed on 2026-07-25 returned 404 or an HTML error page.
+      Nothing was saved because nothing real exists to save.
+  acordPosture: no ACORD reference found — NAIC runs its own statutory idiom (Annual
+    Statement Blanks, MCAS, SERFF filing formats, Financial Data Repository)
+  acordEvidence: |
+    The NAIC is the U.S. insurance sector's other standards body, and it does not
+    use ACORD's. A full-text scan of the official NAIC Technology Products and
+    Services Catalog (content.naic.org/sites/default/files/naic-technology-services-products-catalog.pdf,
+    HTTP 200, 1.5 MB, 57,226 characters extracted) found ZERO occurrences of
+    "ACORD", zero of "XML", zero of "web service", zero of "REST", zero of "SOAP"
+    and zero of "developer"; the five hits on the substring "api" were all inside
+    ordinary words ("capital", "rapidly"). Site searches for ACORD on
+    content.naic.org returned no NAIC-published ACORD material. There is no
+    ACORD XML, AL3, NGDS or ACORD-certified claim anywhere in the NAIC estate,
+    and no IVANS / agency-download / Applied Epic / Vertafore AMS360 integration
+    reference — those live on the carrier-and-agency side of the market, not the
+    regulator side. NAIC's data standards are the Annual Statement Blanks and
+    instructions, the Market Conduct Annual Statement (MCAS), risk-based capital
+    reporting, and the SERFF filing schema, all of which predate and sit parallel
+    to ACORD rather than mapping onto it.
+  insuranceVerbs:
+    quote: false
+    bind: false
+    issue: false
+    fnol: false
+    note: None of the four insurance transaction verbs apply. The NAIC is a
+      regulator-support and market-infrastructure body; it never quotes, binds,
+      issues or takes first notice of loss. Its machine surfaces move rate/form
+      filings, licensing records and statutory financial statements between
+      insurers, filing vendors and state departments of insurance.
+  audience: partner-only — state insurance departments, admitted insurers, and
+    approved filing vendors. No consumer-facing or agent-facing API.
+  authModel:
+    scheme: Okta-fronted SSO (SAML/OIDC) to partner and regulator portals; SERFF Web
+      Services credentials issued per-integrator by NAIC on request
+    selfServeSignup: false
+    oauthMetadataPublished: false
+    evidence: eapps.naic.org serves the Okta Sign-In Widget 7.35.3 at both
+      /.well-known/openid-configuration and /.well-known/oauth-authorization-server
+      (HTTP 200, text/html) — a catch-all login page, not OAuth metadata. No
+      anonymous OIDC discovery document is served on any NAIC host.
+  webhooks:
+    published: false
+    asyncapi: false
+    note: No event catalog, webhook documentation or AsyncAPI document exists. The
+      SERFF "Legacy SPI (two-way PUSH/PULL)" service implies a push capability to
+      provisioned integrators, but no public event schema or subscription contract
+      is documented.
+  graphql:
+    published: false
+    note: No /graphql surface found on any probed NAIC or SERFF host.
+  grpc:
+    published: false
+    note: No .proto artifacts published.
+  postman:
+    published: false
+    note: A Postman public-network search for "NAIC insurance commissioners" on
+      2026-07-25 returned 0 workspaces, 0 collections and 0 APIs.
+  sdks:
+    published: false
+    note: No official SDKs, client libraries or CLI. No NAIC GitHub organization
+      exists — a GitHub org search for "naic" returned only unrelated accounts
+      (NAICNO, Naico-Archive, naicresearch, and similar).
+  transports:
+  - protocol: HTTPS web application
+    documented: true
+    note: Okta-gated portals — SERFF, SBS, iSite+, myNAIC, OPTins, InsData.
+  - protocol: SERFF Web Services (Legacy SPI PUSH/PULL, Legacy SIS PULL, Modernized
+      Data API PULL)
+    documented: false
+    gated: true
+    hosts:
+    - https://services.serff.com/
+    - https://services-beta.serff.com/
+    note: Named on the SERFF Technical Support Checklist with PROD and BETA
+      environments; provisioned via wsrequest@naic.org. No public reference docs,
+      no machine-readable contract.
+  - protocol: REST
+    documented: false
+    note: api.naic.org resolves and answers, but returns text/plain "Not Found" on
+      every probed path. No public REST API is documented.
+  - protocol: GraphQL
+    documented: false
+  - protocol: WebSocket
+    documented: false
+  - protocol: gRPC
+    documented: false
+  bulkData:
+    mechanism: contract-licensed file distribution
+    note: Bulk regulatory data from the Financial Data Repository is requested via a
+      Data Request Form and idp@naic.org and delivered as CSV. InsData sells
+      per-company statutory financial statements as PDFs. Neither is an API.
+sources:
+- url: https://content.naic.org/
+  type: Website
+  status: 200
+  note: naic.org and www.naic.org both redirect here.
+- url: https://content.naic.org/industry
+  type: Documentation
+  status: 200
+  note: Authoritative list of NAIC systems — myNAIC, iSite+, SERFF, UCAA, GRID,
+    OPTins, InsData, Life Policy Locator, SBS. No developer or API resource listed.
+- url: https://www.serff.com/
+  type: Portal
+  status: 200
+  note: Carries the "Web Services" block and the wsrequest@naic.org intake path.
+- url: https://www.serff.com/documents/serff-services-support-checklist.pdf
+  type: Documentation
+  status: 200
+  note: PRIMARY EVIDENCE — names Legacy SPI (two-way PUSH/PULL), Legacy SIS (one-way
+    PULL) and Modernized Data API (one-way PULL), with PROD and BETA environments.
+- url: https://www.serff.com/serff_modernization.htm
+  type: Documentation
+  status: 200
+  note: SERFF Modernization program; first modernized release live 2025-03-03 for
+    Insurance Compact filings, state migrations phased. No API documentation.
+- url: https://content.naic.org/sites/default/files/naic-technology-services-products-catalog.pdf
+  type: Documentation
+  status: 200
+  note: Official technology products catalog; zero occurrences of ACORD, XML, web
+    service, REST, SOAP or developer across 57,226 extracted characters.
+- url: https://content.naic.org/insurance-topics/financial-data-repository
+  type: Documentation
+  status: 200
+  note: FDR covers 98%+ of U.S. written premium; regulator-facing, bulk CSV by
+    request to idp@naic.org.
+- url: https://insdata.naic.org/
+  type: Portal
+  status: 200
+  note: Paid PDF statutory financial statements for 4,800+ insurers.
+- url: https://sbs.naic.org/solar-external-lookup/
+  type: Portal
+  status: 200
+  note: Public Licensee/Company Lookup SPA; no documented API contract.
+- url: https://www.statebasedsystems.com/solar/index.html
+  type: Documentation
+  status: 200
+  note: SBS jurisdiction and tool directory. "service_reg.html" is "SBS for
+    Regulators", NOT a service registry — an easy misread worth recording.
+- url: https://api.naic.org/
+  type: Host
+  status: 404
+  note: Resolves, HTTP/2, text/plain "Not Found" on all probed paths.
+actions:
+  apisYmlUpdated: true
+  openapiSaved: 0
+  reason: |
+    Recorded as an honest documentation-and-standards-first market-body profile.
+    One apis[] entry is retained for SERFF Web Services because the service names,
+    directions and environments are genuinely published by the NAIC; it carries no
+    baseURL and no OpenAPI pointer because neither is documented. No openapi/
+    directory was created because no real specification exists to save. This is
+    the expected and correct outcome for a U.S. insurance market body: there is no
+    federal regulator, no open-insurance mandate, and therefore no forcing
+    function that would make the NAIC publish an API.
