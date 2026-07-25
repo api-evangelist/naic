@@ -1,0 +1,96 @@
+generated: '2026-07-25'
+method: searched
+source: >-
+  Live probes and site search across content.naic.org, serff.com and the SERFF modernization
+  pages, 2026-07-25.
+description: >-
+  Versioning, deprecation and operational-transparency posture. This is the weakest area of the
+  NAIC's machine surface and the honest answer is mostly "absent" — recorded so the next round
+  does not re-search from zero, and so no unearned pointers get emitted into apis.yml.
+
+versioning:
+  scheme: media-type
+  current: JSON:API 1.1
+  docs: https://jsonapi.org/format/1.1/
+  path_versioning: false
+  evidence: >-
+    The JSON:API base path carries no version segment; the only version declared is the
+    JSON:API spec version echoed in every response body.
+  risk: >-
+    The real contract is the Drupal content model, which is unversioned. Bundles, fields and
+    vocabularies can be added, renamed or removed by an editorial/CMS change with no notice,
+    no changelog and no deprecation signal. Consumers should pin to the resource types they
+    read, re-fetch GET /jsonapi periodically to detect index drift, and code defensively
+    against fields disappearing.
+
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  evidence: >-
+    No Sunset or Deprecation response headers observed on any probe. No deprecation, sunset or
+    API-versioning policy page exists on content.naic.org. No `Deprecation` pointer is emitted
+    in apis.yml.
+  deprecated_operations: []
+
+status_page:
+  url: null
+  published: false
+  evidence: >-
+    status.naic.org and status.serff.com do not resolve (DNS failure, curl exit 6). No
+    Statuspage/Instatus/Better Stack tenant was found for either domain. serff.com serves a
+    403 to non-browser agents, so an in-page status block could not be re-confirmed from here;
+    nothing status-shaped is linked from content.naic.org. No `StatusPage` pointer is emitted.
+  substitute: >-
+    The nearest thing is the Drupal `config_pages--sitewide_alert` resource on the JSON:API
+    (GET /jsonapi/config_pages/sitewide_alert), which carries whatever site-wide banner the
+    NAIC has posted. It is an editorial alert channel, not an uptime feed.
+
+sla:
+  url: null
+  uptime_target: null
+  published: false
+  note: >-
+    No SLA is published for the public content estate. SERFF Web Services availability terms,
+    if any, would travel in the per-integrator agreement provisioned via wsrequest@naic.org and
+    are not public.
+
+changelog:
+  published: false
+  evidence: >-
+    No dated API or platform changelog exists. serff.com/serff_release_notes.htm and
+    serff_news.htm return 403 to non-browser agents and are not linked as a changelog from any
+    public page. content.naic.org has no /changelog, and no RSS feed
+    (/rss.xml, /news/rss both 404).
+  nearest_equivalents:
+  - url: https://content.naic.org/newsroom
+    kind: editorial newsroom
+    note: >-
+      Dated organizational news, not API or platform release notes. Machine-readable as
+      node--article on the JSON:API, sortable by `-created`.
+  - url: https://www.serff.com/serff_modernization.htm
+    kind: program page
+    note: >-
+      Tracks the SERFF Modernization program — first modernized release live 2025-03-03 for
+      Insurance Compact filings, with state migrations phased after. Programme milestones, not
+      a versioned changelog.
+  decision: >-
+    No changelog/ artifact and no `ChangeLog` pointer are emitted, because there is no dated
+    release feed to capture. The `Blog` pointer to the newsroom already covers the editorial
+    channel.
+
+lifecycle_stage:
+  jsonapi_surface: undocumented-but-live
+  note: >-
+    The JSON:API is production-live and stable in shape (Drupal 11 core), but it is
+    unadvertised: no docs, no announcement, no support channel scoped to it. Treat it as an
+    unsupported public read surface — durable enough to build on, but with no contractual
+    commitment behind it.
+  serff_web_services: partner-gated, provisioned by email (wsrequest@naic.org)
+  api_naic_org: internal gateway, no public surface
+
+cross_links:
+  conventions: conventions/naic-conventions.yml
+  conformance: conformance/naic-conformance.yml
+  openapi: openapi/naic-content-jsonapi-openapi.yml

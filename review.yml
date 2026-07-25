@@ -121,7 +121,60 @@ findings:
     note: No OpenAPI, Swagger, WSDL, RAML or AsyncAPI document was found anywhere on
       naic.org, serff.com, sbs.naic.org, services.naic.org or api.naic.org. Every
       candidate spec path probed on 2026-07-25 returned 404 or an HTML error page.
-      Nothing was saved because nothing real exists to save.
+      Nothing was saved because nothing real exists to save. SEE THE CORRECTION BELOW —
+      the NAIC publishes no spec, but it does serve a live machine-readable contract of a
+      different kind.
+  correction:
+    date: '2026-07-25'
+    round: enrichment
+    finding: |
+      This review's conclusion that the NAIC has NO public machine surface was too strong,
+      and is corrected here. The enrichment round probed content.naic.org itself (rather than
+      only the developer-hostname and spec-path candidates the review round checked) and
+      found TWO real, anonymous, machine-readable surfaces:
+
+      1. A live Drupal 11 JSON:API v1.1 at https://content.naic.org/jsonapi (HTTP 200,
+         content-type application/vnd.api+json). The entry point returns a resource index
+         enumerating 284 resource types in `entity--bundle` form. Anonymous GET was verified
+         against node--article, node--page, node--committee_page,
+         node--state_department_contact, taxonomy_term--model_laws, taxonomy_term--states,
+         taxonomy_term--insurance_types, taxonomy_term--publications, media--document and
+         node--newsletter, each returning 200. Sparse fieldsets, filtering, sorting,
+         relationship inclusion and offset pagination all work. Writes are closed (POST -> 401
+         "No authentication credentials provided.", DELETE -> 405 "Allow: GET, HEAD, POST").
+         This is the model-law corpus with MDL numbers, the state regulator directory,
+         committees, insurance topics, publications, CIPR research and the newsroom — served
+         as an API the NAIC has simply never told anyone about.
+
+      2. A first-party llms.txt at https://content.naic.org/llms.txt (HTTP 200, text/plain,
+         28KB), declaring AI usage preferences (allow_model_training false,
+         allow_model_generation true, require_attribution true, attribution name "NAIC"),
+         crawl guidance (crawl_delay 10, max_requests_per_day 100) and include/exclude path
+         scoping, plus a link index of committees, insurance topics and resource-center
+         sections. Saved verbatim at llms/naic-llms.txt.
+
+      Everything ELSE the review concluded stands and was re-verified on the same day:
+      developer/developers/docs.naic.org are still NXDOMAIN; api.naic.org still returns a
+      nine-byte text/plain "Not Found" on every path including /openapi.json, /graphql and
+      both /.well-known/ OAuth paths; eapps.naic.org still serves an Okta Sign-In Widget HTML
+      page at /.well-known/openid-configuration and /.well-known/oauth-authorization-server
+      rather than real metadata; there is still no security.txt, no GitHub organization
+      (github.com/naic is an unrelated personal account with one repo), no SDK, no Postman
+      workspace, no status page, no changelog and no trust center.
+    revisedAnswer: |
+      Does the NAIC publish a public, self-serve developer portal or documented API? Still NO.
+      Does the NAIC OPERATE a public, anonymous, machine-readable API? YES — an undocumented
+      JSON:API v1.1 over its content estate. The distinction matters: the surface is real and
+      usable, but it is unadvertised and carries no versioning, deprecation or support
+      commitment.
+    artifactsAdded:
+    - openapi/naic-content-jsonapi-openapi.yml (DERIVED from the live resource index, 569
+      operations; x-publisher-provided false)
+    - llms/naic-llms.txt (searched, verbatim)
+    - examples/ (five verbatim live payloads incl. the resource index)
+    - conventions/, errors/, data-model/, conformance/, authentication/, lifecycle/
+    - mcp/naic-mcp.yml (candidate), skills/ (3 grounded agent skills)
+    - well-known/naic-well-known.yml (audited negative record incl. the eapps 200-but-HTML trap)
   acordPosture: no ACORD reference found — NAIC runs its own statutory idiom (Annual
     Statement Blanks, MCAS, SERFF filing formats, Financial Data Repository)
   acordEvidence: |
@@ -170,7 +223,17 @@ findings:
       is documented.
   graphql:
     published: false
-    note: No /graphql surface found on any probed NAIC or SERFF host.
+    note: No /graphql surface found on any probed NAIC or SERFF host. api.naic.org/graphql
+      returns text/plain 404; content.naic.org/graphql falls through to the Drupal HTML 404.
+  jsonapi:
+    published: true
+    documented: false
+    url: https://content.naic.org/jsonapi
+    version: '1.1'
+    generator: Drupal 11
+    resource_types: 284
+    auth: none (anonymous read); writes return 401
+    note: See findings.correction. Discovered during the 2026-07-25 enrichment round.
   grpc:
     published: false
     note: No .proto artifacts published.

@@ -1,0 +1,60 @@
+generated: '2026-07-25'
+method: searched
+source: https://content.naic.org/jsonapi
+description: >-
+  Live response payloads captured verbatim from the NAIC Drupal JSON:API on 2026-07-25.
+  Every file in this directory is an unmodified HTTP 200 body returned anonymously by
+  content.naic.org — nothing here is synthesized. They are the ground truth the derived
+  OpenAPI (openapi/naic-content-jsonapi-openapi.yml), data model, error catalog and
+  conventions artifacts were built from.
+examples:
+- file: naic-jsonapi-resource-index.json
+  request: GET https://content.naic.org/jsonapi
+  status: 200
+  content_type: application/vnd.api+json
+  description: >-
+    The JSON:API entry point. Its `links` member enumerates 284 exposed resource types in
+    `entity--bundle` form, each with its collection URL. This is the machine-readable
+    contract the NAIC actually publishes, and the source the OpenAPI was derived from.
+- file: naic-node-article-example.json
+  request: GET https://content.naic.org/jsonapi/node/article?page[limit]=1&sort=-created
+  status: 200
+  content_type: application/vnd.api+json
+  operation: listNodeArticle
+  description: >-
+    One newsroom/article node resource object, showing the full attribute set (title, body,
+    field_summary, field_key_points, metatag, moderation_state, publish/unpublish scheduling)
+    and the relationship set (field_topics, field_committee_term, field_tags, field_news_topics,
+    field_media_document, field_media_image, uid, node_type).
+- file: naic-node-state-department-contact-example.json
+  request: GET https://content.naic.org/jsonapi/node/state_department_contact?page[limit]=1
+  status: 200
+  content_type: application/vnd.api+json
+  operation: listNodeStateDepartmentContact
+  description: >-
+    A record from the state insurance department contact directory — the most obviously
+    reusable public dataset on this surface. Carries regulator name fields, position title,
+    term-of-office dates, elected/appointed/confirmed flags, office hours, and relationships
+    to the state department, zone and contact image.
+- file: naic-taxonomy-model-law-example.json
+  request: GET https://content.naic.org/jsonapi/taxonomy_term/model_laws?page[limit]=1
+  status: 200
+  content_type: application/vnd.api+json
+  operation: listTaxonomyTermModelLaws
+  description: >-
+    A model-law taxonomy term, carrying the NAIC model number (field_ml_model_number, e.g.
+    "MDL-10") and a relationship to its model-law category. The NAIC model laws are the
+    NAIC's primary standards output and this is the only machine-readable index of them.
+- file: naic-taxonomy-states-alabama-example.json
+  request: GET https://content.naic.org/jsonapi/taxonomy_term/states?filter[name]=Alabama
+  status: 200
+  content_type: application/vnd.api+json
+  operation: listTaxonomyTermStates
+  description: >-
+    A filtered single-term response, demonstrating JSON:API `filter[field]=value` support and
+    the `virtual` sentinel Drupal emits for the synthetic root of a taxonomy hierarchy.
+notes:
+- The 400 and 404 error bodies captured during the same session are recorded in
+  errors/naic-problem-types.yml and embedded as in-spec examples in the derived OpenAPI.
+- Payloads are point-in-time captures. The NAIC llms.txt asks for a 10-second crawl delay and
+  a 100-request daily ceiling; both were respected when these were taken.

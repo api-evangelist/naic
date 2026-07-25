@@ -1,0 +1,125 @@
+generated: '2026-07-25'
+method: searched
+source: live /.well-known/ probes on 2026-07-25
+description: >-
+  Discovery-surface probe across every NAIC host in apis.yml plus the OpenAPI servers[] host.
+  The result is a clean negative: the NAIC serves NO RFC 9116 security.txt, NO OAuth/OIDC
+  discovery metadata, NO api-catalog and NO ai-plugin manifest anywhere on the estate. The one
+  thing it DOES publish for machine consumers is not under /.well-known/ at all — it is a
+  top-level llms.txt (captured verbatim at llms/naic-llms.txt).
+
+hosts:
+
+- host: https://content.naic.org
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+  - path: /.well-known/host-meta
+    status: 404
+  - path: /.well-known/nodeinfo
+    status: 404
+  - path: /.well-known/gpc.json
+    status: 404
+  - path: /.well-known/dnt-policy.txt
+    status: 404
+  - path: /.well-known/ai.txt
+    status: 404
+  - path: /.well-known/aipref.txt
+    status: 404
+  - path: /.well-known/change-password
+    status: 403
+    note: >-
+      Present but forbidden to anonymous callers — the Drupal password-reset route, not a
+      discovery document.
+  outside_well_known:
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    file: ../llms/naic-llms.txt
+    note: >-
+      REAL FIND. A publisher-authored llms.txt carrying AI usage preferences
+      (allow_model_training false, allow_model_generation true, require_attribution true),
+      crawl guidance (crawl_delay 10, max_requests_per_day 100), include/exclude path scoping,
+      and a full link index of the NAIC's committees, insurance topics and resource-center
+      sections.
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    note: Standard Drupal robots.txt; no Sitemap-only surprises, no AI-specific directives.
+  - path: /sitemap.xml
+    status: 200
+
+- host: https://api.naic.org
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  note: >-
+    Every path on this host returns a nine-byte `text/plain` "Not Found". It is an internal
+    gateway, not a discovery surface.
+
+- host: https://eapps.naic.org
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html;charset=utf-8
+    valid_metadata: false
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html;charset=utf-8
+    valid_metadata: false
+  warning: >-
+    FALSE POSITIVE TRAP. Both paths return HTTP 200, but the body is an Okta Sign-In Widget
+    7.35.3 HTML page served by a catch-all login route — not RFC 8414 / OIDC discovery JSON.
+    Any scanner that treats status 200 as "OAuth metadata published" will score this wrong.
+    Re-verified 2026-07-25.
+
+- host: https://www.serff.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  note: The SERFF web tier returns 403 to non-browser user agents on every path.
+
+- host: https://sbs.naic.org
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+
+- host: https://services.serff.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+
+- host: https://services-beta.serff.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+
+summary:
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  oauth_protected_resource: false
+  api_catalog: false
+  ai_plugin: false
+  llms_txt: true
+  note: >-
+    No `WellKnown` or `SecurityTxt` pointer is emitted in apis.yml, because nothing valid was
+    found to point at. This file is kept as the audited negative record so the next enrichment
+    round does not re-probe from zero — and so the eapps.naic.org 200-but-HTML trap stays
+    documented.

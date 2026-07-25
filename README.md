@@ -32,9 +32,19 @@ The NAIC publishes **no public developer portal and no documented self-serve API
 - `api.naic.org` — resolves and answers over HTTP/2, but returns a bare `text/plain` `Not Found` on `/`, `/openapi.json`, `/swagger.json`, `/api-docs`, `/v1`, `/docs`, `/health`, `/swagger-ui.html` and `/actuator`. An internal gateway, not a portal.
 - `content.naic.org/developers`, `/api`, `/apis`, `/developer`, `/web-services`, `/data` — all HTTP 404
 
-**Zero OpenAPI, Swagger, WSDL or AsyncAPI documents were found**, so this repo ships no `openapi/` directory.
+**Zero OpenAPI, Swagger, WSDL or AsyncAPI documents were found.** The NAIC publishes no specification of any kind.
 
-The only API-shaped surface the NAIC names in public is **SERFF Web Services**, and it is partner-gated. Everything else — myNAIC, iSite+, SBS, OPTins, SERFF Login — is an Okta-fronted web application. Bulk regulatory data from the Financial Data Repository is licensed by contract (`idp@naic.org`) and delivered as CSV; InsData sells statutory financial statements as PDFs. Neither is an API.
+The only API-shaped surface the NAIC *names* in public is **SERFF Web Services**, and it is partner-gated. Everything else — myNAIC, iSite+, SBS, OPTins, SERFF Login — is an Okta-fronted web application. Bulk regulatory data from the Financial Data Repository is licensed by contract (`idp@naic.org`) and delivered as CSV; InsData sells statutory financial statements as PDFs. Neither is an API.
+
+### …but there is an undocumented one
+
+The 2026-07-25 enrichment round probed `content.naic.org` itself rather than only the developer-hostname candidates, and found a **live, anonymously readable JSON:API v1.1** at [`https://content.naic.org/jsonapi`](https://content.naic.org/jsonapi), served by Drupal 11. Its entry point returns a machine-readable resource index enumerating **284 resource types**, and anonymous `GET` returns HTTP 200 `application/vnd.api+json` across every content family. It carries the NAIC's model law corpus (with MDL model numbers), the state insurance department regulator directory, committees and task forces, insurance topics, publications, CIPR research, the newsroom, and the published PDFs behind them.
+
+The NAIC has never advertised it. There is no documentation, no changelog, no deprecation policy, no status page and no support channel scoped to it — and the underlying Drupal content model is unversioned. Treat it as a **real but unsupported public read surface**.
+
+The NAIC also publishes a first-party [`llms.txt`](https://content.naic.org/llms.txt) declaring AI usage preferences (`allow_model_training: false`, `require_attribution: true`), crawl guidance (`crawl_delay: 10`, `max_requests_per_day: 100`) and path scoping — so its stated contract with automated consumers is more explicit than its contract with API developers. **Honor it; nothing enforces it server-side.**
+
+The `openapi/` document in this repo is **derived by API Evangelist** from that live resource index (`x-publisher-provided: false`), not published by the NAIC.
 
 ### ACORD posture
 
@@ -61,6 +71,41 @@ The NAIC-operated SERFF (System for Electronic Rates & Forms Filing) platform ex
 - [Documentation](https://www.serff.com/documents/serff-services-support-checklist.pdf) — SERFF Technical Support Checklist
 - [Documentation](https://www.serff.com/serff_modernization.htm) — SERFF Modernization
 
+### NAIC Content JSON:API
+
+A live, anonymously readable **JSON:API v1.1** surface over the NAIC's public regulatory content estate, served by Drupal 11 and **undocumented by the publisher**. Supports the full JSON:API query grammar — sparse fieldsets, filtering, sorting, relationship inclusion, offset pagination capped at 50 — and returns JSON:API error objects rather than RFC 9457 problem details. Writes are closed (`POST` → HTTP 401 *"No authentication credentials provided."*, `DELETE` → 405). It carries the **content** estate only: **not** SERFF filings, the Financial Data Repository, SBS licensing or OPTins.
+
+- **Base URL:** `https://content.naic.org/jsonapi`
+- **Human URL:** [https://content.naic.org/](https://content.naic.org/)
+- **Auth:** none — anonymous read
+
+#### Properties
+
+- [OpenAPI](openapi/naic-content-jsonapi-openapi.yml) — **derived**, 569 operations
+- [Examples](examples/_index.yml) — five verbatim live payloads
+- [Documentation](https://jsonapi.org/format/1.1/) — the JSON:API specification the surface implements
+
+## Artifacts in this repo
+
+| Artifact | File | Method |
+|---|---|---|
+| OpenAPI | [`openapi/naic-content-jsonapi-openapi.yml`](openapi/naic-content-jsonapi-openapi.yml) | derived from the live resource index |
+| llms.txt | [`llms/naic-llms.txt`](llms/naic-llms.txt) | **searched** — publisher-authored, verbatim |
+| Examples | [`examples/`](examples/) | **searched** — five verbatim live responses |
+| Conventions | [`conventions/naic-conventions.yml`](conventions/naic-conventions.yml) | derived from live probes |
+| Error catalog | [`errors/naic-problem-types.yml`](errors/naic-problem-types.yml) | derived from provoked live errors |
+| Data model | [`data-model/naic-data-model.yml`](data-model/naic-data-model.yml) | derived |
+| Authentication | [`authentication/naic-authentication.yml`](authentication/naic-authentication.yml) | searched |
+| Conformance | [`conformance/naic-conformance.yml`](conformance/naic-conformance.yml) | derived |
+| Lifecycle | [`lifecycle/naic-lifecycle.yml`](lifecycle/naic-lifecycle.yml) | searched |
+| Well-known | [`well-known/naic-well-known.yml`](well-known/naic-well-known.yml) | searched — audited **negative** record |
+| Domain security | [`security/naic-domain-security.yml`](security/naic-domain-security.yml) | probed |
+| MCP server | [`mcp/naic-mcp.yml`](mcp/naic-mcp.yml) | derived — **candidate**, nothing deployed |
+| Agent skills | [`skills/`](skills/) | generated — 3 skills, grounded operationIds |
+| Agentic access | [`agentic-access/naic-agentic-access.yml`](agentic-access/naic-agentic-access.yml) | generated — 569 read-only contracts |
+
+**Not present, because they genuinely do not exist:** SDKs/packages, CLI, sandbox, changelog, status page, deprecation policy, webhooks/AsyncAPI, GraphQL, gRPC, OAuth scopes, Postman collection, security.txt, vulnerability-disclosure program, trust center, GitHub organization.
+
 ## Common Properties
 
 - [Website](https://content.naic.org/)
@@ -75,6 +120,10 @@ The NAIC-operated SERFF (System for Electronic Rates & Forms Filing) platform ex
 - [Financial Data Repository](https://content.naic.org/insurance-topics/financial-data-repository)
 - [Consumer Information Source](https://content.naic.org/cis_consumer_information.htm)
 - [Technology Products and Services Catalog](https://content.naic.org/sites/default/files/naic-technology-services-products-catalog.pdf)
+- [Contact / Support](https://content.naic.org/contact)
+- [Help](https://content.naic.org/help)
+- [Terms & Conditions](https://content.naic.org/application/terms-conditions)
+- [Privacy Statement](https://content.naic.org/privacy_statement.htm)
 
 ## Related but distinct
 

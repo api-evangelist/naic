@@ -1,0 +1,104 @@
+generated: '2026-07-25'
+method: searched
+source: >-
+  Live probes of content.naic.org, api.naic.org, eapps.naic.org, sbs.naic.org,
+  services.serff.com and services-beta.serff.com on 2026-07-25, plus the SERFF Technical
+  Support Checklist at serff.com.
+docs: null
+docs_note: >-
+  The NAIC publishes no authentication documentation for any machine surface. This profile was
+  established entirely by probing. derive-authentication.py was not used because the only
+  OpenAPI in this repo is one API Evangelist derived from the live JSON:API index, and it
+  declares no securitySchemes — the read surface genuinely has none.
+
+summary:
+  types: [none, cookie, saml-oidc-sso]
+  api_key_in: []
+  oauth2_flows: []
+  public_read_without_credentials: true
+  self_serve_signup: false
+  oauth_metadata_published: false
+
+surfaces:
+
+- name: NAIC Content JSON:API
+  host: https://content.naic.org/jsonapi
+  audience: public
+  scheme: none
+  read: anonymous
+  evidence: >-
+    Anonymous GET returned HTTP 200 application/vnd.api+json on every content collection
+    probed (node--article, node--page, node--committee_page, node--state_department_contact,
+    taxonomy_term--model_laws, taxonomy_term--states, taxonomy_term--insurance_types,
+    taxonomy_term--publications, media--document, node--newsletter, user--user). No API key,
+    bearer token, cookie or referer was sent.
+  write: closed
+  write_evidence: >-
+    POST /jsonapi/node/article returned HTTP 401 with detail "No authentication credentials
+    provided."; DELETE returned HTTP 405 with "Allow: GET, HEAD, POST".
+  credentialing_path: >-
+    None published. Drupal would authenticate writes with a session cookie or, if enabled, HTTP
+    Basic / OAuth — but no signup, no key issuance and no documentation exist, so the write
+    surface is effectively unreachable for third parties.
+  caveat: >-
+    Because reads are anonymous, there is also no per-caller identity, no quota and no
+    revocation. Consumption etiquette is the only control: see the crawl_delay and
+    max_requests_per_day the NAIC publishes in llms/naic-llms.txt.
+
+- name: NAIC regulator and industry portals (myNAIC, iSite+, SBS, OPTins, InsData, SERFF Login)
+  hosts:
+  - https://eapps.naic.org/
+  - https://isiteplus.naic.org/
+  - https://sbs.naic.org/
+  - https://insdata.naic.org/
+  audience: partner-only
+  scheme: Okta-fronted SSO (SAML / OIDC), interactive browser login
+  evidence: >-
+    eapps.naic.org returns HTTP 200 for both /.well-known/openid-configuration and
+    /.well-known/oauth-authorization-server, but with `content-type: text/html;charset=utf-8`
+    rendering the Okta Sign-In Widget 7.35.3 — a catch-all login route, NOT an OIDC discovery
+    document. No anonymous OAuth/OIDC metadata is served anywhere on the estate. Re-verified
+    2026-07-25.
+  self_serve: false
+  note: >-
+    These are human web applications behind SSO, not delegated-authorization API surfaces. No
+    OAuth client registration, no scopes, no token endpoint is exposed to third parties, which
+    is why scopes/ is deliberately absent from this repo.
+
+- name: SERFF Web Services (Legacy SPI, Legacy SIS, Modernized Data API)
+  hosts:
+  - https://services.serff.com/
+  - https://services-beta.serff.com/
+  audience: partner-only
+  scheme: per-integrator credentials issued by the NAIC on request
+  provisioning: email wsrequest@naic.org
+  evidence: >-
+    services.serff.com returns HTTP 403 anonymously at the root. The SERFF Technical Support
+    Checklist names the three services and their PROD/BETA environments but publishes no auth
+    scheme, no endpoint list, no WSDL and no OpenAPI.
+  self_serve: false
+
+- name: api.naic.org
+  host: https://api.naic.org/
+  audience: internal
+  scheme: unknown
+  evidence: >-
+    Host resolves and answers over HTTP/2 but returns a bare `text/plain` 404 "Not Found" on /,
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc,
+    /graphql, /.well-known/openid-configuration and /.well-known/oauth-authorization-server
+    (re-probed 2026-07-25). An internal gateway with no public surface and no advertised auth.
+
+well_known:
+  oauth_authorization_server: not published
+  oauth_protected_resource: not published
+  openid_configuration: not published
+  detail: >-
+    See well-known/naic-well-known.yml. The only two hosts that answer 200 on a /.well-known/
+    OAuth path (eapps.naic.org) serve an HTML login page, not metadata — recorded as a
+    false-positive trap rather than as discovery documents.
+
+cross_links:
+  conventions: conventions/naic-conventions.yml
+  errors: errors/naic-problem-types.yml
+  well_known: well-known/naic-well-known.yml
+  domain_security: security/naic-domain-security.yml

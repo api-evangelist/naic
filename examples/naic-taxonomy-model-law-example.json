@@ -1,0 +1,136 @@
+{
+  "type": "taxonomy_term--model_laws",
+  "id": "46f6505d-0014-46ce-95b8-5ba89e7f96f6",
+  "links": {
+    "self": {
+      "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6?resourceVersion=id%3A717"
+    },
+    "working-copy": {
+      "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6?resourceVersion=rel%3Aworking-copy"
+    }
+  },
+  "attributes": {
+    "drupal_internal__tid": 717,
+    "drupal_internal__revision_id": 717,
+    "langcode": "en",
+    "revision_created": "2021-03-04T14:53:16+00:00",
+    "status": true,
+    "name": "Health Insurance Reserves Model Regulation",
+    "description": null,
+    "weight": 0,
+    "changed": "2022-12-05T22:53:08+00:00",
+    "default_langcode": true,
+    "revision_translation_affected": true,
+    "metatag": [
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "title",
+          "content": "Health Insurance Reserves Model Regulation | NAIC"
+        }
+      },
+      {
+        "tag": "link",
+        "attributes": {
+          "rel": "canonical",
+          "href": "https://content.naic.org/taxonomy/term/717"
+        }
+      }
+    ],
+    "path": {
+      "alias": null,
+      "pid": null,
+      "langcode": "en"
+    },
+    "publish_on": null,
+    "unpublish_on": null,
+    "publish_state": null,
+    "unpublish_state": null,
+    "field_ml_model_number": "MDL-10",
+    "field_ml_related_charts": null
+  },
+  "relationships": {
+    "vid": {
+      "data": {
+        "type": "taxonomy_vocabulary--taxonomy_vocabulary",
+        "id": "57288668-e669-4a3d-ab62-5916fc34dda7",
+        "meta": {
+          "drupal_internal__target_id": "model_laws"
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/vid?resourceVersion=id%3A717"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/relationships/vid?resourceVersion=id%3A717"
+        }
+      }
+    },
+    "revision_user": {
+      "data": null,
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/revision_user?resourceVersion=id%3A717"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/relationships/revision_user?resourceVersion=id%3A717"
+        }
+      }
+    },
+    "parent": {
+      "data": [
+        {
+          "type": "taxonomy_term--model_laws",
+          "id": "virtual",
+          "meta": {
+            "links": {
+              "help": {
+                "href": "https://www.drupal.org/docs/8/modules/json-api/core-concepts#virtual",
+                "meta": {
+                  "about": "Usage and meaning of the 'virtual' resource identifier."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/parent?resourceVersion=id%3A717"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/relationships/parent?resourceVersion=id%3A717"
+        }
+      }
+    },
+    "field_ml_category": {
+      "data": {
+        "type": "taxonomy_term--model_law_categories",
+        "id": "018bf4e7-3be6-4800-bc5e-c4eb5a99f4ea",
+        "meta": {
+          "drupal_internal__target_id": 493
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/field_ml_category?resourceVersion=id%3A717"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/relationships/field_ml_category?resourceVersion=id%3A717"
+        }
+      }
+    },
+    "field_related_charts": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/field_related_charts?resourceVersion=id%3A717"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/model_laws/46f6505d-0014-46ce-95b8-5ba89e7f96f6/relationships/field_related_charts?resourceVersion=id%3A717"
+        }
+      }
+    }
+  }
+}

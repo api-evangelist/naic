@@ -1,0 +1,183 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  Live probes of https://content.naic.org/jsonapi on 2026-07-25, plus the JSON:API v1.1
+  specification the surface declares conformance to in every response body.
+description: >-
+  Cross-cutting request/response semantics for the NAIC's one genuinely public machine
+  surface: the Drupal 11 JSON:API at content.naic.org/jsonapi. The NAIC publishes no
+  developer documentation for it, so every convention below was established by probing the
+  live API and cross-checking against the JSON:API v1.1 specification the responses cite.
+  Nothing here is inherited from a vendor doc page that does not exist.
+
+media_type:
+  request: application/vnd.api+json
+  response: application/vnd.api+json
+  note: >-
+    Responses are returned as application/vnd.api+json whether or not the client sends an
+    Accept header. Error responses use the same media type — except for a request to an
+    entirely unexposed resource path (e.g. /jsonapi/node/does_not_exist), which falls through
+    to the Drupal front-end router and returns an HTML 404 page.
+
+authentication:
+  read: none
+  detail: >-
+    The entire read surface is anonymous. No API key, token, cookie or referer is required
+    for GET. See authentication/naic-authentication.yml.
+  write: required
+  write_evidence: >-
+    POST /jsonapi/node/article returned HTTP 401 with
+    {"errors":[{"title":"Unauthorized","status":"401","detail":"No authentication credentials provided."}]}.
+    The NAIC documents no credentialing path for the write surface.
+
+idempotency:
+  supported: false
+  header: null
+  note: >-
+    No idempotency-key mechanism is offered, and none is needed on the public surface: every
+    exposed operation is a safe GET. Writes are closed. No Idempotency pointer is emitted in
+    apis.yml because there is genuinely no idempotency contract here.
+
+pagination:
+  style: offset
+  params:
+    limit: page[limit]
+    offset: page[offset]
+  max_page_size: 50
+  max_page_size_note: >-
+    Drupal JSON:API caps page[limit] at 50; larger values are silently clamped.
+  response_fields:
+    - links.self
+    - links.next
+    - links.prev
+  cursor: false
+  total_count: >-
+    Not returned by default. JSON:API `meta.count` is absent on these collections, so callers
+    page until `links.next` disappears rather than reading a total.
+  evidence: >-
+    GET /jsonapi/node/article?page[offset]=10&page[limit]=1 returned 200 with a `links.next`
+    href carrying the incremented offset.
+
+sorting:
+  param: sort
+  style: comma-separated field list, `-` prefix for descending
+  example: sort=-created
+  evidence: GET /jsonapi/node/article?sort=-created&page[limit]=2 -> 200
+
+filtering:
+  simple_form: filter[FIELD]=VALUE
+  condition_form: >-
+    filter[LABEL][condition][path]=FIELD&filter[LABEL][condition][operator]=OPERATOR&filter[LABEL][condition][value]=VALUE
+  group_form: filter[GROUP][group][conjunction]=AND|OR
+  operators_note: >-
+    The standard Drupal JSON:API operator set (=, <>, >, >=, <, <=, STARTS_WITH, CONTAINS,
+    ENDS_WITH, IN, NOT IN, BETWEEN, IS NULL, IS NOT NULL). Only `=` and the simple form were
+    exercised against the live surface.
+  evidence: GET /jsonapi/taxonomy_term/states?filter[name]=Alabama -> 200 with exactly the Alabama term
+  unknown_field_behavior: >-
+    HTTP 400 with a JSON:API error object: "Invalid nested filtering. The field `nope`, given
+    in the path `nope`, does not exist."
+
+sparse_fieldsets:
+  param: fields[RESOURCE_TYPE]
+  style: comma-separated attribute/relationship names, keyed by `entity--bundle` type
+  example: fields[node--article]=title,created
+  note: >-
+    Strongly recommended. The default node--article response carries ~38 attributes and ~20
+    relationships per record; sparse fieldsets are the difference between a 1KB and a 22KB
+    payload.
+  evidence: GET /jsonapi/node/article?fields[node--article]=title,created&page[limit]=2 -> 200
+
+field_expansion:
+  param: include
+  style: comma-separated relationship paths, dot-notation for nested
+  example: include=field_topics,field_media_document,uid
+  response_member: included
+  note: >-
+    Included resources land in a top-level `included` array; the referencing record keeps only
+    a resource identifier in `relationships`. Requests using `include` are marked
+    "UNCACHEABLE (poor cacheability)" by Drupal's dynamic page cache, so they are measurably
+    slower — combine with sparse fieldsets.
+
+relationship_routes:
+  related: /{entity}/{bundle}/{id}/{relationship}
+  self: /{entity}/{bundle}/{id}/relationships/{relationship}
+  note: >-
+    Every relationship on every record advertises both routes in its own `links` member. They
+    are generic and machine-discoverable rather than enumerated, so they are documented here
+    instead of being expanded into ~2,000 additional paths in the derived OpenAPI.
+
+revisions:
+  param: resourceVersion
+  forms:
+    - id:NNN
+    - rel:working-copy
+    - rel:latest-version
+  note: >-
+    Resource `links.self` hrefs come back with `?resourceVersion=id%3A717` already applied, and
+    editorially-moderated bundles additionally advertise a `working-copy` link. This is a real
+    revision-addressable read surface.
+
+metadata:
+  resource_identity: >-
+    Every resource carries a stable Drupal UUID as `id`, plus the internal serial id as an
+    attribute (drupal_internal__nid for nodes, drupal_internal__tid for taxonomy terms).
+    Prefer the UUID; the serial id is convenient for correlating with naic.org page URLs.
+  timestamps: [created, changed, revision_timestamp]
+  publication_state: [status, moderation_state, publish_on, unpublish_on, promote, sticky]
+  seo: [path.alias, metatag]
+
+request_tracing:
+  request_id_header: null
+  note: >-
+    No X-Request-Id / correlation header is returned. Observability headers present are
+    Drupal's own: X-Generator (Drupal 11), X-Drupal-Dynamic-Cache (HIT/MISS/UNCACHEABLE) and
+    standard Cache-Control.
+
+caching:
+  cache_control: 'max-age=1800, public'
+  vary: Cookie
+  drupal_dynamic_cache_header: X-Drupal-Dynamic-Cache
+  note: >-
+    Collection reads are publicly cacheable for 30 minutes. Requests using `include` report
+    UNCACHEABLE. There is no ETag / If-None-Match support on this surface.
+
+versioning:
+  scheme: media-type
+  current: JSON:API 1.1
+  evidence: >-
+    Every response body opens with {"jsonapi":{"version":"1.1","meta":{"links":{"self":
+    {"href":"https://jsonapi.org/format/1.1/"}}}}}.
+  path_versioning: false
+  note: >-
+    The URL carries no version segment. The contract is versioned by the JSON:API spec version
+    declared in the payload, and — implicitly — by the Drupal content model, which can add or
+    remove bundles without notice. See lifecycle/naic-lifecycle.yml.
+
+error_envelope:
+  format: jsonapi-errors
+  shape: '{"jsonapi": {...}, "errors": [{"title","status","detail","links":{"via","info"}}]}'
+  rfc9457: false
+  note: >-
+    JSON:API error objects, not RFC 9457 problem details. Each error carries a `links.info`
+    href pointing at the HTTP status-code definition. Full catalog in
+    errors/naic-problem-types.yml.
+
+rate_limiting:
+  headers: []
+  documented_limits: false
+  publisher_request: >-
+    No rate-limit headers are returned and no limits are documented for the API. The NAIC's
+    own llms.txt (llms/naic-llms.txt) does, however, publish machine-consumption guidance that
+    a well-behaved client should honor on this host: crawl_delay 10 seconds and
+    max_requests_per_day 100, with allow_model_training false and require_attribution true.
+    Treat that as the provider's stated consumption contract for automated clients.
+
+cross_links:
+  errors: errors/naic-problem-types.yml
+  authentication: authentication/naic-authentication.yml
+  lifecycle: lifecycle/naic-lifecycle.yml
+  conformance: conformance/naic-conformance.yml
+  data_model: data-model/naic-data-model.yml
+  openapi: openapi/naic-content-jsonapi-openapi.yml
+  examples: examples/_index.yml

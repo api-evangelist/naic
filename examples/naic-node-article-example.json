@@ -1,0 +1,511 @@
+{
+  "type": "node--article",
+  "id": "1e4e5bf7-1083-43c1-847f-789284870a46",
+  "links": {
+    "self": {
+      "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46?resourceVersion=id%3A267133"
+    },
+    "working-copy": {
+      "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46?resourceVersion=rel%3Aworking-copy"
+    }
+  },
+  "attributes": {
+    "drupal_internal__nid": 14553,
+    "drupal_internal__vid": 267133,
+    "langcode": "en",
+    "revision_timestamp": "2026-07-24T12:44:21+00:00",
+    "status": true,
+    "title": "NAIC Member Discusses AI Trends and Supervision at East Asia Pacific Insurance Forum",
+    "created": "2026-07-24T02:28:25+00:00",
+    "changed": "2026-07-24T12:44:21+00:00",
+    "promote": false,
+    "sticky": false,
+    "default_langcode": true,
+    "revision_translation_affected": true,
+    "moderation_state": "published",
+    "metatag": [
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "title",
+          "content": "NAIC Member Discusses AI Trends and Supervision at East Asia Pacific Insurance Forum"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "description",
+          "content": "On July 22, at the East Asia Pacific Insurance Forum 2026 in Taipei, Taiwan, Hawaii Insurance Commissioner Scott Saiki delivered a presentation titled \u201cU.S. Insurance Regulatory Update: Regulatory Framework for Digital Insurers & Market Innovation.\u201d Among other topics, Commissioner Saiki discussed AI adoption trends among insurers, as well as the NAIC\u2019s ongoing work on the supervision of AI, including the AI Systems Evaluation Tool pilot program. On the sidelines of the event, Commissioner Saiki held a bilateral meeting with representatives from the Financial Supervisory Commission and the Taiwan Insurance Institute. (Hawaii Insurance Commissioner Scott Saiki [fourth from right, front row] at the East Asia Pacific Insurance Forum 2026.)"
+        }
+      },
+      {
+        "tag": "link",
+        "attributes": {
+          "rel": "canonical",
+          "href": "https://content.naic.org/article/naic-member-discusses-ai-trends-and-supervision-east-asia-pacific-insurance-forum"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:site_name",
+          "content": "NAIC"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:type",
+          "content": "website"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:url",
+          "content": "https://content.naic.org/article/naic-member-discusses-ai-trends-and-supervision-east-asia-pacific-insurance-forum"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:title",
+          "content": "NAIC Member Discusses AI Trends and Supervision at East Asia Pacific Insurance Forum"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:description",
+          "content": "On July 22, at the East Asia Pacific Insurance Forum 2026 in Taipei, Taiwan, Hawaii Insurance Commissioner Scott Saiki delivered a presentation titled \u201cU.S. Insurance Regulatory Update: Regulatory Framework for Digital Insurers & Market Innovation.\u201d Among other topics, Commissioner Saiki discussed AI adoption trends among insurers, as well as the NAIC\u2019s ongoing work on the supervision of AI, including the AI Systems Evaluation Tool pilot program. On the sidelines of the event, Commissioner Saiki held a bilateral meeting with representatives from the Financial Supervisory Commission and the Taiwan Insurance Institute. (Hawaii Insurance Commissioner Scott Saiki [fourth from right, front row] at the East Asia Pacific Insurance Forum 2026.)"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:image",
+          "content": "https://content.naic.org/sites/default/files/2022-05/article-naic-logo-purple.png"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:image:width",
+          "content": "1200px"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:image:height",
+          "content": "600px"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:image:alt",
+          "content": "NAIC Member Discusses AI Trends and Supervision at East Asia Pacific Insurance Forum"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "@type",
+          "content": "Article",
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "headline",
+          "content": "NAIC Member Discusses AI Trends and Supervision at East Asia Pacific Insurance Forum",
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "description",
+          "content": "On July 22, at the East Asia Pacific Insurance Forum 2026 in Taipei, Taiwan, Hawaii Insurance Commissioner Scott Saiki delivered a presentation titled \u201cU.S. Insurance Regulatory Update: Regulatory Framework for Digital Insurers & Market Innovation.\u201d \u00a0\nAmong other topics, Commissioner Saiki discussed AI adoption trends among insurers, as well as the NAIC\u2019s ongoing work on the supervision of AI, including the AI Systems Evaluation Tool pilot program.\nOn the sidelines of the event, Commissioner Saiki held a bilateral meeting with representatives from the Financial Supervisory Commission and the Taiwan Insurance Institute.\n\n(Hawaii Insurance Commissioner Scott Saiki [fourth from right, front row] at the East Asia Pacific Insurance Forum 2026.)",
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "image",
+          "content": {
+            "@type": "ImageObject",
+            "url": "https://content.naic.org/sites/default/files/2022-05/article-naic-logo-purple.png"
+          },
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "dateModified",
+          "content": "2026-07-24T07:44:21-05:00",
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "author",
+          "content": {
+            "@type": "Organization",
+            "name": "NAIC",
+            "url": "https://content.naic.org"
+          },
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "publisher",
+          "content": {
+            "@type": "Organization",
+            "name": "NAIC",
+            "url": "https://content.naic.org"
+          },
+          "group": "schema_article",
+          "schema_metatag": true
+        }
+      }
+    ],
+    "path": {
+      "alias": "/article/naic-member-discusses-ai-trends-and-supervision-east-asia-pacific-insurance-forum",
+      "pid": 13007,
+      "langcode": "en"
+    },
+    "publish_on": null,
+    "unpublish_on": null,
+    "publish_state": null,
+    "unpublish_state": null,
+    "content_translation_source": "und",
+    "content_translation_outdated": false,
+    "field_no_committees_apply": false,
+    "field_video": [],
+    "body": {
+      "value": "<p>On July 22, at the East Asia Pacific Insurance Forum 2026 in Taipei, Taiwan, Hawaii Insurance Commissioner Scott Saiki delivered a presentation titled \u201cU.S. Insurance Regulatory Update: Regulatory Framework for Digital Insurers &amp; Market Innovation.\u201d &nbsp;</p><p>Among other topics, Commissioner Saiki discussed AI adoption trends among insurers, as well as the NAIC\u2019s ongoing work on the supervision of AI, including the AI Systems Evaluation Tool pilot program.</p><p>On the sidelines of the event, Commissioner Saiki held a bilateral meeting with representatives from the Financial Supervisory Commission and the Taiwan Insurance Institute.</p><img src=\"/sites/default/files/inline-images/article-072426-east-asia-pacific-insurance-forum.webp\" data-align=\"center\" data-entity-uuid=\"2f2770f0-0359-4fb3-be11-d390d365f489\" data-entity-type=\"file\" alt=\"Hawaii Insurance Commissioner Scott Saiki (third from right, front row) at the East Asia Pacific Insurance Forum 2026.\" width=\"496\" height=\"281\"><p class=\"text-align-center\"><em>(Hawaii Insurance Commissioner Scott Saiki [fourth from right, front row] at the East Asia Pacific Insurance Forum 2026.)</em></p>",
+      "format": "basic_html_file_upload",
+      "processed": "<p>On July 22, at the East Asia Pacific Insurance Forum 2026 in Taipei, Taiwan, Hawaii Insurance Commissioner Scott Saiki delivered a presentation titled \u201cU.S. Insurance Regulatory Update: Regulatory Framework for Digital Insurers &amp; Market Innovation.\u201d &nbsp;</p>\n<p>Among other topics, Commissioner Saiki discussed AI adoption trends among insurers, as well as the NAIC\u2019s ongoing work on the supervision of AI, including the AI Systems Evaluation Tool pilot program.</p>\n<p>On the sidelines of the event, Commissioner Saiki held a bilateral meeting with representatives from the Financial Supervisory Commission and the Taiwan Insurance Institute.</p>\n<p><img src=\"/sites/default/files/inline-images/article-072426-east-asia-pacific-insurance-forum.webp\" data-entity-uuid=\"2f2770f0-0359-4fb3-be11-d390d365f489\" data-entity-type=\"file\" alt=\"Hawaii Insurance Commissioner Scott Saiki (third from right, front row) at the East Asia Pacific Insurance Forum 2026.\" width=\"496\" height=\"281\" loading=\"lazy\" class=\"align-center\"><br>\n</p><p class=\"text-align-center\"><em>(Hawaii Insurance Commissioner Scott Saiki [fourth from right, front row] at the East Asia Pacific Insurance Forum 2026.)</em></p>\n",
+      "summary": ""
+    },
+    "field_date": "2026-07-24",
+    "field_featured_resource": false,
+    "field_featured_resource_summary": null,
+    "field_help_committee_tags": false,
+    "field_help_topic_tags": false,
+    "field_key_points": null,
+    "field_link": null,
+    "field_location": null,
+    "field_meta": null,
+    "field_naic_subtitle": null,
+    "field_nmn_promote": false,
+    "field_no_topics_apply": false,
+    "field_outside_link": null,
+    "field_summary": null,
+    "field_weight": 0,
+    "field_youtube": []
+  },
+  "relationships": {
+    "node_type": {
+      "data": {
+        "type": "node_type--node_type",
+        "id": "291d6ee9-3ab0-4b95-80cd-2c469b3a02c4",
+        "meta": {
+          "drupal_internal__target_id": "article"
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/node_type?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/node_type?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "revision_uid": {
+      "data": {
+        "type": "user--user",
+        "id": "9a872df1-eebc-4c9d-983c-ee204812b974",
+        "meta": {
+          "drupal_internal__target_id": 96
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/revision_uid?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/revision_uid?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "uid": {
+      "data": {
+        "type": "user--user",
+        "id": "10de0c55-c243-437f-a46f-2d7807a2dd93",
+        "meta": {
+          "drupal_internal__target_id": 1083
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/uid?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/uid?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_topics": {
+      "data": [
+        {
+          "type": "taxonomy_term--topics",
+          "id": "cc9ca84e-6f37-4066-a0b2-888b2aeb61c8",
+          "meta": {
+            "drupal_internal__target_id": 1605
+          }
+        }
+      ],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_topics?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_topics?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_article_types": {
+      "data": [
+        {
+          "type": "taxonomy_term--articles",
+          "id": "77bda032-6292-4701-aa35-cd76683eb74b",
+          "meta": {
+            "drupal_internal__target_id": 445
+          }
+        }
+      ],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_article_types?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_article_types?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_capital_market_topics": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_capital_market_topics?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_capital_market_topics?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_capital_market_types": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_capital_market_types?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_capital_market_types?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_center_of_excellence_types": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_center_of_excellence_types?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_center_of_excellence_types?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_committee_term": {
+      "data": [
+        {
+          "type": "taxonomy_term--committees",
+          "id": "9a4953a0-fa48-4c1b-a17c-911d44acd9f5",
+          "meta": {
+            "drupal_internal__target_id": 534
+          }
+        }
+      ],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_committee_term?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_committee_term?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_government_affairs_topics": {
+      "data": [
+        {
+          "type": "taxonomy_term--government_affairs_topics",
+          "id": "36bc546b-25b8-4026-b0b5-68eb860957c2",
+          "meta": {
+            "drupal_internal__target_id": 571
+          }
+        }
+      ],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_government_affairs_topics?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_government_affairs_topics?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_government_affairs_types": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_government_affairs_types?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_government_affairs_types?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_media_document": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_media_document?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_media_document?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_media_image": {
+      "data": {
+        "type": "media--image",
+        "id": "44d79679-ab9d-43b4-b8dd-2eb6a0f6f626",
+        "meta": {
+          "drupal_internal__target_id": 3469
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_media_image?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_media_image?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_naic_article_image": {
+      "data": null,
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_naic_article_image?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_naic_article_image?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_news_topics": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_news_topics?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_news_topics?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_news_types": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_news_types?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_news_types?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_research_topics": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_research_topics?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_research_topics?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_research_types": {
+      "data": null,
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_research_types?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_research_types?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_search_tag": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_search_tag?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_search_tag?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_tags": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_tags?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_tags?resourceVersion=id%3A267133"
+        }
+      }
+    },
+    "field_view": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/field_view?resourceVersion=id%3A267133"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/article/1e4e5bf7-1083-43c1-847f-789284870a46/relationships/field_view?resourceVersion=id%3A267133"
+        }
+      }
+    }
+  }
+}

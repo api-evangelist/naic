@@ -1,0 +1,191 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  Live responses from https://content.naic.org/jsonapi and the artifacts in this repo
+  (openapi/, conventions/, errors/, authentication/, security/, llms/), 2026-07-25.
+description: >-
+  Which cross-cutting and industry standards the NAIC's machine surface actually conforms to.
+  The headline is unusual for a standards body: the NAIC authors the U.S. insurance sector's
+  regulatory standards (model laws, Annual Statement Blanks, MCAS, RBC) but adopts almost none
+  of the API-industry ones. The single genuine conformance is JSON:API v1.1, and it arrived by
+  way of Drupal core rather than by design.
+
+standards:
+
+- id: jsonapi-1.1
+  name: JSON:API v1.1
+  conforms: true
+  evidence: >-
+    Every response body opens with {"jsonapi":{"version":"1.1","meta":{"links":{"self":
+    {"href":"https://jsonapi.org/format/1.1/"}}}}} and is served as
+    `content-type: application/vnd.api+json`. Sparse fieldsets (fields[type]), inclusion
+    (include), sorting (sort), filtering (filter[...]) and offset pagination
+    (page[limit]/page[offset]) were each exercised successfully. Errors are JSON:API error
+    objects with title/status/detail/links.
+  source: conventions/naic-conventions.yml
+  caveat: >-
+    Conformance is Drupal core's, not the NAIC's — the NAIC neither documents nor advertises
+    this surface. It is nonetheless a real, complete implementation of the spec.
+
+- id: openapi
+  name: OpenAPI Specification
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document is published anywhere on naic.org, serff.com, sbs.naic.org,
+    services.naic.org or api.naic.org. Every candidate path re-probed 2026-07-25 returned 404,
+    403 or an HTML shell. The spec in openapi/ is DERIVED by API Evangelist from the live
+    JSON:API resource index and is labelled x-publisher-provided false.
+
+- id: rfc9457-problem-details
+  name: RFC 9457 Problem Details for HTTP APIs
+  conforms: false
+  evidence: >-
+    Errors use the JSON:API error-object envelope under application/vnd.api+json, not
+    application/problem+json. See errors/naic-problem-types.yml.
+
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: >-
+    No token endpoint, no client registration, no scopes exposed to third parties. The read
+    surface is anonymous; portals use interactive Okta SSO.
+
+- id: oidc
+  name: OpenID Connect Discovery
+  conforms: false
+  evidence: >-
+    eapps.naic.org returns HTTP 200 for /.well-known/openid-configuration but serves an Okta
+    Sign-In Widget HTML page, not a discovery document. No valid metadata exists on any host.
+    See well-known/naic-well-known.yml.
+
+- id: rfc8414-oauth-metadata
+  name: RFC 8414 OAuth 2.0 Authorization Server Metadata
+  conforms: false
+  evidence: Same catch-all HTML route as OIDC discovery; no JSON metadata served.
+
+- id: rfc9116-security-txt
+  name: RFC 9116 security.txt
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404 on content.naic.org and api.naic.org, and 403 on the
+    serff.com and sbs.naic.org web tiers. No security.txt exists on the estate.
+
+- id: rfc8594-sunset-header
+  name: RFC 8594 Sunset HTTP Header
+  conforms: false
+  evidence: No Sunset or Deprecation headers observed; no deprecation policy published.
+
+- id: rfc9111-http-caching
+  name: HTTP caching (Cache-Control)
+  conforms: true
+  evidence: >-
+    Collection reads return `Cache-Control: max-age=1800, public` with `Vary: Cookie` and a
+    Drupal X-Drupal-Dynamic-Cache HIT/MISS/UNCACHEABLE signal.
+  caveat: No ETag / If-None-Match support, so conditional requests are not available.
+
+- id: idempotency-key
+  name: Idempotency-Key (draft-ietf-httpapi-idempotency-key-header)
+  conforms: false
+  evidence: >-
+    No idempotency header is accepted or documented. Every public operation is a safe GET, so
+    the mechanism has nothing to protect.
+
+- id: pagination
+  name: Documented pagination
+  conforms: true
+  evidence: >-
+    Offset pagination via page[limit] (capped at 50) and page[offset], with `links.next` /
+    `links.prev` navigation, per JSON:API.
+  caveat: No total count is returned; callers page until `next` disappears.
+
+- id: rate-limit-headers
+  name: RFC 9239 / draft RateLimit header fields
+  conforms: false
+  evidence: >-
+    No RateLimit, X-RateLimit or Retry-After headers observed, and no 429 encountered. The only
+    published consumption guidance is in llms.txt (crawl_delay 10, max_requests_per_day 100),
+    which is advisory and not enforced in-band.
+
+- id: llms-txt
+  name: llms.txt
+  conforms: true
+  evidence: >-
+    https://content.naic.org/llms.txt returns HTTP 200 text/plain, publisher-authored, with AI
+    usage preferences, attribution requirements, crawl guidance and include/exclude path
+    scoping. Saved verbatim at llms/naic-llms.txt.
+  note: >-
+    Notable: this is a regulator publishing machine-consumption terms for AI clients while
+    publishing no API documentation at all. The AI-consumption contract is more explicit than
+    the API contract.
+
+- id: asyncapi
+  name: AsyncAPI
+  conforms: false
+  evidence: >-
+    No event catalog, webhook documentation or AsyncAPI document exists. The SERFF "Legacy SPI
+    (two-way PUSH/PULL)" service implies a push capability for provisioned integrators, but no
+    public event schema or subscription contract is documented.
+
+- id: graphql
+  name: GraphQL
+  conforms: false
+  evidence: >-
+    /graphql returns 404 on api.naic.org and falls through to the Drupal HTML 404 on
+    content.naic.org. No introspection endpoint exists.
+
+- id: grpc
+  name: gRPC / Protobuf
+  conforms: false
+  evidence: No .proto artifacts published; no NAIC GitHub organization exists.
+
+- id: acord
+  name: ACORD standards (XML, AL3, NGDS)
+  conforms: false
+  evidence: >-
+    A full-text scan of the official NAIC Technology Products and Services Catalog (57,226
+    characters extracted) found ZERO occurrences of "ACORD", "XML", "web service", "REST" or
+    "SOAP". The NAIC runs its own statutory idiom — Annual Statement Blanks, MCAS, risk-based
+    capital reporting and the SERFF filing schema — which predates and sits parallel to ACORD.
+  source: review.yml
+
+- id: fhir-r4
+  name: HL7 FHIR R4
+  conforms: false
+  evidence: Not applicable — this is insurance regulation, not clinical data exchange.
+
+- id: fapi
+  name: FAPI (Financial-grade API)
+  conforms: false
+  evidence: No OAuth surface to secure; no FAPI claim anywhere on the estate.
+
+- id: scim
+  name: SCIM 2.0
+  conforms: false
+
+- id: odata
+  name: OData
+  conforms: false
+
+naic_authored_standards:
+  note: >-
+    Recorded for completeness — these are standards the NAIC PUBLISHES rather than conforms to,
+    and they are the reason the organization exists. None of them are exposed as an API; the
+    model-law corpus is, however, indexed as taxonomy terms on the JSON:API surface
+    (taxonomy_term--model_laws, carrying MDL numbers).
+  standards:
+  - NAIC Model Laws, Regulations and Guidelines (MDL series)
+  - Annual Statement Blanks and Instructions
+  - Statutory Accounting Principles (SSAP / Accounting Practices and Procedures Manual)
+  - Market Conduct Annual Statement (MCAS)
+  - Risk-Based Capital (RBC) formulas and reporting
+  - SERFF filing schema
+  - Own Risk and Solvency Assessment (ORSA) guidance
+  - Insurance Data Security Model Law (MDL-668)
+
+compliance_program:
+  published: false
+  note: >-
+    No SOC 2, ISO 27001, PCI DSS, HIPAA or FedRAMP attestation is published for the NAIC's
+    public estate, and no trust center exists (probe-security-programs.py returned
+    vdp=none trust=none on 2026-07-25). Accordingly NO `Compliance` and NO `TrustCenter`
+    pointer is emitted in apis.yml — only the `Conformance` pointer to this file.

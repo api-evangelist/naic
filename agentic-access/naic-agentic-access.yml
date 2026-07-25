@@ -1,0 +1,5704 @@
+generated: '2026-07-25'
+method: generated
+source: openapi/naic-content-jsonapi-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 569
+  by_action_class:
+    connected: 569
+  by_consequence:
+    read: 569
+  human_in_the_loop_required: 0
+operations:
+- path: /
+  method: get
+  operationId: getResourceIndex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /action/action
+  method: get
+  operationId: listAction
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /action/action/{id}
+  method: get
+  operationId: getAction
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /base_field_override/base_field_override
+  method: get
+  operationId: listBaseFieldOverride
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /base_field_override/base_field_override/{id}
+  method: get
+  operationId: getBaseFieldOverride
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block/block
+  method: get
+  operationId: listBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block/block/{id}
+  method: get
+  operationId: getBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/basic
+  method: get
+  operationId: listBlockContentBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/basic/{id}
+  method: get
+  operationId: getBlockContentBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/footer_content
+  method: get
+  operationId: listBlockContentFooterContent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/footer_content/{id}
+  method: get
+  operationId: getBlockContentFooterContent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/footer_menus
+  method: get
+  operationId: listBlockContentFooterMenus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/footer_menus/{id}
+  method: get
+  operationId: getBlockContentFooterMenus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/in_page_navigation
+  method: get
+  operationId: listBlockContentInPageNavigation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/in_page_navigation/{id}
+  method: get
+  operationId: getBlockContentInPageNavigation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_image_title_and_descri
+  method: get
+  operationId: listBlockContentMegaMenuImageTitleAndDescri
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_image_title_and_descri/{id}
+  method: get
+  operationId: getBlockContentMegaMenuImageTitleAndDescri
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_label_with_quicklinks
+  method: get
+  operationId: listBlockContentMegaMenuLabelWithQuicklinks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_label_with_quicklinks/{id}
+  method: get
+  operationId: getBlockContentMegaMenuLabelWithQuicklinks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_title_with_description
+  method: get
+  operationId: listBlockContentMegaMenuTitleWithDescription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_title_with_description/{id}
+  method: get
+  operationId: getBlockContentMegaMenuTitleWithDescription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_title_with_link_list
+  method: get
+  operationId: listBlockContentMegaMenuTitleWithLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/mega_menu_title_with_link_list/{id}
+  method: get
+  operationId: getBlockContentMegaMenuTitleWithLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/reusable_links_dropdown
+  method: get
+  operationId: listBlockContentReusableLinksDropdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/reusable_links_dropdown/{id}
+  method: get
+  operationId: getBlockContentReusableLinksDropdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/section_title_with_secondary_nav
+  method: get
+  operationId: listBlockContentSectionTitleWithSecondaryNav
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/section_title_with_secondary_nav/{id}
+  method: get
+  operationId: getBlockContentSectionTitleWithSecondaryNav
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/table_of_contents
+  method: get
+  operationId: listBlockContentTableOfContents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content/table_of_contents/{id}
+  method: get
+  operationId: getBlockContentTableOfContents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content_type/block_content_type
+  method: get
+  operationId: listBlockContentType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /block_content_type/block_content_type/{id}
+  method: get
+  operationId: getBlockContentType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /classy_paragraphs_style/classy_paragraphs_style
+  method: get
+  operationId: listClassyParagraphsStyle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /classy_paragraphs_style/classy_paragraphs_style/{id}
+  method: get
+  operationId: getClassyParagraphsStyle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /comment/comment
+  method: get
+  operationId: listComment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /comment/comment/{id}
+  method: get
+  operationId: getComment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /comment_type/comment_type
+  method: get
+  operationId: listCommentType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /comment_type/comment_type/{id}
+  method: get
+  operationId: getCommentType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /config_pages/sitewide_alert
+  method: get
+  operationId: listConfigPagesSitewideAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /config_pages/sitewide_alert/{id}
+  method: get
+  operationId: getConfigPagesSitewideAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /config_pages_type/config_pages_type
+  method: get
+  operationId: listConfigPagesType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /config_pages_type/config_pages_type/{id}
+  method: get
+  operationId: getConfigPagesType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /configurable_language/configurable_language
+  method: get
+  operationId: listConfigurableLanguage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /configurable_language/configurable_language/{id}
+  method: get
+  operationId: getConfigurableLanguage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /crop/focal_point
+  method: get
+  operationId: listCropFocalPoint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /crop/focal_point/{id}
+  method: get
+  operationId: getCropFocalPoint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /crop_type/crop_type
+  method: get
+  operationId: listCropType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /crop_type/crop_type/{id}
+  method: get
+  operationId: getCropType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /date_format/date_format
+  method: get
+  operationId: listDateFormat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /date_format/date_format/{id}
+  method: get
+  operationId: getDateFormat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /editor/editor
+  method: get
+  operationId: listEditor
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /editor/editor/{id}
+  method: get
+  operationId: getEditor
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /embed_button/embed_button
+  method: get
+  operationId: listEmbedButton
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /embed_button/embed_button/{id}
+  method: get
+  operationId: getEmbedButton
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_browser/entity_browser
+  method: get
+  operationId: listEntityBrowser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_browser/entity_browser/{id}
+  method: get
+  operationId: getEntityBrowser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_extra_field/entity_extra_field
+  method: get
+  operationId: listEntityExtraField
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_extra_field/entity_extra_field/{id}
+  method: get
+  operationId: getEntityExtraField
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_form_display/entity_form_display
+  method: get
+  operationId: listEntityFormDisplay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_form_display/entity_form_display/{id}
+  method: get
+  operationId: getEntityFormDisplay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_form_mode/entity_form_mode
+  method: get
+  operationId: listEntityFormMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_form_mode/entity_form_mode/{id}
+  method: get
+  operationId: getEntityFormMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_view_display/entity_view_display
+  method: get
+  operationId: listEntityViewDisplay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_view_display/entity_view_display/{id}
+  method: get
+  operationId: getEntityViewDisplay
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_view_mode/entity_view_mode
+  method: get
+  operationId: listEntityViewMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /entity_view_mode/entity_view_mode/{id}
+  method: get
+  operationId: getEntityViewMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /event_entity/event_entity
+  method: get
+  operationId: listEventEntity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /event_entity/event_entity/{id}
+  method: get
+  operationId: getEventEntity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/event_sessions
+  method: get
+  operationId: listFeedsFeedEventSessions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/event_sessions/{id}
+  method: get
+  operationId: getFeedsFeedEventSessions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/meeting_calendar
+  method: get
+  operationId: listFeedsFeedMeetingCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/meeting_calendar/{id}
+  method: get
+  operationId: getFeedsFeedMeetingCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contact_departments
+  method: get
+  operationId: listFeedsFeedStateContactDepartments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contact_departments/{id}
+  method: get
+  operationId: getFeedsFeedStateContactDepartments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contacts
+  method: get
+  operationId: listFeedsFeedStateContacts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contacts/{id}
+  method: get
+  operationId: getFeedsFeedStateContacts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contacts_all_
+  method: get
+  operationId: listFeedsFeedStateContactsAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contacts_all_/{id}
+  method: get
+  operationId: getFeedsFeedStateContactsAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contacts_csv_
+  method: get
+  operationId: listFeedsFeedStateContactsCsv
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_contacts_csv_/{id}
+  method: get
+  operationId: getFeedsFeedStateContactsCsv
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_departments_all_
+  method: get
+  operationId: listFeedsFeedStateDepartmentsAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_departments_all_/{id}
+  method: get
+  operationId: getFeedsFeedStateDepartmentsAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_regulators_csv
+  method: get
+  operationId: listFeedsFeedStateRegulatorsCsv
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed/state_regulators_csv/{id}
+  method: get
+  operationId: getFeedsFeedStateRegulatorsCsv
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed_type/feeds_feed_type
+  method: get
+  operationId: listFeedsFeedType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_feed_type/feeds_feed_type/{id}
+  method: get
+  operationId: getFeedsFeedType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_subscription/feeds_subscription
+  method: get
+  operationId: listFeedsSubscription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /feeds_subscription/feeds_subscription/{id}
+  method: get
+  operationId: getFeedsSubscription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /field_config/field_config
+  method: get
+  operationId: listFieldConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /field_config/field_config/{id}
+  method: get
+  operationId: getFieldConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /field_storage_config/field_storage_config
+  method: get
+  operationId: listFieldStorageConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /field_storage_config/field_storage_config/{id}
+  method: get
+  operationId: getFieldStorageConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /file/file
+  method: get
+  operationId: listFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /file/file/{id}
+  method: get
+  operationId: getFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /filter_format/filter_format
+  method: get
+  operationId: listFilterFormat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /filter_format/filter_format/{id}
+  method: get
+  operationId: getFilterFormat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /image_style/image_style
+  method: get
+  operationId: listImageStyle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /image_style/image_style/{id}
+  method: get
+  operationId: getImageStyle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /imce_profile/imce_profile
+  method: get
+  operationId: listImceProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /imce_profile/imce_profile/{id}
+  method: get
+  operationId: getImceProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /language_content_settings/language_content_settings
+  method: get
+  operationId: listLanguageContentSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /language_content_settings/language_content_settings/{id}
+  method: get
+  operationId: getLanguageContentSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /layout_builder_browser_block/layout_builder_browser_block
+  method: get
+  operationId: listLayoutBuilderBrowserBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /layout_builder_browser_block/layout_builder_browser_block/{id}
+  method: get
+  operationId: getLayoutBuilderBrowserBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /layout_builder_browser_blockcat/layout_builder_browser_blockcat
+  method: get
+  operationId: listLayoutBuilderBrowserBlockcat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /layout_builder_browser_blockcat/layout_builder_browser_blockcat/{id}
+  method: get
+  operationId: getLayoutBuilderBrowserBlockcat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /linkit_profile/linkit_profile
+  method: get
+  operationId: listLinkitProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /linkit_profile/linkit_profile/{id}
+  method: get
+  operationId: getLinkitProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/audio
+  method: get
+  operationId: listMediaAudio
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/audio/{id}
+  method: get
+  operationId: getMediaAudio
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/component_preview
+  method: get
+  operationId: listMediaComponentPreview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/component_preview/{id}
+  method: get
+  operationId: getMediaComponentPreview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/document
+  method: get
+  operationId: listMediaDocument
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/document/{id}
+  method: get
+  operationId: getMediaDocument
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/icon
+  method: get
+  operationId: listMediaIcon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/icon/{id}
+  method: get
+  operationId: getMediaIcon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/image
+  method: get
+  operationId: listMediaImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/image/{id}
+  method: get
+  operationId: getMediaImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/remote_video
+  method: get
+  operationId: listMediaRemoteVideo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/remote_video/{id}
+  method: get
+  operationId: getMediaRemoteVideo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/video
+  method: get
+  operationId: listMediaVideo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media/video/{id}
+  method: get
+  operationId: getMediaVideo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media_type/media_type
+  method: get
+  operationId: listMediaType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /media_type/media_type/{id}
+  method: get
+  operationId: getMediaType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu/menu
+  method: get
+  operationId: listMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu/menu/{id}
+  method: get
+  operationId: getMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/account
+  method: get
+  operationId: listMenuLinkContentAccount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/account/{id}
+  method: get
+  operationId: getMenuLinkContentAccount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/admin
+  method: get
+  operationId: listMenuLinkContentAdmin
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/admin/{id}
+  method: get
+  operationId: getMenuLinkContentAdmin
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/footer
+  method: get
+  operationId: listMenuLinkContentFooter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/footer/{id}
+  method: get
+  operationId: getMenuLinkContentFooter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/main
+  method: get
+  operationId: listMenuLinkContentMain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/main/{id}
+  method: get
+  operationId: getMenuLinkContentMain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/mega-menu
+  method: get
+  operationId: listMenuLinkContentMegaMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/mega-menu/{id}
+  method: get
+  operationId: getMenuLinkContentMegaMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/naic-admin-menu
+  method: get
+  operationId: listMenuLinkContentNaicAdminMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/naic-admin-menu/{id}
+  method: get
+  operationId: getMenuLinkContentNaicAdminMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/tools
+  method: get
+  operationId: listMenuLinkContentTools
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /menu_link_content/tools/{id}
+  method: get
+  operationId: getMenuLinkContentTools
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /metatag_defaults/metatag_defaults
+  method: get
+  operationId: listMetatagDefaults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /metatag_defaults/metatag_defaults/{id}
+  method: get
+  operationId: getMetatagDefaults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/archive
+  method: get
+  operationId: listNodeArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/archive/{id}
+  method: get
+  operationId: getNodeArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/article
+  method: get
+  operationId: listNodeArticle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/article/{id}
+  method: get
+  operationId: getNodeArticle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/cipr_article
+  method: get
+  operationId: listNodeCiprArticle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/cipr_article/{id}
+  method: get
+  operationId: getNodeCiprArticle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/cipr_key_topic
+  method: get
+  operationId: listNodeCiprKeyTopic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/cipr_key_topic/{id}
+  method: get
+  operationId: getNodeCiprKeyTopic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/committee_page
+  method: get
+  operationId: listNodeCommitteePage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/committee_page/{id}
+  method: get
+  operationId: getNodeCommitteePage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/contact
+  method: get
+  operationId: listNodeContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/contact/{id}
+  method: get
+  operationId: getNodeContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/crm_report
+  method: get
+  operationId: listNodeCrmReport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/crm_report/{id}
+  method: get
+  operationId: getNodeCrmReport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/education_class
+  method: get
+  operationId: listNodeEducationClass
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/education_class/{id}
+  method: get
+  operationId: getNodeEducationClass
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_page
+  method: get
+  operationId: listNodeEventPage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_page/{id}
+  method: get
+  operationId: getNodeEventPage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_promotion
+  method: get
+  operationId: listNodeEventPromotion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_promotion/{id}
+  method: get
+  operationId: getNodeEventPromotion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_session
+  method: get
+  operationId: listNodeEventSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_session/{id}
+  method: get
+  operationId: getNodeEventSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_speaker
+  method: get
+  operationId: listNodeEventSpeaker
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/event_speaker/{id}
+  method: get
+  operationId: getNodeEventSpeaker
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/external_resource
+  method: get
+  operationId: listNodeExternalResource
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/external_resource/{id}
+  method: get
+  operationId: getNodeExternalResource
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/gallery
+  method: get
+  operationId: listNodeGallery
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/gallery/{id}
+  method: get
+  operationId: getNodeGallery
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/gallery_component
+  method: get
+  operationId: listNodeGalleryComponent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/gallery_component/{id}
+  method: get
+  operationId: getNodeGalleryComponent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/jir
+  method: get
+  operationId: listNodeJir
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/jir/{id}
+  method: get
+  operationId: getNodeJir
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/naic_calendar
+  method: get
+  operationId: listNodeNaicCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/naic_calendar/{id}
+  method: get
+  operationId: getNodeNaicCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/naic_custom
+  method: get
+  operationId: listNodeNaicCustom
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/naic_custom/{id}
+  method: get
+  operationId: getNodeNaicCustom
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/naic_generic
+  method: get
+  operationId: listNodeNaicGeneric
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/naic_generic/{id}
+  method: get
+  operationId: getNodeNaicGeneric
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/national_meeting_calendar
+  method: get
+  operationId: listNodeNationalMeetingCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/national_meeting_calendar/{id}
+  method: get
+  operationId: getNodeNationalMeetingCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/news_pandemic
+  method: get
+  operationId: listNodeNewsPandemic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/news_pandemic/{id}
+  method: get
+  operationId: getNodeNewsPandemic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/newsletter
+  method: get
+  operationId: listNodeNewsletter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/newsletter/{id}
+  method: get
+  operationId: getNodeNewsletter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/page
+  method: get
+  operationId: listNodePage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/page/{id}
+  method: get
+  operationId: getNodePage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/secondary_consumer_page
+  method: get
+  operationId: listNodeSecondaryConsumerPage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/secondary_consumer_page/{id}
+  method: get
+  operationId: getNodeSecondaryConsumerPage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/state_department_contact
+  method: get
+  operationId: listNodeStateDepartmentContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/state_department_contact/{id}
+  method: get
+  operationId: getNodeStateDepartmentContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/state_participation_optins
+  method: get
+  operationId: listNodeStateParticipationOptins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/state_participation_optins/{id}
+  method: get
+  operationId: getNodeStateParticipationOptins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/timeline_calendar
+  method: get
+  operationId: listNodeTimelineCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/timeline_calendar/{id}
+  method: get
+  operationId: getNodeTimelineCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/webpost_systems
+  method: get
+  operationId: listNodeWebpostSystems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node/webpost_systems/{id}
+  method: get
+  operationId: getNodeWebpostSystems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node_type/node_type
+  method: get
+  operationId: listNodeType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /node_type/node_type/{id}
+  method: get
+  operationId: getNodeType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/2_column_image_with_wysiwyg
+  method: get
+  operationId: listParagraph2ColumnImageWithWysiwyg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/2_column_image_with_wysiwyg/{id}
+  method: get
+  operationId: getParagraph2ColumnImageWithWysiwyg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/accordion
+  method: get
+  operationId: listParagraphAccordion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/accordion/{id}
+  method: get
+  operationId: getParagraphAccordion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/accordion_item
+  method: get
+  operationId: listParagraphAccordionItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/accordion_item/{id}
+  method: get
+  operationId: getParagraphAccordionItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_accordion
+  method: get
+  operationId: listParagraphBpAccordion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_accordion/{id}
+  method: get
+  operationId: getParagraphBpAccordion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_accordion_section
+  method: get
+  operationId: listParagraphBpAccordionSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_accordion_section/{id}
+  method: get
+  operationId: getParagraphBpAccordionSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_blank
+  method: get
+  operationId: listParagraphBpBlank
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_blank/{id}
+  method: get
+  operationId: getParagraphBpBlank
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_block
+  method: get
+  operationId: listParagraphBpBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_block/{id}
+  method: get
+  operationId: getParagraphBpBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_callout
+  method: get
+  operationId: listParagraphBpCallout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_callout/{id}
+  method: get
+  operationId: getParagraphBpCallout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_card
+  method: get
+  operationId: listParagraphBpCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_card/{id}
+  method: get
+  operationId: getParagraphBpCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_carousel
+  method: get
+  operationId: listParagraphBpCarousel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_carousel/{id}
+  method: get
+  operationId: getParagraphBpCarousel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_column_wrapper
+  method: get
+  operationId: listParagraphBpColumnWrapper
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_column_wrapper/{id}
+  method: get
+  operationId: getParagraphBpColumnWrapper
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_columns
+  method: get
+  operationId: listParagraphBpColumns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_columns/{id}
+  method: get
+  operationId: getParagraphBpColumns
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_columns_three_uneven
+  method: get
+  operationId: listParagraphBpColumnsThreeUneven
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_columns_three_uneven/{id}
+  method: get
+  operationId: getParagraphBpColumnsThreeUneven
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_columns_two_uneven
+  method: get
+  operationId: listParagraphBpColumnsTwoUneven
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_columns_two_uneven/{id}
+  method: get
+  operationId: getParagraphBpColumnsTwoUneven
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_image
+  method: get
+  operationId: listParagraphBpImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_image/{id}
+  method: get
+  operationId: getParagraphBpImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_modal
+  method: get
+  operationId: listParagraphBpModal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_modal/{id}
+  method: get
+  operationId: getParagraphBpModal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_simple
+  method: get
+  operationId: listParagraphBpSimple
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_simple/{id}
+  method: get
+  operationId: getParagraphBpSimple
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_stat
+  method: get
+  operationId: listParagraphBpStat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_stat/{id}
+  method: get
+  operationId: getParagraphBpStat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_statistics
+  method: get
+  operationId: listParagraphBpStatistics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_statistics/{id}
+  method: get
+  operationId: getParagraphBpStatistics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_tab_section
+  method: get
+  operationId: listParagraphBpTabSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_tab_section/{id}
+  method: get
+  operationId: getParagraphBpTabSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_tabs
+  method: get
+  operationId: listParagraphBpTabs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_tabs/{id}
+  method: get
+  operationId: getParagraphBpTabs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_view
+  method: get
+  operationId: listParagraphBpView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/bp_view/{id}
+  method: get
+  operationId: getParagraphBpView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/card_grid
+  method: get
+  operationId: listParagraphCardGrid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/card_grid/{id}
+  method: get
+  operationId: getParagraphCardGrid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/card_grid_cards
+  method: get
+  operationId: listParagraphCardGridCards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/card_grid_cards/{id}
+  method: get
+  operationId: getParagraphCardGridCards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/consumer_basic
+  method: get
+  operationId: listParagraphConsumerBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/consumer_basic/{id}
+  method: get
+  operationId: getParagraphConsumerBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/contact_image_slider
+  method: get
+  operationId: listParagraphContactImageSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/contact_image_slider/{id}
+  method: get
+  operationId: getParagraphContactImageSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/contact_list
+  method: get
+  operationId: listParagraphContactList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/contact_list/{id}
+  method: get
+  operationId: getParagraphContactList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/content_card
+  method: get
+  operationId: listParagraphContentCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/content_card/{id}
+  method: get
+  operationId: getParagraphContentCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/content_cards
+  method: get
+  operationId: listParagraphContentCards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/content_cards/{id}
+  method: get
+  operationId: getParagraphContentCards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/cta_with_background
+  method: get
+  operationId: listParagraphCtaWithBackground
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/cta_with_background/{id}
+  method: get
+  operationId: getParagraphCtaWithBackground
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/cta_with_dropdown
+  method: get
+  operationId: listParagraphCtaWithDropdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/cta_with_dropdown/{id}
+  method: get
+  operationId: getParagraphCtaWithDropdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/cta_with_image
+  method: get
+  operationId: listParagraphCtaWithImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/cta_with_image/{id}
+  method: get
+  operationId: getParagraphCtaWithImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/event_basic
+  method: get
+  operationId: listParagraphEventBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/event_basic/{id}
+  method: get
+  operationId: getParagraphEventBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/event_card_slider
+  method: get
+  operationId: listParagraphEventCardSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/event_card_slider/{id}
+  method: get
+  operationId: getParagraphEventCardSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/featured_article
+  method: get
+  operationId: listParagraphFeaturedArticle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/featured_article/{id}
+  method: get
+  operationId: getParagraphFeaturedArticle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/featured_image_custom_item
+  method: get
+  operationId: listParagraphFeaturedImageCustomItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/featured_image_custom_item/{id}
+  method: get
+  operationId: getParagraphFeaturedImageCustomItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/featured_image_slider
+  method: get
+  operationId: listParagraphFeaturedImageSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/featured_image_slider/{id}
+  method: get
+  operationId: getParagraphFeaturedImageSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/footer_link_list
+  method: get
+  operationId: listParagraphFooterLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/footer_link_list/{id}
+  method: get
+  operationId: getParagraphFooterLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/full_width_cta_skinny
+  method: get
+  operationId: listParagraphFullWidthCtaSkinny
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/full_width_cta_skinny/{id}
+  method: get
+  operationId: getParagraphFullWidthCtaSkinny
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/full_width_wysiwyg
+  method: get
+  operationId: listParagraphFullWidthWysiwyg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/full_width_wysiwyg/{id}
+  method: get
+  operationId: getParagraphFullWidthWysiwyg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/gallery_component
+  method: get
+  operationId: listParagraphGalleryComponent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/gallery_component/{id}
+  method: get
+  operationId: getParagraphGalleryComponent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/home_hero
+  method: get
+  operationId: listParagraphHomeHero
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/home_hero/{id}
+  method: get
+  operationId: getParagraphHomeHero
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/home_hero_slider
+  method: get
+  operationId: listParagraphHomeHeroSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/home_hero_slider/{id}
+  method: get
+  operationId: getParagraphHomeHeroSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/icon_card
+  method: get
+  operationId: listParagraphIconCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/icon_card/{id}
+  method: get
+  operationId: getParagraphIconCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/icon_card_slider
+  method: get
+  operationId: listParagraphIconCardSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/icon_card_slider/{id}
+  method: get
+  operationId: getParagraphIconCardSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/image_grid
+  method: get
+  operationId: listParagraphImageGrid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/image_grid/{id}
+  method: get
+  operationId: getParagraphImageGrid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/in_page_navigation
+  method: get
+  operationId: listParagraphInPageNavigation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/in_page_navigation/{id}
+  method: get
+  operationId: getParagraphInPageNavigation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_slider
+  method: get
+  operationId: listParagraphLinkCardSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_slider/{id}
+  method: get
+  operationId: getParagraphLinkCardSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_slider_paragraph
+  method: get
+  operationId: listParagraphLinkCardSliderParagraph
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_slider_paragraph/{id}
+  method: get
+  operationId: getParagraphLinkCardSliderParagraph
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_with_category_and_icon
+  method: get
+  operationId: listParagraphLinkCardWithCategoryAndIcon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_with_category_and_icon/{id}
+  method: get
+  operationId: getParagraphLinkCardWithCategoryAndIcon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_with_title_description
+  method: get
+  operationId: listParagraphLinkCardWithTitleDescription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_card_with_title_description/{id}
+  method: get
+  operationId: getParagraphLinkCardWithTitleDescription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_list
+  method: get
+  operationId: listParagraphLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/link_list/{id}
+  method: get
+  operationId: getParagraphLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/links_dropdown
+  method: get
+  operationId: listParagraphLinksDropdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/links_dropdown/{id}
+  method: get
+  operationId: getParagraphLinksDropdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/links_dropdown_reusable
+  method: get
+  operationId: listParagraphLinksDropdownReusable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/links_dropdown_reusable/{id}
+  method: get
+  operationId: getParagraphLinksDropdownReusable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/ll_link
+  method: get
+  operationId: listParagraphLlLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/ll_link/{id}
+  method: get
+  operationId: getParagraphLlLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/ll_media_link
+  method: get
+  operationId: listParagraphLlMediaLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/ll_media_link/{id}
+  method: get
+  operationId: getParagraphLlMediaLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/model_laws_archive
+  method: get
+  operationId: listParagraphModelLawsArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/model_laws_archive/{id}
+  method: get
+  operationId: getParagraphModelLawsArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/model_laws_feed
+  method: get
+  operationId: listParagraphModelLawsFeed
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/model_laws_feed/{id}
+  method: get
+  operationId: getParagraphModelLawsFeed
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_50
+  method: get
+  operationId: listParagraphNaic50
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_50/{id}
+  method: get
+  operationId: getParagraphNaic50
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_basic
+  method: get
+  operationId: listParagraphNaicBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_basic/{id}
+  method: get
+  operationId: getParagraphNaicBasic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_basic_border
+  method: get
+  operationId: listParagraphNaicBasicBorder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_basic_border/{id}
+  method: get
+  operationId: getParagraphNaicBasicBorder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_full_width
+  method: get
+  operationId: listParagraphNaicFullWidth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_full_width/{id}
+  method: get
+  operationId: getParagraphNaicFullWidth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_image
+  method: get
+  operationId: listParagraphNaicImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_image/{id}
+  method: get
+  operationId: getParagraphNaicImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_right_column
+  method: get
+  operationId: listParagraphNaicRightColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_right_column/{id}
+  method: get
+  operationId: getParagraphNaicRightColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_section
+  method: get
+  operationId: listParagraphNaicSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/naic_section/{id}
+  method: get
+  operationId: getParagraphNaicSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/page_header
+  method: get
+  operationId: listParagraphPageHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/page_header/{id}
+  method: get
+  operationId: getParagraphPageHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/paid_publication
+  method: get
+  operationId: listParagraphPaidPublication
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/paid_publication/{id}
+  method: get
+  operationId: getParagraphPaidPublication
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/paid_publication_sets
+  method: get
+  operationId: listParagraphPaidPublicationSets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/paid_publication_sets/{id}
+  method: get
+  operationId: getParagraphPaidPublicationSets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/publications_archive
+  method: get
+  operationId: listParagraphPublicationsArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/publications_archive/{id}
+  method: get
+  operationId: getParagraphPublicationsArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/publications_feed
+  method: get
+  operationId: listParagraphPublicationsFeed
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/publications_feed/{id}
+  method: get
+  operationId: getParagraphPublicationsFeed
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/resource_center_archive
+  method: get
+  operationId: listParagraphResourceCenterArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/resource_center_archive/{id}
+  method: get
+  operationId: getParagraphResourceCenterArchive
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/resource_center_feed
+  method: get
+  operationId: listParagraphResourceCenterFeed
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/resource_center_feed/{id}
+  method: get
+  operationId: getParagraphResourceCenterFeed
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/section_heading_with_description
+  method: get
+  operationId: listParagraphSectionHeadingWithDescription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/section_heading_with_description/{id}
+  method: get
+  operationId: getParagraphSectionHeadingWithDescription
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/section_navigation_slider
+  method: get
+  operationId: listParagraphSectionNavigationSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/section_navigation_slider/{id}
+  method: get
+  operationId: getParagraphSectionNavigationSlider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/section_navigation_slider_main
+  method: get
+  operationId: listParagraphSectionNavigationSliderMain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/section_navigation_slider_main/{id}
+  method: get
+  operationId: getParagraphSectionNavigationSliderMain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_contact_address
+  method: get
+  operationId: listParagraphStateContactAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_contact_address/{id}
+  method: get
+  operationId: getParagraphStateContactAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_contact_fax_number
+  method: get
+  operationId: listParagraphStateContactFaxNumber
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_contact_fax_number/{id}
+  method: get
+  operationId: getParagraphStateContactFaxNumber
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_contact_phone_number
+  method: get
+  operationId: listParagraphStateContactPhoneNumber
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_contact_phone_number/{id}
+  method: get
+  operationId: getParagraphStateContactPhoneNumber
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_department_contacts
+  method: get
+  operationId: listParagraphStateDepartmentContacts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_department_contacts/{id}
+  method: get
+  operationId: getParagraphStateDepartmentContacts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_participation
+  method: get
+  operationId: listParagraphStateParticipation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_participation/{id}
+  method: get
+  operationId: getParagraphStateParticipation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_participation_note
+  method: get
+  operationId: listParagraphStateParticipationNote
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/state_participation_note/{id}
+  method: get
+  operationId: getParagraphStateParticipationNote
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tabbed_link_list
+  method: get
+  operationId: listParagraphTabbedLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tabbed_link_list/{id}
+  method: get
+  operationId: getParagraphTabbedLinkList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/table_of_contents
+  method: get
+  operationId: listParagraphTableOfContents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/table_of_contents/{id}
+  method: get
+  operationId: getParagraphTableOfContents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_left_sidebar
+  method: get
+  operationId: listParagraphTemplateLeftSidebar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_left_sidebar/{id}
+  method: get
+  operationId: getParagraphTemplateLeftSidebar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_one_column
+  method: get
+  operationId: listParagraphTemplateOneColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_one_column/{id}
+  method: get
+  operationId: getParagraphTemplateOneColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_right_sidebar
+  method: get
+  operationId: listParagraphTemplateRightSidebar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_right_sidebar/{id}
+  method: get
+  operationId: getParagraphTemplateRightSidebar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_three_column
+  method: get
+  operationId: listParagraphTemplateThreeColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_three_column/{id}
+  method: get
+  operationId: getParagraphTemplateThreeColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_two_column
+  method: get
+  operationId: listParagraphTemplateTwoColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/template_two_column/{id}
+  method: get
+  operationId: getParagraphTemplateTwoColumn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline
+  method: get
+  operationId: listParagraphTimeline
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline/{id}
+  method: get
+  operationId: getParagraphTimeline
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_calendar
+  method: get
+  operationId: listParagraphTimelineCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_calendar/{id}
+  method: get
+  operationId: getParagraphTimelineCalendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_calendar_item
+  method: get
+  operationId: listParagraphTimelineCalendarItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_calendar_item/{id}
+  method: get
+  operationId: getParagraphTimelineCalendarItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_calendar_view
+  method: get
+  operationId: listParagraphTimelineCalendarView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_calendar_view/{id}
+  method: get
+  operationId: getParagraphTimelineCalendarView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_item
+  method: get
+  operationId: listParagraphTimelineItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/timeline_item/{id}
+  method: get
+  operationId: getParagraphTimelineItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tll_link
+  method: get
+  operationId: listParagraphTllLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tll_link/{id}
+  method: get
+  operationId: getParagraphTllLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tll_media_link
+  method: get
+  operationId: listParagraphTllMediaLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tll_media_link/{id}
+  method: get
+  operationId: getParagraphTllMediaLink
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tll_tab
+  method: get
+  operationId: listParagraphTllTab
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/tll_tab/{id}
+  method: get
+  operationId: getParagraphTllTab
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/toc_section
+  method: get
+  operationId: listParagraphTocSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/toc_section/{id}
+  method: get
+  operationId: getParagraphTocSection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/topic_descriptions
+  method: get
+  operationId: listParagraphTopicDescriptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/topic_descriptions/{id}
+  method: get
+  operationId: getParagraphTopicDescriptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/topic_overview_with_descriptions
+  method: get
+  operationId: listParagraphTopicOverviewWithDescriptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/topic_overview_with_descriptions/{id}
+  method: get
+  operationId: getParagraphTopicOverviewWithDescriptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/view_heading
+  method: get
+  operationId: listParagraphViewHeading
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraph/view_heading/{id}
+  method: get
+  operationId: getParagraphViewHeading
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraphs_type/paragraphs_type
+  method: get
+  operationId: listParagraphsType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paragraphs_type/paragraphs_type/{id}
+  method: get
+  operationId: getParagraphsType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /path_alias/path_alias
+  method: get
+  operationId: listPathAlias
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /path_alias/path_alias/{id}
+  method: get
+  operationId: getPathAlias
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pathauto_pattern/pathauto_pattern
+  method: get
+  operationId: listPathautoPattern
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pathauto_pattern/pathauto_pattern/{id}
+  method: get
+  operationId: getPathautoPattern
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /print_engine/print_engine
+  method: get
+  operationId: listPrintEngine
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /print_engine/print_engine/{id}
+  method: get
+  operationId: getPrintEngine
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rdf_mapping/rdf_mapping
+  method: get
+  operationId: listRdfMapping
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rdf_mapping/rdf_mapping/{id}
+  method: get
+  operationId: getRdfMapping
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /redirect/redirect
+  method: get
+  operationId: listRedirect
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /redirect/redirect/{id}
+  method: get
+  operationId: getRedirect
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rest_resource_config/rest_resource_config
+  method: get
+  operationId: listRestResourceConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /rest_resource_config/rest_resource_config/{id}
+  method: get
+  operationId: getRestResourceConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search_api_index/search_api_index
+  method: get
+  operationId: listSearchApiIndex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search_api_index/search_api_index/{id}
+  method: get
+  operationId: getSearchApiIndex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search_api_server/search_api_server
+  method: get
+  operationId: listSearchApiServer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search_api_server/search_api_server/{id}
+  method: get
+  operationId: getSearchApiServer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search_api_task/search_api_task
+  method: get
+  operationId: listSearchApiTask
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search_api_task/search_api_task/{id}
+  method: get
+  operationId: getSearchApiTask
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/settings
+  method: get
+  operationId: listSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/settings/{id}
+  method: get
+  operationId: getSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /shortcut/default
+  method: get
+  operationId: listShortcutDefault
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /shortcut/default/{id}
+  method: get
+  operationId: getShortcutDefault
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /shortcut_set/shortcut_set
+  method: get
+  operationId: listShortcutSet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /shortcut_set/shortcut_set/{id}
+  method: get
+  operationId: getShortcutSet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /simple_sitemap/simple_sitemap
+  method: get
+  operationId: listSimpleSitemap
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /simple_sitemap/simple_sitemap/{id}
+  method: get
+  operationId: getSimpleSitemap
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /simple_sitemap_engine/simple_sitemap_engine
+  method: get
+  operationId: listSimpleSitemapEngine
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /simple_sitemap_engine/simple_sitemap_engine/{id}
+  method: get
+  operationId: getSimpleSitemapEngine
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /simple_sitemap_type/simple_sitemap_type
+  method: get
+  operationId: listSimpleSitemapType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /simple_sitemap_type/simple_sitemap_type/{id}
+  method: get
+  operationId: getSimpleSitemapType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /slick/slick
+  method: get
+  operationId: listSlick
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /slick/slick/{id}
+  method: get
+  operationId: getSlick
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/articles
+  method: get
+  operationId: listTaxonomyTermArticles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/articles/{id}
+  method: get
+  operationId: getTaxonomyTermArticles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/capital_market_topics
+  method: get
+  operationId: listTaxonomyTermCapitalMarketTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/capital_market_topics/{id}
+  method: get
+  operationId: getTaxonomyTermCapitalMarketTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/capital_market_types
+  method: get
+  operationId: listTaxonomyTermCapitalMarketTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/capital_market_types/{id}
+  method: get
+  operationId: getTaxonomyTermCapitalMarketTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/categories
+  method: get
+  operationId: listTaxonomyTermCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/categories/{id}
+  method: get
+  operationId: getTaxonomyTermCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/center_of_excellence_types
+  method: get
+  operationId: listTaxonomyTermCenterOfExcellenceTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/center_of_excellence_types/{id}
+  method: get
+  operationId: getTaxonomyTermCenterOfExcellenceTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/cipr_news
+  method: get
+  operationId: listTaxonomyTermCiprNews
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/cipr_news/{id}
+  method: get
+  operationId: getTaxonomyTermCiprNews
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/cipr_tags
+  method: get
+  operationId: listTaxonomyTermCiprTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/cipr_tags/{id}
+  method: get
+  operationId: getTaxonomyTermCiprTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/committees
+  method: get
+  operationId: listTaxonomyTermCommittees
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/committees/{id}
+  method: get
+  operationId: getTaxonomyTermCommittees
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/communications
+  method: get
+  operationId: listTaxonomyTermCommunications
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/communications/{id}
+  method: get
+  operationId: getTaxonomyTermCommunications
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/demographics
+  method: get
+  operationId: listTaxonomyTermDemographics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/demographics/{id}
+  method: get
+  operationId: getTaxonomyTermDemographics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/department
+  method: get
+  operationId: listTaxonomyTermDepartment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/department/{id}
+  method: get
+  operationId: getTaxonomyTermDepartment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/documents
+  method: get
+  operationId: listTaxonomyTermDocuments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/documents/{id}
+  method: get
+  operationId: getTaxonomyTermDocuments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/event_promotion_level
+  method: get
+  operationId: listTaxonomyTermEventPromotionLevel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/event_promotion_level/{id}
+  method: get
+  operationId: getTaxonomyTermEventPromotionLevel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/event_promotion_type
+  method: get
+  operationId: listTaxonomyTermEventPromotionType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/event_promotion_type/{id}
+  method: get
+  operationId: getTaxonomyTermEventPromotionType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/external_resource_type
+  method: get
+  operationId: listTaxonomyTermExternalResourceType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/external_resource_type/{id}
+  method: get
+  operationId: getTaxonomyTermExternalResourceType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/government_affairs_topics
+  method: get
+  operationId: listTaxonomyTermGovernmentAffairsTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/government_affairs_topics/{id}
+  method: get
+  operationId: getTaxonomyTermGovernmentAffairsTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/government_affairs_types
+  method: get
+  operationId: listTaxonomyTermGovernmentAffairsTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/government_affairs_types/{id}
+  method: get
+  operationId: getTaxonomyTermGovernmentAffairsTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/healthcare_reform_types
+  method: get
+  operationId: listTaxonomyTermHealthcareReformTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/healthcare_reform_types/{id}
+  method: get
+  operationId: getTaxonomyTermHealthcareReformTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/insurance_types
+  method: get
+  operationId: listTaxonomyTermInsuranceTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/insurance_types/{id}
+  method: get
+  operationId: getTaxonomyTermInsuranceTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/link_card_slider_category
+  method: get
+  operationId: listTaxonomyTermLinkCardSliderCategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/link_card_slider_category/{id}
+  method: get
+  operationId: getTaxonomyTermLinkCardSliderCategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/media_module
+  method: get
+  operationId: listTaxonomyTermMediaModule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/media_module/{id}
+  method: get
+  operationId: getTaxonomyTermMediaModule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/model_law_categories
+  method: get
+  operationId: listTaxonomyTermModelLawCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/model_law_categories/{id}
+  method: get
+  operationId: getTaxonomyTermModelLawCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/model_laws
+  method: get
+  operationId: listTaxonomyTermModelLaws
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/model_laws/{id}
+  method: get
+  operationId: getTaxonomyTermModelLaws
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/months
+  method: get
+  operationId: listTaxonomyTermMonths
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/months/{id}
+  method: get
+  operationId: getTaxonomyTermMonths
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic
+  method: get
+  operationId: listTaxonomyTermNaic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic/{id}
+  method: get
+  operationId: getTaxonomyTermNaic
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic_archive_documents
+  method: get
+  operationId: listTaxonomyTermNaicArchiveDocuments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic_archive_documents/{id}
+  method: get
+  operationId: getTaxonomyTermNaicArchiveDocuments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic_custom_layout
+  method: get
+  operationId: listTaxonomyTermNaicCustomLayout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic_custom_layout/{id}
+  method: get
+  operationId: getTaxonomyTermNaicCustomLayout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic_events
+  method: get
+  operationId: listTaxonomyTermNaicEvents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/naic_events/{id}
+  method: get
+  operationId: getTaxonomyTermNaicEvents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/news_topics
+  method: get
+  operationId: listTaxonomyTermNewsTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/news_topics/{id}
+  method: get
+  operationId: getTaxonomyTermNewsTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/nm_regulator_criteria
+  method: get
+  operationId: listTaxonomyTermNmRegulatorCriteria
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/nm_regulator_criteria/{id}
+  method: get
+  operationId: getTaxonomyTermNmRegulatorCriteria
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/optins_tax_types
+  method: get
+  operationId: listTaxonomyTermOptinsTaxTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/optins_tax_types/{id}
+  method: get
+  operationId: getTaxonomyTermOptinsTaxTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/pandemic_action_type
+  method: get
+  operationId: listTaxonomyTermPandemicActionType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/pandemic_action_type/{id}
+  method: get
+  operationId: getTaxonomyTermPandemicActionType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/pandemic_insurance_subcategory
+  method: get
+  operationId: listTaxonomyTermPandemicInsuranceSubcategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/pandemic_insurance_subcategory/{id}
+  method: get
+  operationId: getTaxonomyTermPandemicInsuranceSubcategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/pandemic_insurance_type
+  method: get
+  operationId: listTaxonomyTermPandemicInsuranceType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/pandemic_insurance_type/{id}
+  method: get
+  operationId: getTaxonomyTermPandemicInsuranceType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/publication_categories
+  method: get
+  operationId: listTaxonomyTermPublicationCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/publication_categories/{id}
+  method: get
+  operationId: getTaxonomyTermPublicationCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/publications
+  method: get
+  operationId: listTaxonomyTermPublications
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/publications/{id}
+  method: get
+  operationId: getTaxonomyTermPublications
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/regulator_to_regulator_criteria
+  method: get
+  operationId: listTaxonomyTermRegulatorToRegulatorCriteria
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/regulator_to_regulator_criteria/{id}
+  method: get
+  operationId: getTaxonomyTermRegulatorToRegulatorCriteria
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/research_categories
+  method: get
+  operationId: listTaxonomyTermResearchCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/research_categories/{id}
+  method: get
+  operationId: getTaxonomyTermResearchCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/research_topics
+  method: get
+  operationId: listTaxonomyTermResearchTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/research_topics/{id}
+  method: get
+  operationId: getTaxonomyTermResearchTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/research_types
+  method: get
+  operationId: listTaxonomyTermResearchTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/research_types/{id}
+  method: get
+  operationId: getTaxonomyTermResearchTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/resource_center_archive_types
+  method: get
+  operationId: listTaxonomyTermResourceCenterArchiveTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/resource_center_archive_types/{id}
+  method: get
+  operationId: getTaxonomyTermResourceCenterArchiveTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/resource_center_types_new_
+  method: get
+  operationId: listTaxonomyTermResourceCenterTypesNew
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/resource_center_types_new_/{id}
+  method: get
+  operationId: getTaxonomyTermResourceCenterTypesNew
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/resource_types_new_
+  method: get
+  operationId: listTaxonomyTermResourceTypesNew
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/resource_types_new_/{id}
+  method: get
+  operationId: getTaxonomyTermResourceTypesNew
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/search_terms
+  method: get
+  operationId: listTaxonomyTermSearchTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/search_terms/{id}
+  method: get
+  operationId: getTaxonomyTermSearchTerms
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/seasons
+  method: get
+  operationId: listTaxonomyTermSeasons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/seasons/{id}
+  method: get
+  operationId: getTaxonomyTermSeasons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/sections
+  method: get
+  operationId: listTaxonomyTermSections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/sections/{id}
+  method: get
+  operationId: getTaxonomyTermSections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/state_department_category
+  method: get
+  operationId: listTaxonomyTermStateDepartmentCategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/state_department_category/{id}
+  method: get
+  operationId: getTaxonomyTermStateDepartmentCategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/state_departments
+  method: get
+  operationId: listTaxonomyTermStateDepartments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/state_departments/{id}
+  method: get
+  operationId: getTaxonomyTermStateDepartments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/state_participation_types
+  method: get
+  operationId: listTaxonomyTermStateParticipationTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/state_participation_types/{id}
+  method: get
+  operationId: getTaxonomyTermStateParticipationTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/states
+  method: get
+  operationId: listTaxonomyTermStates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/states/{id}
+  method: get
+  operationId: getTaxonomyTermStates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/states_optins
+  method: get
+  operationId: listTaxonomyTermStatesOptins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/states_optins/{id}
+  method: get
+  operationId: getTaxonomyTermStatesOptins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/summit_session_type
+  method: get
+  operationId: listTaxonomyTermSummitSessionType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/summit_session_type/{id}
+  method: get
+  operationId: getTaxonomyTermSummitSessionType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/tags
+  method: get
+  operationId: listTaxonomyTermTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/tags/{id}
+  method: get
+  operationId: getTaxonomyTermTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/topics
+  method: get
+  operationId: listTaxonomyTermTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/topics/{id}
+  method: get
+  operationId: getTaxonomyTermTopics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/volumes
+  method: get
+  operationId: listTaxonomyTermVolumes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/volumes/{id}
+  method: get
+  operationId: getTaxonomyTermVolumes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/webpost_systems
+  method: get
+  operationId: listTaxonomyTermWebpostSystems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/webpost_systems/{id}
+  method: get
+  operationId: getTaxonomyTermWebpostSystems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/years
+  method: get
+  operationId: listTaxonomyTermYears
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/years/{id}
+  method: get
+  operationId: getTaxonomyTermYears
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/zones
+  method: get
+  operationId: listTaxonomyTermZones
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_term/zones/{id}
+  method: get
+  operationId: getTaxonomyTermZones
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_vocabulary/taxonomy_vocabulary
+  method: get
+  operationId: listTaxonomyVocabulary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /taxonomy_vocabulary/taxonomy_vocabulary/{id}
+  method: get
+  operationId: getTaxonomyVocabulary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /toolbar_menu_element/toolbar_menu_element
+  method: get
+  operationId: listToolbarMenuElement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /toolbar_menu_element/toolbar_menu_element/{id}
+  method: get
+  operationId: getToolbarMenuElement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/user
+  method: get
+  operationId: listUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/user/{id}
+  method: get
+  operationId: getUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user_role/user_role
+  method: get
+  operationId: listUserRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user_role/user_role/{id}
+  method: get
+  operationId: getUserRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/view
+  method: get
+  operationId: listView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /view/view/{id}
+  method: get
+  operationId: getView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform/webform
+  method: get
+  operationId: listWebform
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform/webform/{id}
+  method: get
+  operationId: getWebform
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform_options/webform_options
+  method: get
+  operationId: listWebformOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform_options/webform_options/{id}
+  method: get
+  operationId: getWebformOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform_submission/contact
+  method: get
+  operationId: listWebformSubmissionContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform_submission/contact/{id}
+  method: get
+  operationId: getWebformSubmissionContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform_submission/opt_in
+  method: get
+  operationId: listWebformSubmissionOptIn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webform_submission/opt_in/{id}
+  method: get
+  operationId: getWebformSubmissionOptIn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/workflow
+  method: get
+  operationId: listWorkflow
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/workflow/{id}
+  method: get
+  operationId: getWorkflow
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

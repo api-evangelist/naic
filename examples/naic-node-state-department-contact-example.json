@@ -1,0 +1,270 @@
+{
+  "type": "node--state_department_contact",
+  "id": "25a2a19c-937b-45f4-942a-3f4e0110a746",
+  "links": {
+    "self": {
+      "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746?resourceVersion=id%3A66409"
+    },
+    "working-copy": {
+      "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746?resourceVersion=rel%3Aworking-copy"
+    }
+  },
+  "attributes": {
+    "drupal_internal__nid": 6804,
+    "drupal_internal__vid": 66409,
+    "langcode": "en",
+    "revision_timestamp": "2022-06-28T15:48:42+00:00",
+    "status": true,
+    "title": "Rebecca Smid",
+    "created": "2021-11-03T15:39:25+00:00",
+    "changed": "2022-06-28T15:48:42+00:00",
+    "promote": true,
+    "sticky": false,
+    "default_langcode": true,
+    "revision_translation_affected": true,
+    "moderation_state": "published",
+    "metatag": [
+      {
+        "tag": "meta",
+        "attributes": {
+          "name": "title",
+          "content": "Rebecca Smid"
+        }
+      },
+      {
+        "tag": "link",
+        "attributes": {
+          "rel": "canonical",
+          "href": "https://content.naic.org/node/6804"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:type",
+          "content": "website"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:url",
+          "content": "https://content.naic.org/node/6804"
+        }
+      },
+      {
+        "tag": "meta",
+        "attributes": {
+          "property": "og:title",
+          "content": "Rebecca Smid"
+        }
+      }
+    ],
+    "path": {
+      "alias": null,
+      "pid": null,
+      "langcode": "en"
+    },
+    "publish_on": null,
+    "unpublish_on": null,
+    "publish_state": null,
+    "unpublish_state": null,
+    "content_translation_source": "und",
+    "content_translation_outdated": false,
+    "field_leader": false,
+    "field_appointed": null,
+    "field_confirmed": null,
+    "field_contact_email_address": [
+      "Rebecca.Smid@floir.com"
+    ],
+    "field_contact_first_name": "Rebecca",
+    "field_contact_last_name": "Smid",
+    "field_contact_title_position": [
+      "Startups"
+    ],
+    "field_elected": null,
+    "field_hide_email_from_public": null,
+    "field_hide_phone_from_public": null,
+    "field_make_checks_payable_to": null,
+    "field_middle_name": null,
+    "field_naic_position_title": null,
+    "field_office_hours": null,
+    "field_prefix": null,
+    "field_product_focus": null,
+    "field_reappointed": [],
+    "field_regulator": false,
+    "field_regulator_biography": null,
+    "field_re_elected": [],
+    "field_state_contact_phone": "(850) 413-5021",
+    "field_suffix": null,
+    "field_term_of_office": null,
+    "field_website": null,
+    "field_zone_position_title": null
+  },
+  "relationships": {
+    "node_type": {
+      "data": {
+        "type": "node_type--node_type",
+        "id": "eb195d90-2714-4c11-87e1-8aae9f9e78b1",
+        "meta": {
+          "drupal_internal__target_id": "state_department_contact"
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/node_type?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/node_type?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "revision_uid": {
+      "data": {
+        "type": "user--user",
+        "id": "a52320e7-c752-43a4-ab8f-4ac57a8683e8",
+        "meta": {
+          "drupal_internal__target_id": 1
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/revision_uid?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/revision_uid?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "uid": {
+      "data": {
+        "type": "user--user",
+        "id": "9a872df1-eebc-4c9d-983c-ee204812b974",
+        "meta": {
+          "drupal_internal__target_id": 96
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/uid?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/uid?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "feeds_item": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/feeds_item?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/feeds_item?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_addresses": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_addresses?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_addresses?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_contact_image": {
+      "data": null,
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_contact_image?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_contact_image?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_contact_state_department": {
+      "data": {
+        "type": "taxonomy_term--state_departments",
+        "id": "1b2fe204-d6ef-445c-86d0-837a3ab4f399",
+        "meta": {
+          "drupal_internal__target_id": 1034
+        }
+      },
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_contact_state_department?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_contact_state_department?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_fax_numbers": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_fax_numbers?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_fax_numbers?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_phone_numbers": {
+      "data": [],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_phone_numbers?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_phone_numbers?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_related_regulator": {
+      "data": null,
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_related_regulator?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_related_regulator?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_state_department_category": {
+      "data": [
+        {
+          "type": "taxonomy_term--state_department_category",
+          "id": "4a10cabb-085f-4e0d-bdad-e44161b9bbf4",
+          "meta": {
+            "drupal_internal__target_id": 1024
+          }
+        }
+      ],
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_state_department_category?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_state_department_category?resourceVersion=id%3A66409"
+        }
+      }
+    },
+    "field_zone": {
+      "data": null,
+      "links": {
+        "related": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/field_zone?resourceVersion=id%3A66409"
+        },
+        "self": {
+          "href": "https://content.naic.org/jsonapi/node/state_department_contact/25a2a19c-937b-45f4-942a-3f4e0110a746/relationships/field_zone?resourceVersion=id%3A66409"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,292 @@
+
+# LLMs.txt for content.naic.org
+site: https://content.naic.org
+owner: National Association of Insurance Commissioners (NAIC)
+contact: webpost@naic.org
+logo: https://content.naic.org/themes/custom/naic/images/logo/naic-blue.svg
+policy_url: https://content.naic.org/accessibility
+
+## Usage Preferences
+allow_model_training: false
+allow_model_generation: true
+allow_snippet_generation: true
+
+## Content Scope
+include_paths:
+  - /article/
+
+exclude_paths:
+  - /members-only/
+  - /user/
+  - /private/
+
+## Attribution
+require_attribution: true
+preferred_attribution_name: NAIC
+preferred_attribution_url: https://content.naic.org
+
+## Crawl Guidelines
+crawl_delay: 10
+max_requests_per_day: 100
+
+## Accessibility
+accessibility_statement: https://content.naic.org/accessibility
+
+## Copyright
+copyright_notice: All content © 1991–2025 National Association of Insurance Commissioners. All rights reserved.
+copyright_policy_url: https://content.naic.org/application/terms-conditions
+
+## Top-Level Navigation
+  - [Regulator](https://content.naic.org/regulator): We provide tools and resources to help regulators set standards and best practices, provide regulatory support functions, and educate on U.S. state-based insurance regulation.
+  - [Industry](https://content.naic.org/industry): Access forms, tools, and resources for individuals and organizations to file forms, improve efficiency, and remain compliant.
+  - [Consumer](https://content.naic.org/consumer): Discover tools and resources to help you understand different types of insurance, claims processes, and practical tips to help support you through every stage of your life. 
+  - [Committees](https://content.naic.org/committees): View actions considered by committees, task forces, and subgroups, as well as charges, schedules, and staff links.
+  - [Resource Center](https://content.naic.org/resource-center): Explore recent publications, the latest news articles, new federal and legislative news, and model laws to help inform your approach.
+  - [Insurance Departments](https://content.naic.org/state-insurance-departments): Find contact information for insurance departments and local insurance agents, or file a complaint.
+  - [About](https://content.naic.org/about): The NAIC provides expertise, data, and analysis for insurance commissioners to effectively regulate the insurance industry and protect consumers.
+
+## Committees, Task Forces, Working Groups, Subgroups
+  - [Executive (EX) Committee](https://content.naic.org/committees/ex/executive-cmte)
+  - [Natural Catastrophe Risk and Resilience (EX) Task Force](https://content.naic.org/committees/ex/natural-catastrophe-risk-resilience-tf)
+  - [Severe Peril (EX) Working Group](https://content.naic.org/committees/ex/severe-peril-wg)
+  - [Pre-Disaster Mitigation and Risk Modeling (EX) Working Group](https://content.naic.org/committees/ex/pre-disaster-mitigation-risk-modeling-wg)
+  - [Government Relations (EX) Leadership Council](https://content.naic.org/committees/ex/government-relations-lc)
+  - [Risk-Based Capital Model Governance (EX) Task Force](https://content.naic.org/committees/ex/rbc-model-governance-tf)
+  - [Life Insurance and Annuities (A) Committee](https://content.naic.org/committees/a/life-insurance-annuities-cmte)
+  - [Annuity Suitability (A) Working Group](https://content.naic.org/committees/a/annuity-suitability-wg)
+  - [Life Actuarial (A) Task Force](https://content.naic.org/committees/a/life-actuarial-tf)
+  - [Experience Reporting (A) Subgroup](https://content.naic.org/committees/a/experience-reporting-sg)
+  - [Life and Annuity Illustration (A) Subgroup](https://content.naic.org/committees/a/life-annuity-illustration-sg)
+  - [Variable Annuities Capital and Reserve (E/A) Subgroup](https://content.naic.org/committees/a-e/variable-annuities-capital-reserve-sg)
+  - [Longevity Risk (E/A) Subgroup](https://content.naic.org/committees/a-e/longevity-risk-sg)
+  - [Health Insurance and Managed Care (B) Committee](https://content.naic.org/committees/b/health-insurance-managed-care-cmte)
+  - [Consumer Information (B) Working Group](https://content.naic.org/committees/b/consumer-information-wg)
+  - [Health Actuarial (B) Task Force](https://content.naic.org/committees/b/health-actuarial-tf)
+  - [Long-Term Care Actuarial (B) Working Group](https://content.naic.org/committees/b/long-term-care-actuarial-wg)
+  - [Health Care Affordability and Mitigation (B) Working Group](https://content.naic.org/committees/b/healthcare-affordability-mitigation-wg)
+  - [Regulatory Framework (B) Task Force](https://content.naic.org/committees/b/regulatory-framework-tf)
+  - [Employee Retirement Income Security Act (ERISA) and Alternative Health Coverage (B) Working Group](https://content.naic.org/committees/b/erisa-alt-health-coverage-wg)
+  - [Mental Health Parity and Addiction Equity Act (MHPAEA) (B) Working Group](https://content.naic.org/committees/b/mental-health-parity-addiction-equity-act-wg)
+  - [Prescription Drug Coverage (B) Working Group](https://content.naic.org/committees/b/prescription-drug-coverage-wg)
+  - [Senior Issues (B) Task Force](https://content.naic.org/committees/b/senior-issues-tf)
+  - [Property and Casualty Insurance (C) Committee](https://content.naic.org/committees/c/property-casualty-insurance-cmte)
+  - [Cannabis Insurance (C) Working Group](https://content.naic.org/committees/c/cannabis-insurance-wg)
+  - [Casualty Actuarial and Statistical (C) Task Force](https://content.naic.org/committees/c/casualty-actuarial-statistical-tf)
+  - [Actuarial Opinion (C) Working Group](https://content.naic.org/committees/c/actuarial-opinion-wg)
+  - [Statistical Data (C) Working Group](https://content.naic.org/committees/c/statistical-data-wg)
+  - [Catastrophe Insurance (C) Working Group](https://content.naic.org/committees/c/catastrophe-insurance-wg)
+  - [Homeowners Market Data Call (C) Task Force](https://content.naic.org/committees/c/homeowners-market-data-call-tf)
+  - [Homeowners Market Report (C) Working Group](https://content.naic.org/committees/c/homeowners-market-report-wg)
+  - [NAIC/Federal Emergency Management Agency (FEMA) (C) Working Group](https://content.naic.org/committees/c/federal-emergency-management-agency-wg)
+  - [Surplus Lines (C) Task Force](https://content.naic.org/committees/c/surplus-lines-tf)
+  - [Surplus Lines (C) Working Group](https://content.naic.org/committees/c/surplus-lines-wg)
+  - [Terrorism Insurance Implementation (C) Working Group](https://content.naic.org/committees/c/terrorism-insurance-implementation-wg)
+  - [Title Insurance (C) Working Group](https://content.naic.org/committees/c/title-insurance-wg)
+  - [Transparency and Readability of Consumer Information (C) Working Group](https://content.naic.org/committees/c/transparency-readability-consumer-information-wg)
+  - [Workers' Compensation (C) Working Group](https://content.naic.org/committees/c/workers-compensation-wg)
+  - [Market Regulation and Consumer Affairs (D) Committee](https://content.naic.org/committees/d/market-regulation-consumer-affairs-committee)
+  - [Advisory Organization (D) Working Group](https://content.naic.org/committees/d/advisory-organization-wg)
+  - [Antifraud (D) Task Force](https://content.naic.org/committees/d/antifraud-tf)
+  - [Antifraud Technology (D) Working Group](https://content.naic.org/committees/d/antifraud-technology-wg)
+  - [Improper Marketing of Health Insurance (D) Working Group](https://content.naic.org/committees/d/improper-marketing-health-insurance-wg)
+  - [Market Actions (D) Working Group](https://content.naic.org/committees/d/market-actions-wg)
+  - [Market Analysis Procedures (D) Working Group](https://content.naic.org/committees/d/market-analysis-procedures-wg)
+  - [Market Conduct Annual Statement Blanks (D) Working Group](https://content.naic.org/committees/d/market-conduct-annual-statement-blanks-wg)
+  - [Market Conduct Examination Guidelines (D) Working Group](https://content.naic.org/committees/d/market-conduct-examination-guidelines-wg)
+  - [Market Information Systems (D) Working Group](https://content.naic.org/committees/d/market-information-systems-wg)
+  - [Market Regulation Certification (D) Working Group](https://content.naic.org/committees/d/market-regulation-certification-wg)
+  - [Pharmacy Benefit Management (D) Working Group](https://content.naic.org/committees/d/market-regulation-consumer-affairs-committee)
+  - [Producer Licensing (D) Task Force](https://content.naic.org/committees/d/producers-licensing-tf)
+  - [Adjuster Licensing (D) Working Group](https://content.naic.org/committees/d/adjuster-licensing-wg)
+  - [Producer Licensing Uniformity (D) Working Group](https://content.naic.org/committees/d/producers-licensing-uniformity-wg)
+  - [Uniform Education (D) Working Group](https://content.naic.org/committees/d/market-regulation-consumer-affairs-committee)
+  - [Speed to Market (D) Working Group](https://content.naic.org/committees/d/market-regulation-consumer-affairs-committee)
+  - [Financial Condition (E) Committee](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Accounting Practices and Procedures (E) Task Force](https://content.naic.org/committees/e/accounting-practices-procedures-tf)
+  - [Blanks (E) Working Group](https://content.naic.org/committees/e/blanks-wg)
+  - [Statutory Accounting Principles (E) Working Group](https://content.naic.org/committees/e/statutory-accounting-principles-wg)
+  - [Capital Adequacy (E) Task Force](https://content.naic.org/committees/e/capital-adequacy-tf)
+  - [Health Risk-Based Capital (E) Working Group](https://content.naic.org/committees/e/capital-adequacy-tf)
+  - [Life Risk-Based Capital (E) Working Group](https://content.naic.org/committees/e/life-risk-based-capital-wg)
+  - [Property and Casualty Risk-Based Capital (E) Working Group](https://content.naic.org/committees/e/property-casualty-risk-based-capital-wg)
+  - [Catastrophe Risk (E) Subgroup](https://content.naic.org/committees/e/catastrophe-risk-sg)
+  - [Risk-Based Capital Investment Risk and Evaluation (E) Working Group](https://content.naic.org/committees/e/capital-adequacy-tf)
+  - [Examination Oversight (E) Task Force](https://content.naic.org/committees/e/examination-oversight-tf)
+  - [Electronic Workpaper (E) Working Group](https://content.naic.org/committees/e/examination-oversight-tf)
+  - [Financial Analysis Solvency Tools (E) Working Group](https://content.naic.org/committees/e/examination-oversight-tf)
+  - [Financial Examiners Coordination (E) Working Group](https://content.naic.org/committees/e/examination-oversight-tf)
+  - [Financial Examiners Handbook (E) Technical Group](https://content.naic.org/committees/e/examination-oversight-tf)
+  - [Information Technology (IT) Examination (E) Working Group](https://content.naic.org/committees/e/information-technology-examination-wg)
+  - [Financial Analysis (E) Working Group](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Financial Stability (E) Task Force](https://content.naic.org/committees/e/financial-stability-tf)
+  - [Macroprudential (E) Working Group](https://content.naic.org/committees/e/macroprudential-wg)
+  - [Group Capital Calculation (E) Working Group](https://content.naic.org/committees/e/group-capital-calculation-wg)
+  - [Group Solvency Issues (E) Working Group](https://content.naic.org/committees/e/group-solvency-issues-wg)
+  - [Own Risk and Solvency Assessment (ORSA) Implementation (E) Subgroup](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Mutual Recognition of Jurisdictions (E) Working Group](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [NAIC/American Institute of Certified Public Accountants (AICPA) (E) Working Group](https://content.naic.org/committees/e/naic-american-institute-certified-public-accountants-wg)
+  - [National Treatment and Coordination (E) Working Group](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Receivership and Insolvency (E) Task Force](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Receivership Financial Analysis (E) Working Group](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Receivership Law (E) Working Group](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Reinsurance (E) Task Force](https://content.naic.org/committees/e/reinsurance-tf)
+  - [Reinsurance Financial Analysis (E) Working Group](https://content.naic.org/committees/e/reinsurance-tf)
+  - [Restructuring Mechanisms (E) Working Group](https://content.naic.org/committees/e/restructuring-mechanisms-wg)
+  - [Risk-Focused Surveillance (E) Working Group](https://content.naic.org/committees/e/examination-oversight-tf)
+  - [Risk Retention Group (E) Task Force](https://content.naic.org/committees/e/financial-condition-cmte)
+  - [Valuation Analysis (E) Working Group](https://content.naic.org/committees/e/valuation-securities-tf)
+  - [Valuation of Securities (E) Task Force](https://content.naic.org/committees/e/valuation-securities-tf)
+  - [Financial Regulation Standards and Accreditation (F) Committee](https://content.naic.org/committees/f/financial-regulation-standards-accreditation-cmte)
+  - [International Insurance Relations (G) Committee](https://content.naic.org/committees/g/international-insurance-relations-cmte)
+  - [Aggregation Method Implementation (G) Working Group](https://content.naic.org/committees/g/aggregation-method-wg)
+  - [Innovation, Cybersecurity, and Technology (H) Committee](https://content.naic.org/committees/h/innovation-cybersecurity-technology-cmte)
+  - [Big Data and Artificial Intelligence (H) Working Group](https://content.naic.org/committees/h/big-data-artificial-intelligence-wg)
+  - [Cybersecurity (H) Working Group](https://content.naic.org/committees/h/cybersecurity-wg)
+  - [Privacy Protections (H) Working Group](https://content.naic.org/committees/h/privacy-protections-wg)
+  - [SupTech/GovTech (H) Subgroup](https://content.naic.org/committees/h/innovation-cybersecurity-technology-cmte)
+  - [Third-Party Data and Models (H) Working Group](https://content.naic.org/committees/h/third-party-data-models-wg)
+
+## Guides
+  - [Financial Statement Filing Online User's Guide](https://content.naic.org/industry_financial_filing_if_guide.htm)
+  - [Climate Risk & Resiliency Resource Center](https://content.naic.org/climate-resiliency-resource.htm)
+
+## Insurance Topics
+  - [Accelerated Underwriting](https://content.naic.org/insurance-topics/accelerated-underwriting)
+  - [Accreditation](https://content.naic.org/insurance-topics/accreditation)
+  - [Actuarial Guidelines](https://content.naic.org/insurance-topics/actuarial-guidelines)
+  - [Actuaries Climate Index](https://content.naic.org/insurance-topics/actuaries-climate-index)
+  - [Air Ambulances](https://content.naic.org/insurance-topics/air-ambulances)
+  - [Annuities](https://content.naic.org/insurance-topics/annuities)
+  - [Annuity Suitability and Best Interest Standard](https://content.naic.org/insurance-topics/annuity-suitability-and-best-interest-standard)
+  - [Artificial Intelligence](https://content.naic.org/insurance-topics/artificial-intelligence)
+  - [Asset-Backed Securities](https://content.naic.org/insurance-topics/asset-backed-securities)
+  - [Auto Insurance](https://content.naic.org/insurance-topics/auto-insurance)
+  - [Autonomous Vehicles](https://content.naic.org/insurance-topics/autonomous-vehicles)
+  - [Big Data](https://content.naic.org/insurance-topics/big-data)
+  - [Blockchain Technology](https://content.naic.org/insurance-topics/blockchain-technology)
+  - [Breed-Specific Legislation](https://content.naic.org/insurance-topics/breed-specific-legislation)
+  - [Bundling](https://content.naic.org/insurance-topics/bundling)
+  - [Business Interruption and Business Owner Policy](https://content.naic.org/insurance-topics/business-interruption-and-business-owner-policy)
+  - [Cannabis and Insurance](https://content.naic.org/insurance-topics/cannabis-and-insurance)
+  - [Captive Insurance Companies](https://content.naic.org/insurance-topics/captive-insurance-companies)
+  - [Catastrophe Models Casualty](https://content.naic.org/insurance-topics/catastrophe-models-casualty)
+  - [Catastrophe Models Property](https://content.naic.org/insurance-topics/catastrophe-models-property)
+  - [Chatbots](https://content.naic.org/insurance-topics/chatbots)
+  - [Commercial Ride-Sharing](https://content.naic.org/insurance-topics/commercial-ride-sharing)
+  - [Common Framework for the Supervision of Internationally Active Insurance Groups](https://content.naic.org/insurance-topics/common-framework-for-the-supervision-of-internationally-active-insurance-groups)
+  - [Corporate Governance](https://content.naic.org/insurance-topics/corporate-governance)
+  - [Covered Agreement](https://content.naic.org/insurance-topics/covered-agreement)
+  - [Credit-Based Insurance Scores](https://content.naic.org/insurance-topics/credit-based-insurance-scores)
+  - [Crop Insurance](https://content.naic.org/insurance-topics/crop-insurance)
+  - [Cryptocurrency](https://content.naic.org/insurance-topics/cryptocurrency)
+  - [Cybersecurity](https://content.naic.org/insurance-topics/cybersecurity)
+  - [Data Privacy and Insurance](https://content.naic.org/insurance-topics/data-privacy-and-insurance)
+  - [Derivatives](https://content.naic.org/insurance-topics/derivatives)
+  - [Distracted Driving](https://content.naic.org/insurance-topics/distracted-driving)
+  - [Drones and Unmanned Air Systems](https://content.naic.org/insurance-topics/drones-and-unmanned-air-systems)
+  - [Earthquake Insurance](https://content.naic.org/insurance-topics/earthquake-insurance)
+  - [Electric Vehicle Insurance Rates](https://content.naic.org/insurance-topics/electric-vehicle-insurance-rates)
+  - [Employee Retirement Income Security Act](https://content.naic.org/insurance-topics/employee-retirement-income-security-act)
+  - [Enterprise Risk Management](https://content.naic.org/insurance-topics/enterprise-risk-management)
+  - [Environmental Insurance](https://content.naic.org/insurance-topics/environmental-insurance)
+  - [EU-U.S. Dialogue Project](https://content.naic.org/insurance-topics/eu-us-dialogue-project)
+  - [Exchange-Traded Funds](https://content.naic.org/insurance-topics/exchange-traded-funds)
+  - [Fair Access to Insurance Requirements Plans](https://content.naic.org/insurance-topics/fair-access-to-insurance-requirements-plans)
+  - [Federal Insurance Office](https://content.naic.org/insurance-topics/federal-insurance-office)
+  - [Financial Data Repository](https://content.naic.org/insurance-topics/financial-data-repository)
+  - [Financial Inclusion](https://content.naic.org/insurance-topics/financial-inclusion)
+  - [Financial Sector Assessment Program](https://content.naic.org/insurance-topics/financial-sector-assessment-program)
+  - [Financial Stability Board](https://content.naic.org/insurance-topics/financial-stability-board)
+  - [Flood Insurance](https://content.naic.org/insurance-topics/flood-insurance)
+  - [Group Capital Calculation](https://content.naic.org/insurance-topics/group-capital-calculation)
+  - [Group Supervision](https://content.naic.org/insurance-topics/group-supervision)
+  - [Guaranty Associations and Funds](https://content.naic.org/insurance-topics/guaranty-associations-and-funds)
+  - [Health Insurance](https://content.naic.org/insurance-topics/health-insurance)
+  - [Holistic Framework](https://content.naic.org/insurance-topics/holistic-framework)
+  - [Homeowners Insurance](https://content.naic.org/insurance-topics/homeowners-insurance)
+  - [Hurricane Deductibles](https://content.naic.org/insurance-topics/hurricane-deductibles)
+  - [Identity Theft](https://content.naic.org/insurance-topics/identity-theft)
+  - [Improper Marketing of Health Plans](https://content.naic.org/insurance-topics/improper-marketing-of-health-plans)
+  - [Indian and Indigenous Affairs](https://content.naic.org/insurance-topics/indian-and-indigenous-affairs)
+  - [Infrastructure Investments](https://content.naic.org/insurance-topics/infrastructure-investments)
+  - [Insurance Capital Standard](https://content.naic.org/insurance-topics/insurance-capital-standard)
+  - [Insurance Core Principles](https://content.naic.org/insurance-topics/insurance-core-principles)
+  - [Insurance Fraud](https://content.naic.org/insurance-topics/insurance-fraud)
+  - [Insurance-Linked Securities](https://content.naic.org/insurance-topics/insurance-linked-securities)
+  - [Insurtech](https://content.naic.org/insurance-topics/insurtech)
+  - [Interest Rates and Insurance](https://content.naic.org/insurance-topics/interest-rates-and-insurance)
+  - [International Insurance Supervision](https://content.naic.org/insurance-topics/international-insurance-supervision)
+  - [International Regulatory Cooperation](https://content.naic.org/insurance-topics/international-regulatory-cooperation)
+  - [Internationally Active Insurance Group](https://content.naic.org/insurance-topics/internationally-active-insurance-group)
+  - [Internet of Things](https://content.naic.org/insurance-topics/internet-of-things)
+  - [Lender-Placed Insurance](https://content.naic.org/insurance-topics/lender-placed-insurance)
+  - [Life Insurance](https://content.naic.org/insurance-topics/life-insurance)
+  - [Life Insurance Illustrations](https://content.naic.org/insurance-topics/life-insurance-illustrations)
+  - [Long-Term Care Insurance](https://content.naic.org/insurance-topics/long-term-care-insurance)
+  - [Macroprudential Supervision](https://content.naic.org/insurance-topics/macroprudential-supervision)
+  - [Market Conduct Annual Statement](https://content.naic.org/insurance-topics/market-conduct-annual-statement)
+  - [Market Conduct Regulation](https://content.naic.org/insurance-topics/market-conduct-regulation)
+  - [McCarran-Ferguson Act](https://content.naic.org/insurance-topics/mccarran-ferguson-act)
+  - [Medical Loss Ratio](https://content.naic.org/insurance-topics/medical-loss-ratio)
+  - [Medical Malpractice Insurance](https://content.naic.org/insurance-topics/medical-malpractice-insurance)
+  - [Mortgage-Backed Securities](https://content.naic.org/insurance-topics/mortgage-backed-securities)
+  - [Municipal Bonds](https://content.naic.org/insurance-topics/municipal-bonds)
+  - [National Association of Registered Agents and Brokers Reform Act](https://content.naic.org/insurance-topics/national-association-of-registered-agents-and-brokers-reform-act)
+  - [Natural Catastrophe Risk and Resiliency](https://content.naic.org/insurance-topics/natural-catastrophe-risk-and-resiliency)
+  - [Network Adequacy](https://content.naic.org/insurance-topics/network-adequacy)
+  - [No Surprises Act](https://content.naic.org/insurance-topics/no-surprises-act)
+  - [Operational Risk](https://content.naic.org/insurance-topics/operational-risk)
+  - [Own Risk and Solvency Assessment](https://content.naic.org/insurance-topics/own-risk-and-solvency-assessment)
+  - [Pandemics and COVID-19](https://content.naic.org/insurance-topics/pandemics-and-covid-19)
+  - [Parametric Disaster Insurance](https://content.naic.org/insurance-topics/parametric-disaster-insurance)
+  - [Peer-to-Peer Insurance](https://content.naic.org/insurance-topics/peer-to-peer-insurance)
+  - [Pension Risk Transfer](https://content.naic.org/insurance-topics/pension-risk-transfer)
+  - [Pet Insurance](https://content.naic.org/insurance-topics/pet-insurance)
+  - [Pharmacy Benefit Managers](https://content.naic.org/insurance-topics/pharmacy-benefit-managers)
+  - [Political Risk Insurance](https://content.naic.org/insurance-topics/political-risk-insurance)
+  - [Principle-Based Reserving](https://content.naic.org/insurance-topics/principle-based-reserving)
+  - [Private Equity](https://content.naic.org/insurance-topics/private-equity)
+  - [Producer Licensing](https://content.naic.org/insurance-topics/producer-licensing)
+  - [Race and Insurance](https://content.naic.org/insurance-topics/race-and-insurance)
+  - [Ransomware](https://content.naic.org/insurance-topics/ransomware)
+  - [Rating Agencies](https://content.naic.org/insurance-topics/rating-agencies)
+  - [Receivership](https://content.naic.org/insurance-topics/receivership)
+  - [Reinsurance](https://content.naic.org/insurance-topics/reinsurance)
+  - [Retirement Security](https://content.naic.org/insurance-topics/retirement-security)
+  - [Risk Retention Groups](https://content.naic.org/insurance-topics/risk-retention-groups)
+  - [Risk-Based Capital](https://content.naic.org/insurance-topics/risk-based-capital)
+  - [Role of Actuaries in Insurance](https://content.naic.org/insurance-topics/role-of-actuaries-in-insurance)
+  - [Securities Lending](https://content.naic.org/insurance-topics/securities-lending)
+  - [Separate Accounts](https://content.naic.org/insurance-topics/separate-accounts)
+  - [Sharing Economy](https://content.naic.org/insurance-topics/sharing-economy)
+  - [Short -Term Limited-Duration Health Plans](https://content.naic.org/insurance-topics/short--term-limited-duration-health-plans)
+  - [Social Impact Investing](https://content.naic.org/insurance-topics/social-impact-investing)
+  - [Social Inflation](https://content.naic.org/insurance-topics/social-inflation)
+  - [Statutory Accounting Principles](https://content.naic.org/insurance-topics/statutory-accounting-principles)
+  - [Structured Securities Project](https://content.naic.org/insurance-topics/structured-securities-project)
+  - [Supervisory Colleges](https://content.naic.org/insurance-topics/supervisory-colleges)
+  - [Surplus Lines](https://content.naic.org/insurance-topics/surplus-lines)
+  - [Surplus Notes](https://content.naic.org/insurance-topics/surplus-notes)
+  - [Telehealth](https://content.naic.org/insurance-topics/telehealth)
+  - [Telematics](https://content.naic.org/insurance-topics/telematics)
+  - [Terrorism Risk Insurance Act](https://content.naic.org/insurance-topics/terrorism-risk-insurance-act)
+  - [Title Insurance](https://content.naic.org/insurance-topics/title-insurance)
+  - [Transition Risk](https://content.naic.org/insurance-topics/transition-risk)
+  - [Transparency and Readability of Consumer Information](https://content.naic.org/insurance-topics/transparency-and-readability-of-consumer-information)
+  - [Travel Insurance](https://content.naic.org/insurance-topics/travel-insurance)
+  - [Troubled Companies](https://content.naic.org/insurance-topics/troubled-companies)
+  - [Uninsured Motorists](https://content.naic.org/insurance-topics/uninsured-motorists)
+  - [Wildfires](https://content.naic.org/insurance-topics/wildfires)
+  - [Workers' Compensation Insurance](https://content.naic.org/insurance-topics/workers-compensation-insurance)
+  - [Working Capital Finance Investments](https://content.naic.org/insurance-topics/working-capital-finance-investments)
+
+## Resource Center Content
+  - [Capital Markets Bureau](https://content.naic.org/capital-markets-bureau): Developments and trends in financial markets and insurer investments.
+  - [Glossary](https://content.naic.org/glossary-insurance-terms): A glossary of insurance terms and definitions.
+  - [Government Affairs](https://content.naic.org/government-affairs): Domestic and international policy and outreach initiatives.
+  - [Health Coverage Policy and Regulation](https://content.naic.org/health-coverage-policy-regulation): Answers regarding health care law and insurance.
+  - [Insurance Topics](https://content.naic.org/insurance-topics): Background information and coverage on a range of insurance regulatory issues.
+  - [Model Laws](https://content.naic.org/model-laws): Access to every published model law, regulation, and guideline
+  - [Newsroom](https://content.naic.org/newsroom): The latest news and consumer articles.
+  - [Publications](https://content.naic.org/publications): Exclusive, industry-focused manuals, data, and more.
+  - [Center for Insurance Policy and Research](https://content.naic.org/research): Research and analysis on important insurance issues.

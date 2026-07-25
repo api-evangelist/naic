@@ -1,0 +1,199 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  openapi/naic-content-jsonapi-openapi.yml plus the verbatim resource objects in examples/,
+  fetched from https://content.naic.org/jsonapi on 2026-07-25.
+description: >-
+  Entity-relationship map of the NAIC's public JSON:API. Derived from the live resource index
+  (284 exposed resource types) and from the `relationships` members of real fetched records —
+  every edge below was read off an actual response, not inferred from a field name. Identity is
+  a Drupal UUID on every entity; the internal serial id travels alongside it as an attribute
+  (`drupal_internal__nid` for nodes, `drupal_internal__tid` for taxonomy terms).
+
+identity:
+  primary_key: id
+  format: UUID
+  secondary_keys:
+  - {entity: node, field: drupal_internal__nid, kind: serial}
+  - {entity: taxonomy_term, field: drupal_internal__tid, kind: serial}
+  - {entity: taxonomy_term, field: drupal_internal__revision_id, kind: serial}
+  - {entity: node, field: drupal_internal__vid, kind: revision-serial}
+  sentinel_ids:
+  - value: virtual
+    where: taxonomy_term.parent
+    meaning: >-
+      Drupal's synthetic root of a taxonomy hierarchy. It is NOT a UUID and will not resolve —
+      clients walking `parent` must stop when they hit it.
+  type_discriminator: >-
+    The `type` member, always in `entity--bundle` form (e.g. `node--article`,
+    `taxonomy_term--model_laws`). It is the join key for the resource index and for sparse
+    fieldsets.
+
+resource_families:
+- family: node
+  bundles: 28
+  role: Editorial content — the substantive pages and records.
+  notable:
+  - article
+  - page
+  - committee_page
+  - state_department_contact
+  - newsletter
+  - cipr_article
+  - cipr_key_topic
+  - external_resource
+  - naic_calendar
+  - national_meeting_calendar
+  - event_page
+  - event_session
+  - event_speaker
+  - state_participation_optins
+- family: taxonomy_term
+  bundles: 58
+  role: Controlled vocabularies — the NAIC's classification layer, and the most reusable data on
+    the surface.
+  notable:
+  - model_laws
+  - model_law_categories
+  - insurance_types
+  - states
+  - state_departments
+  - committees
+  - publications
+  - publication_categories
+  - topics
+  - news_topics
+  - research_topics
+  - zones
+- family: media
+  bundles: 7
+  role: Document/image/video/audio wrappers. `media--document` fronts the published PDFs.
+- family: file
+  bundles: 1
+  role: The uploaded binaries behind media entities (uri, filemime, filesize).
+- family: paragraph
+  bundles: 100
+  role: >-
+    Page-composition building blocks. Real endpoints, but presentation plumbing rather than
+    regulatory data — deprioritize when mining this API.
+- family: block_content
+  bundles: 11
+  role: Reusable content blocks (footer content, mega-menu fragments, table of contents).
+- family: menu_link_content
+  bundles: 7
+  role: Navigation structure (main, footer, mega-menu, tools).
+- family: feeds_feed
+  bundles: 8
+  role: >-
+    Importer configuration for the state contact/department directory and the meeting calendar —
+    evidence that the contact data is fed in from an upstream system.
+- family: user
+  bundles: 1
+  role: Author references. Anonymous callers see no personally-identifying attributes.
+- family: config
+  bundles: ~70
+  role: >-
+    Drupal configuration entities (views, field_config, image_style, workflow, etc.). Exposed
+    and returning HTTP 200, but the collections come back empty for anonymous callers.
+
+entities:
+
+- entity: node--article
+  label: Newsroom / editorial article
+  attributes_observed: 38
+  key_attributes: [title, body, field_summary, field_key_points, field_date, field_link,
+    field_video, field_youtube, status, moderation_state, created, changed, path, metatag]
+  relationships:
+  - {name: field_topics, cardinality: has_many, target: taxonomy_term--topics}
+  - {name: field_article_types, cardinality: has_many, target: taxonomy_term--articles}
+  - {name: field_committee_term, cardinality: has_many, target: taxonomy_term--committees}
+  - {name: field_government_affairs_topics, cardinality: has_many, target: taxonomy_term--government_affairs_topics}
+  - {name: field_news_topics, cardinality: has_many, target: taxonomy_term--news_topics}
+  - {name: field_research_topics, cardinality: has_many, target: taxonomy_term--research_topics}
+  - {name: field_capital_market_topics, cardinality: has_many, target: taxonomy_term--capital_market_topics}
+  - {name: field_tags, cardinality: has_many, target: taxonomy_term--tags}
+  - {name: field_media_document, cardinality: has_many, target: media--document}
+  - {name: field_media_image, cardinality: has_one, target: media--image}
+  - {name: uid, cardinality: belongs_to, target: user--user}
+  - {name: revision_uid, cardinality: belongs_to, target: user--user}
+  - {name: node_type, cardinality: belongs_to, target: node_type--node_type}
+  note: >-
+    Empty relationship arrays are common — an article is typically tagged into only two or
+    three of its ~18 vocabularies. Do not treat an empty array as an error.
+
+- entity: taxonomy_term--model_laws
+  label: NAIC model law / regulation / guideline
+  key_attributes: [name, field_ml_model_number, description, weight, changed, path]
+  relationships:
+  - {name: field_ml_category, cardinality: belongs_to, target: taxonomy_term--model_law_categories}
+  - {name: parent, cardinality: has_many, target: taxonomy_term--model_laws, via: hierarchy}
+  - {name: field_related_charts, cardinality: has_many, target: taxonomy_term--model_laws}
+  - {name: vid, cardinality: belongs_to, target: taxonomy_vocabulary--taxonomy_vocabulary}
+  significance: >-
+    `field_ml_model_number` carries the canonical MDL identifier (e.g. "MDL-10" for the Health
+    Insurance Reserves Model Regulation). This is the only machine-readable index of the NAIC
+    model-law corpus — the NAIC's primary standards output — anywhere on the estate.
+
+- entity: node--state_department_contact
+  label: State insurance department regulator contact
+  key_attributes: [title, field_contact_first_name, field_contact_last_name, field_prefix,
+    field_suffix, field_contact_title_position, field_naic_position_title,
+    field_contact_email_address, field_state_contact_phone, field_website, field_office_hours,
+    field_term_of_office, field_elected, field_appointed, field_confirmed, field_re_elected,
+    field_reappointed, field_leader, field_regulator, field_regulator_biography,
+    field_hide_email_from_public, field_hide_phone_from_public]
+  relationships:
+  - {name: field_contact_state_department, cardinality: belongs_to, target: taxonomy_term--state_departments}
+  - {name: field_state_department_category, cardinality: has_many, target: taxonomy_term--state_department_category}
+  - {name: field_zone, cardinality: belongs_to, target: taxonomy_term--zones}
+  - {name: field_related_regulator, cardinality: has_one, target: node--state_department_contact}
+  - {name: field_contact_image, cardinality: has_one, target: media--image}
+  - {name: feeds_item, cardinality: has_many, target: feeds_feed}
+  significance: >-
+    The 50-states-plus-territories regulator directory, with elected/appointed provenance and
+    term dates. The most directly reusable public dataset on this API.
+  privacy_note: >-
+    Records carry `field_hide_email_from_public` and `field_hide_phone_from_public` booleans.
+    Honor them — the flags are the NAIC's stated intent even where the underlying value is
+    still present in the payload.
+
+- entity: media--document
+  label: Published document (PDF)
+  key_attributes: [name, created, changed, status]
+  relationships:
+  - {name: field_media_document, cardinality: belongs_to, target: file--file}
+  significance: >-
+    The bridge from an article or publication page to the actual PDF — CIPR reports, statutory
+    manuals, consumer guides.
+
+relationship_traversal:
+  related_route: /{entity}/{bundle}/{id}/{relationship}
+  self_route: /{entity}/{bundle}/{id}/relationships/{relationship}
+  side_load: '?include=field_topics,field_media_document'
+  note: >-
+    Both routes are advertised inline on every relationship of every record. `include` is the
+    efficient path; the dedicated routes are useful when you want the related set alone.
+
+mining_guidance:
+  high_value:
+  - taxonomy_term--model_laws  # the model-law corpus with MDL numbers
+  - node--state_department_contact  # the regulator directory
+  - taxonomy_term--insurance_types
+  - taxonomy_term--committees
+  - node--committee_page
+  - taxonomy_term--publications
+  - media--document
+  - node--article
+  low_value:
+  - paragraph--*  # page-composition plumbing
+  - block_content--*
+  - menu_link_content--*
+  - the ~70 Drupal configuration entity types (empty for anonymous callers)
+  not_here: >-
+    This API carries the NAIC's CONTENT estate only. It does not expose SERFF rate/form
+    filings, the Financial Data Repository statutory statements, SBS producer licensing
+    records, OPTins premium-tax data, or the Consumer Information Source — all of which live
+    behind Okta or behind a licensing contract (idp@naic.org).
+
+render: null
+render_note: No subway/ diagram exists for this repo yet.

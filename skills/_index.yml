@@ -1,0 +1,38 @@
+generated: '2026-07-25'
+method: generated
+source: openapi/naic-content-jsonapi-openapi.yml
+description: >-
+  Packaged Agent Skills for the NAIC's one genuinely public machine surface — the undocumented
+  Drupal JSON:API at content.naic.org/jsonapi. Every step in every skill is grounded in an
+  operationId that exists verbatim in the derived OpenAPI, and every convention, error and
+  privacy rule is one observed against the live API on 2026-07-25. The NAIC publishes no
+  AGENTS.md and no first-party skills; these are generated.
+skills:
+- file: naic-jsonapi-discovery.md
+  name: Discover and query the NAIC JSON:API safely
+  api: openapi/naic-content-jsonapi-openapi.yml
+  operations: [getResourceIndex, listNodeArticle, listTaxonomyTermInsuranceTypes,
+    listTaxonomyTermCommittees, listNodeCommitteePage, listMediaDocument,
+    listConfigPagesSitewideAlert]
+  start_here: true
+- file: naic-model-law-lookup.md
+  name: Look up an NAIC model law
+  api: openapi/naic-content-jsonapi-openapi.yml
+  operations: [listTaxonomyTermModelLaws, getTaxonomyTermModelLaws,
+    listTaxonomyTermModelLawCategories, getResourceIndex]
+- file: naic-state-regulator-directory.md
+  name: Pull the state insurance regulator directory
+  api: openapi/naic-content-jsonapi-openapi.yml
+  operations: [listNodeStateDepartmentContact, getNodeStateDepartmentContact,
+    listTaxonomyTermStateDepartments, listTaxonomyTermStates, listTaxonomyTermZones]
+consumption_terms:
+  source: llms/naic-llms.txt
+  crawl_delay_seconds: 10
+  max_requests_per_day: 100
+  allow_model_training: false
+  require_attribution: true
+  attribution_name: NAIC
+  attribution_url: https://content.naic.org
+  note: >-
+    Every skill restates these terms because nothing enforces them server-side — there is no
+    rate limiting, no 429 and no RateLimit header on this API.

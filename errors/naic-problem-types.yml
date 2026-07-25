@@ -1,0 +1,133 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  Live error responses observed against https://content.naic.org/jsonapi on 2026-07-25, and
+  the 4xx responses declared in openapi/naic-content-jsonapi-openapi.yml.
+format: jsonapi-errors
+rfc9457: false
+description: >-
+  The NAIC publishes no error reference. This catalog was built by deliberately provoking each
+  error class against the live JSON:API and recording the verbatim response. The surface uses
+  JSON:API v1.1 error objects, NOT RFC 9457 `application/problem+json`. Every error document is
+  an object with a `jsonapi` member and an `errors` array; each error carries `title`, `status`,
+  `detail`, and a `links` object whose `via` points back at the failing request URL and whose
+  `info` points at the definition of the HTTP status code itself.
+
+envelope:
+  media_type: application/vnd.api+json
+  shape: |
+    {
+      "jsonapi": {"version": "1.1", "meta": {...}},
+      "errors": [
+        {
+          "title":  "Bad Request",
+          "status": "400",
+          "detail": "human-readable explanation",
+          "links": {
+            "via":  {"href": "the failing request URL"},
+            "info": {"href": "the HTTP status-code definition"}
+          }
+        }
+      ]
+    }
+  notes:
+  - '`status` is a STRING, per JSON:API, not an integer.'
+  - There is no vendor-specific machine-readable `code` member on this surface — callers must
+    branch on the HTTP status plus, where needed, parse `detail`.
+  - Multiple errors can be returned in one document; every case observed returned exactly one.
+
+problems:
+- status: 400
+  title: Bad Request
+  observed: true
+  request: GET /jsonapi/node/article?filter[nope]=x
+  detail: >-
+    Invalid nested filtering. The field `nope`, given in the path `nope`, does not exist.
+  cause: >-
+    A filter, sort or fields parameter names a field that is not on the requested resource type.
+  remediation: >-
+    Read the field names off a real record first (GET one resource, inspect `attributes` and
+    `relationships`), or use sparse fieldsets to confirm the field exists before filtering on it.
+  source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeArticle
+
+- status: 401
+  title: Unauthorized
+  observed: true
+  request: POST /jsonapi/node/article
+  detail: No authentication credentials provided.
+  cause: >-
+    Any write method (POST/PATCH/DELETE) against a resource the anonymous user may not modify.
+    The read surface never returns 401.
+  remediation: >-
+    None available publicly. The NAIC documents no credentialing path for the JSON:API write
+    surface; treat this API as read-only.
+  source: authentication/naic-authentication.yml
+
+- status: 404
+  title: Not Found
+  observed: true
+  request: GET /jsonapi/node/article/00000000-0000-0000-0000-000000000000
+  detail: >-
+    The "entity" parameter was not converted for the path "/jsonapi/node/article/{entity}"
+    (route name: "jsonapi.node--article.individual")
+  cause: >-
+    A well-formed resource path with an identifier that does not resolve to an existing entity,
+    or an entity the anonymous user cannot see (unpublished content is indistinguishable from
+    a missing record).
+  remediation: >-
+    Re-resolve the UUID from a collection query. Do not treat 404 as proof the record never
+    existed — unpublished and access-restricted records also 404 for anonymous callers.
+  source_operation: openapi/naic-content-jsonapi-openapi.yml#getNodeArticle
+
+- status: 404
+  title: Not Found (HTML fallthrough)
+  observed: true
+  request: GET /jsonapi/node/does_not_exist
+  detail: >-
+    Returns the Drupal site's HTML 404 page with `content-type: text/html; charset=utf-8`,
+    NOT a JSON:API error document.
+  cause: >-
+    The resource TYPE is not exposed at all, so the request never reaches the JSON:API router
+    and falls through to the site's front-end 404 handler.
+  remediation: >-
+    Enumerate valid resource types from the index at GET /jsonapi (see
+    examples/naic-jsonapi-resource-index.json) rather than guessing bundle names. Clients must
+    check `content-type` before parsing — an unexposed type is the one case where a 4xx body is
+    HTML.
+  gotcha: true
+
+- status: 405
+  title: Method Not Allowed
+  observed: true
+  request: DELETE /jsonapi/node/article
+  detail: >-
+    No route found for "DELETE https://content.naic.org/jsonapi/node/article": Method Not
+    Allowed (Allow: GET, HEAD, POST)
+  cause: >-
+    A method the route does not implement. The detail string enumerates the permitted methods,
+    which is the cheapest way to discover a collection's real method surface.
+  remediation: Use GET or HEAD. Collections advertise GET, HEAD, POST; POST then 401s anonymously.
+
+- status: 403
+  title: Forbidden
+  observed: partial
+  detail: >-
+    Not returned by content.naic.org/jsonapi during probing. It IS the standing response on the
+    adjacent gated NAIC hosts — services.serff.com/ and sbs.naic.org/.well-known/* both return
+    403 anonymously — so clients traversing the wider NAIC estate should expect it there.
+  cause: Credential-gated NAIC/SERFF hosts outside the public JSON:API.
+
+not_applicable:
+- status: 429
+  note: >-
+    No rate-limit response was observed and no rate-limit headers are emitted. The NAIC's
+    llms.txt nonetheless asks automated clients for a 10-second crawl delay and a 100
+    request/day ceiling — honor it voluntarily; there is no server-side signal to back off on.
+- status: 409
+  note: Conflict is a write-path status; the write path is closed anonymously.
+
+cross_links:
+  conventions: conventions/naic-conventions.yml
+  authentication: authentication/naic-authentication.yml
+  openapi: openapi/naic-content-jsonapi-openapi.yml
+  examples: examples/_index.yml

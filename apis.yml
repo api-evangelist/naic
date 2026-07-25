@@ -21,7 +21,14 @@ description: 'The National Association of Insurance Commissioners (NAIC) is the 
   Legacy SIS (one-way PULL) and a Modernized Data API (one-way PULL), in PROD and BETA - but
   they are named only on a support checklist, provisioned by emailing wsrequest@naic.org,
   and fronted by Okta login walls. Bulk regulatory data is licensed by contract through idp@naic.org
-  rather than served over an API.'
+  rather than served over an API. There is, however, one real and entirely undocumented public
+  machine surface: content.naic.org runs Drupal 11 and serves a live, anonymously readable
+  JSON:API v1.1 at /jsonapi, whose resource index enumerates 284 resource types and exposes the
+  model law corpus with its MDL numbers, the state insurance department regulator directory,
+  committees, insurance topics, publications, CIPR research and the newsroom. The NAIC also
+  publishes a first-party llms.txt declaring AI usage preferences, attribution requirements and
+  crawl limits - so its stated contract with automated consumers is more explicit than its
+  contract with API developers.'
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Insurance
@@ -36,6 +43,9 @@ tags:
 - Rate and Form Filing
 - Regulatory Reporting
 - Standards Body
+- Model Laws
+- Regulatory Data
+- Open Data
 created: '2026-07-25'
 modified: '2026-07-25'
 specificationVersion: '0.19'
@@ -53,6 +63,7 @@ apis:
     an NAIC/NIPR landing page). Recorded here as a real but partner-gated surface, not a public
     API.'
   humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
   tags:
   - Insurance
   - Rate and Form Filing
@@ -65,7 +76,67 @@ apis:
     url: https://www.serff.com/documents/serff-services-support-checklist.pdf
   - type: Documentation
     url: https://www.serff.com/serff_modernization.htm
+- aid: naic:content-jsonapi
+  name: NAIC Content JSON:API
+  description: 'A live, anonymously readable JSON:API v1.1 surface over the NAIC''s public
+    regulatory content estate, served by Drupal 11 at content.naic.org/jsonapi. The NAIC
+    neither documents nor advertises it - there is no developer portal, no reference and no
+    published specification - but the entry point returns a machine-readable resource index
+    enumerating 284 resource types, and anonymous GET was verified against every content
+    family on 2026-07-25. What it exposes is the NAIC''s own material: the model law corpus
+    with its canonical MDL model numbers, the state insurance department regulator directory
+    with terms of office and elected/appointed provenance, committees and task forces,
+    insurance topics, publications, CIPR research, newsroom articles and the published PDF
+    documents behind them. It supports the full JSON:API query grammar - sparse fieldsets,
+    filtering, sorting, relationship inclusion and offset pagination capped at 50 - and
+    returns JSON:API error objects rather than RFC 9457 problem details. Writes are closed:
+    POST returns HTTP 401 "No authentication credentials provided." and no credentialing path
+    is published. It carries the content estate only, NOT SERFF filings, the Financial Data
+    Repository, SBS licensing or OPTins. Treat it as an unsupported but durable public read
+    surface: no changelog, no deprecation policy, no status page, and an unversioned Drupal
+    content model that can drift without notice. The OpenAPI in this repo is DERIVED by API
+    Evangelist from the live resource index, not published by the NAIC.'
+  humanURL: https://content.naic.org/
+  baseURL: https://content.naic.org/jsonapi
+  tags:
+  - Insurance Regulation
+  - Regulatory Data
+  - Model Laws
+  - JSON API
+  - Open Data
+  - Content API
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-content-jsonapi-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
 common:
+- type: AgenticAccess
+  url: agentic-access/naic-agentic-access.yml
+- type: DomainSecurity
+  url: security/naic-domain-security.yml
+- type: LLMsTxt
+  url: llms/naic-llms.txt
+- type: Authentication
+  url: authentication/naic-authentication.yml
+- type: Conventions
+  url: conventions/naic-conventions.yml
+- type: ErrorCatalog
+  url: errors/naic-problem-types.yml
+- type: Examples
+  url: examples/_index.yml
+- type: DataModel
+  url: data-model/naic-data-model.yml
+- type: Conformance
+  url: conformance/naic-conformance.yml
+- type: Lifecycle
+  url: lifecycle/naic-lifecycle.yml
+- type: MCPServer
+  url: mcp/naic-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
 - type: Website
   url: https://content.naic.org/
 - type: About
@@ -90,6 +161,14 @@ common:
   url: https://content.naic.org/cis_consumer_information.htm
 - type: Documentation
   url: https://content.naic.org/sites/default/files/naic-technology-services-products-catalog.pdf
+- type: Support
+  url: https://content.naic.org/contact
+- type: HelpCenter
+  url: https://content.naic.org/help
+- type: TermsOfService
+  url: https://content.naic.org/application/terms-conditions
+- type: PrivacyPolicy
+  url: https://content.naic.org/privacy_statement.htm
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

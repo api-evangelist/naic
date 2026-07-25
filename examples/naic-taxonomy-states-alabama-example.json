@@ -1,0 +1,125 @@
+{
+  "jsonapi": {
+    "version": "1.1",
+    "meta": {
+      "links": {
+        "self": {
+          "href": "https://jsonapi.org/format/1.1/"
+        }
+      }
+    }
+  },
+  "data": [
+    {
+      "type": "taxonomy_term--states",
+      "id": "3d44e8bf-29a9-4c58-820f-4a1576cb9773",
+      "links": {
+        "self": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773?resourceVersion=id%3A243"
+        },
+        "working-copy": {
+          "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773?resourceVersion=rel%3Aworking-copy"
+        }
+      },
+      "attributes": {
+        "drupal_internal__tid": 243,
+        "drupal_internal__revision_id": 243,
+        "langcode": "en",
+        "revision_created": "2020-03-27T14:28:18+00:00",
+        "status": true,
+        "name": "Alabama",
+        "description": null,
+        "weight": 0,
+        "changed": "2020-03-27T14:28:18+00:00",
+        "default_langcode": true,
+        "revision_translation_affected": true,
+        "metatag": [
+          {
+            "tag": "meta",
+            "attributes": {
+              "name": "title",
+              "content": "Alabama | NAIC"
+            }
+          },
+          {
+            "tag": "link",
+            "attributes": {
+              "rel": "canonical",
+              "href": "https://content.naic.org/taxonomy/term/243"
+            }
+          }
+        ],
+        "path": {
+          "alias": null,
+          "pid": null,
+          "langcode": "en"
+        },
+        "publish_on": null,
+        "unpublish_on": null,
+        "publish_state": null,
+        "unpublish_state": null
+      },
+      "relationships": {
+        "vid": {
+          "data": {
+            "type": "taxonomy_vocabulary--taxonomy_vocabulary",
+            "id": "9cad8fe6-aeb0-4024-a05f-7707403466b7",
+            "meta": {
+              "drupal_internal__target_id": "states"
+            }
+          },
+          "links": {
+            "related": {
+              "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773/vid?resourceVersion=id%3A243"
+            },
+            "self": {
+              "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773/relationships/vid?resourceVersion=id%3A243"
+            }
+          }
+        },
+        "revision_user": {
+          "data": null,
+          "links": {
+            "related": {
+              "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773/revision_user?resourceVersion=id%3A243"
+            },
+            "self": {
+              "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773/relationships/revision_user?resourceVersion=id%3A243"
+            }
+          }
+        },
+        "parent": {
+          "data": [
+            {
+              "type": "taxonomy_term--states",
+              "id": "virtual",
+              "meta": {
+                "links": {
+                  "help": {
+                    "href": "https://www.drupal.org/docs/8/modules/json-api/core-concepts#virtual",
+                    "meta": {
+                      "about": "Usage and meaning of the 'virtual' resource identifier."
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "links": {
+            "related": {
+              "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773/parent?resourceVersion=id%3A243"
+            },
+            "self": {
+              "href": "https://content.naic.org/jsonapi/taxonomy_term/states/3d44e8bf-29a9-4c58-820f-4a1576cb9773/relationships/parent?resourceVersion=id%3A243"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": {
+      "href": "https://content.naic.org/jsonapi/taxonomy_term/states?filter%5Bname%5D=Alabama"
+    }
+  }
+}
