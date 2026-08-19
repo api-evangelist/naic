@@ -2,162 +2,121 @@ generated: '2026-07-25'
 method: derived
 status: candidate
 source: openapi/naic-content-jsonapi-openapi.yml
-description: >-
-  No official or third-party hosted NAIC MCP server exists. Searched the NAIC estate (no
-  developer portal, no GitHub organization — github.com/naic is an unrelated personal account
-  with one repo), the MCP registries and npm; nothing was found. This is a CANDIDATE tool set
-  derived from the NAIC's real, anonymously readable JSON:API, curated down from the 569
-  derived operations to the surface that is actually worth handing an agent: the model-law
-  corpus, the regulator directory, committees, insurance topics, publications and the newsroom.
-  The 100 paragraph bundles, 11 block-content bundles and ~70 Drupal configuration entity types
-  are deliberately excluded — they are page-composition plumbing, not regulatory data.
-
+description: 'No official or third-party hosted NAIC MCP server exists. Searched the NAIC estate (no developer
+  portal, no GitHub organization — github.com/naic is an unrelated personal account with one repo), the
+  MCP registries and npm; nothing was found. This is a CANDIDATE tool set derived from the NAIC''s real,
+  anonymously readable JSON:API, curated down from the 569 derived operations to the surface that is actually
+  worth handing an agent: the model-law corpus, the regulator directory, committees, insurance topics,
+  publications and the newsroom. The 100 paragraph bundles, 11 block-content bundles and ~70 Drupal configuration
+  entity types are deliberately excluded — they are page-composition plumbing, not regulatory data.'
 server:
   name: naic
   transport: http
   url: null
   auth: none
-  note: >-
-    Candidate only — nothing is deployed. A server built from this would need no credentials:
-    every backing operation is an anonymous GET. It would, however, need to honor the
-    consumption terms the NAIC publishes in its own llms.txt: crawl_delay 10 seconds,
-    max_requests_per_day 100, allow_model_training false, require_attribution true with
-    preferred attribution name "NAIC" and URL https://content.naic.org.
-
+  note: 'Candidate only — nothing is deployed. A server built from this would need no credentials: every
+    backing operation is an anonymous GET. It would, however, need to honor the consumption terms the
+    NAIC publishes in its own llms.txt: crawl_delay 10 seconds, max_requests_per_day 100, allow_model_training
+    false, require_attribution true with preferred attribution name "NAIC" and URL https://content.naic.org.'
 tools:
-
 - name: search_model_laws
-  description: >-
-    Search and list NAIC model laws, regulations and guidelines, including their canonical MDL
-    model numbers. Supports filter[name], filter[field_ml_model_number] and sort.
+  description: Search and list NAIC model laws, regulations and guidelines, including their canonical
+    MDL model numbers. Supports filter[name], filter[field_ml_model_number] and sort.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermModelLaws
   category: standards
-
 - name: get_model_law
   description: Retrieve one NAIC model law by UUID, with its category and hierarchy parent.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#getTaxonomyTermModelLaws
   category: standards
-
 - name: list_model_law_categories
   description: List the categories NAIC model laws are grouped into.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermModelLawCategories
   category: standards
-
 - name: find_state_regulator_contacts
-  description: >-
-    Search the state insurance department regulator directory — commissioner and staff records
-    with position, term of office, elected/appointed provenance, office hours and public
-    contact details. Filter by state department or category.
+  description: Search the state insurance department regulator directory — commissioner and staff records
+    with position, term of office, elected/appointed provenance, office hours and public contact details.
+    Filter by state department or category.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeStateDepartmentContact
   category: directory
-  caution: >-
-    Records carry field_hide_email_from_public and field_hide_phone_from_public. A conforming
-    tool must suppress those values when the flag is set.
-
+  caution: Records carry field_hide_email_from_public and field_hide_phone_from_public. A conforming tool
+    must suppress those values when the flag is set.
 - name: get_state_regulator_contact
   description: Retrieve one regulator contact record by UUID.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#getNodeStateDepartmentContact
   category: directory
-
 - name: list_state_departments
   description: List the state insurance departments the directory is organized by.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermStateDepartments
   category: directory
-
 - name: list_states
   description: List the states and territories vocabulary used across NAIC content.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermStates
   category: directory
-
 - name: list_zones
   description: List the NAIC regulatory zones states are grouped into.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermZones
   category: directory
-
 - name: list_committees
-  description: >-
-    List NAIC committees, task forces, working groups and subgroups as controlled vocabulary
+  description: List NAIC committees, task forces, working groups and subgroups as controlled vocabulary
     terms.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermCommittees
   category: governance
-
 - name: list_committee_pages
-  description: >-
-    List the editorial committee pages — charges, schedules, adopted actions and staff links.
+  description: List the editorial committee pages — charges, schedules, adopted actions and staff links.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeCommitteePage
   category: governance
-
 - name: list_insurance_topics
-  description: >-
-    List the insurance-topic vocabulary (property/casualty, life, health, title, cyber,
-    telematics, surplus lines and the rest of the regulatory issue set).
+  description: List the insurance-topic vocabulary (property/casualty, life, health, title, cyber, telematics,
+    surplus lines and the rest of the regulatory issue set).
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermInsuranceTypes
   category: taxonomy
-
 - name: list_topics
   description: List the general NAIC topic vocabulary used to tag articles and pages.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermTopics
   category: taxonomy
-
 - name: list_publications
-  description: >-
-    List NAIC publications — Annual Statement Blanks, manuals, handbooks and data products.
+  description: List NAIC publications — Annual Statement Blanks, manuals, handbooks and data products.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listTaxonomyTermPublications
   category: publications
-
 - name: list_documents
-  description: >-
-    List published document media entities (the PDFs behind reports, manuals and consumer
-    guides), resolvable to their file URIs.
+  description: List published document media entities (the PDFs behind reports, manuals and consumer guides),
+    resolvable to their file URIs.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listMediaDocument
   category: publications
-
 - name: search_news
-  description: >-
-    Search NAIC newsroom articles. Sort by -created for the latest, filter by topic, committee
+  description: Search NAIC newsroom articles. Sort by -created for the latest, filter by topic, committee
     or article type.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeArticle
   category: news
-
 - name: get_article
   description: Retrieve one NAIC article by UUID with its full body and related media.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#getNodeArticle
   category: news
-
 - name: list_cipr_research
-  description: >-
-    List Center for Insurance Policy and Research articles and key topics.
+  description: List Center for Insurance Policy and Research articles and key topics.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeCiprArticle
   category: research
-
 - name: list_cipr_key_topics
   description: List CIPR key research topics.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeCiprKeyTopic
   category: research
-
 - name: list_newsletters
   description: List NAIC newsletters, including the President's Newsletter editions.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listNodeNewsletter
   category: news
-
 - name: get_sitewide_alert
-  description: >-
-    Read the current NAIC site-wide alert banner — the closest thing the estate has to a
-    status/notice feed.
+  description: Read the current NAIC site-wide alert banner — the closest thing the estate has to a status/notice
+    feed.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#listConfigPagesSitewideAlert
   category: operations
-
 - name: list_resource_types
-  description: >-
-    Fetch the JSON:API resource index and enumerate every exposed resource type. Use this to
+  description: Fetch the JSON:API resource index and enumerate every exposed resource type. Use this to
     detect content-model drift before it breaks a query.
   source_operation: openapi/naic-content-jsonapi-openapi.yml#getResourceIndex
   category: discovery
-
 out_of_scope:
-  note: >-
-    None of the NAIC's regulatory transaction systems are reachable from this API and no tool
-    should imply otherwise.
+  note: None of the NAIC's regulatory transaction systems are reachable from this API and no tool should
+    imply otherwise.
   systems:
   - SERFF rate and form filings (partner-gated, wsrequest@naic.org)
   - Financial Data Repository statutory statements (licensed via idp@naic.org)
@@ -165,9 +124,13 @@ out_of_scope:
   - OPTins premium tax
   - iSite+ and myNAIC regulator analytics
   - Consumer Information Source and the Life Insurance Policy Locator
-
 crosswalk: null
-crosswalk_note: >-
-  No mcp/naic-tool-crosswalk.yml is emitted. A crosswalk records divergence between a real MCP
-  server, a GraphQL surface and REST; here there is no published MCP server and no GraphQL, and
-  every tool above maps 1:1 to exactly one derived REST operationId already named inline.
+crosswalk_note: No mcp/naic-tool-crosswalk.yml is emitted. A crosswalk records divergence between a real
+  MCP server, a GraphQL surface and REST; here there is no published MCP server and no GraphQL, and every
+  tool above maps 1:1 to exactly one derived REST operationId already named inline.
+deployment:
+  mode: none
+  verified: derived
+  tools: 21
+  checked: '2026-08-12'
+  source: catalog MCP census
