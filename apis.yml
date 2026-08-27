@@ -52,16 +52,15 @@ specificationVersion: '0.23'
 apis:
 - aid: naic:serff-web-services
   name: SERFF Web Services
-  description: 'The NAIC-operated SERFF (System for Electronic Rates & Forms Filing) platform
-    exposes machine integration services to filers, state regulators and filing vendors. The
-    SERFF Technical Support Checklist published at serff.com names three services by name
-    - Legacy SPI (two-way PUSH/PULL), Legacy SIS (one-way PULL), and a Modernized Data API
-    (one-way PULL) - each available in PROD and BETA environments. There is NO public reference
-    documentation, no OpenAPI or WSDL, and no self-serve signup: access is provisioned by
-    request to wsrequest@naic.org and the service hosts are credential-gated (services.serff.com
-    returned HTTP 403 anonymously; services-beta.serff.com returned HTTP 200 but serves only
-    an NAIC/NIPR landing page). Recorded here as a real but partner-gated surface, not a public
-    API.'
+  description: >-
+    The NAIC-operated SERFF (System for Electronic Rates & Forms Filing) platform exposes machine integration
+    services to filers, state regulators and filing vendors. The SERFF Technical Support Checklist published
+    at serff.com names three services by name - Legacy SPI (two-way PUSH/PULL), Legacy SIS (one-way PULL),
+    and a Modernized Data API (one-way PULL) - each available in PROD and BETA environments. There is
+    NO public reference documentation, no OpenAPI or WSDL, and no self-serve signup: access is provisioned
+    by request to wsrequest@naic.org and the service hosts are credential-gated (services.serff.com returned
+    HTTP 403 anonymously; services-beta.serff.com returned HTTP 200 but serves only an NAIC/NIPR landing
+    page). Recorded here as a real but partner-gated surface, not a public API.
   humanURL: https://www.serff.com/
   baseURL: https://services.serff.com/
   tags:
@@ -76,45 +75,1014 @@ apis:
     url: https://www.serff.com/documents/serff-services-support-checklist.pdf
   - type: Documentation
     url: https://www.serff.com/serff_modernization.htm
-- aid: naic:content-jsonapi
-  name: NAIC Content JSON:API
-  description: 'A live, anonymously readable JSON:API v1.1 surface over the NAIC''s public
-    regulatory content estate, served by Drupal 11 at content.naic.org/jsonapi. The NAIC
-    neither documents nor advertises it - there is no developer portal, no reference and no
-    published specification - but the entry point returns a machine-readable resource index
-    enumerating 284 resource types, and anonymous GET was verified against every content
-    family on 2026-07-25. What it exposes is the NAIC''s own material: the model law corpus
-    with its canonical MDL model numbers, the state insurance department regulator directory
-    with terms of office and elected/appointed provenance, committees and task forces,
-    insurance topics, publications, CIPR research, newsroom articles and the published PDF
-    documents behind them. It supports the full JSON:API query grammar - sparse fieldsets,
-    filtering, sorting, relationship inclusion and offset pagination capped at 50 - and
-    returns JSON:API error objects rather than RFC 9457 problem details. Writes are closed:
-    POST returns HTTP 401 "No authentication credentials provided." and no credentialing path
-    is published. It carries the content estate only, NOT SERFF filings, the Financial Data
-    Repository, SBS licensing or OPTins. Treat it as an unsupported but durable public read
-    surface: no changelog, no deprecation policy, no status page, and an unversioned Drupal
-    content model that can drift without notice. The OpenAPI in this repo is DERIVED by API
-    Evangelist from the live resource index, not published by the NAIC.'
-  humanURL: https://content.naic.org/
-  baseURL: https://content.naic.org/jsonapi
+- aid: naic:naic-action-api
+  name: NAIC Action API
+  description: action entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
   tags:
-  - Insurance Regulation
-  - Regulatory Data
-  - Model Laws
-  - JSON:API
-  - Open Data
-  - content-api
-  tags_raw:
-  - Insurance Regulation
-  - Regulatory Data
-  - Model Laws
-  - JSON API
-  - Open Data
-  - Content API
+  - action
   properties:
   - type: OpenAPI
-    url: openapi/naic-content-jsonapi-openapi.yml
+    url: openapi/naic-action-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-base-field-override-api
+  name: NAIC Base Field Override API
+  description: base_field_override entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - base_field_override
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-base-field-override-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-block-api
+  name: NAIC Block API
+  description: block entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - block
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-block-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-block-content-api
+  name: NAIC Block Content API
+  description: Reusable content blocks used to compose NAIC pages.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - block_content
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-block-content-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-block-content-type-api
+  name: NAIC Block Content Type API
+  description: block_content_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - block_content_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-block-content-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-classy-paragraphs-style-api
+  name: NAIC Classy Paragraphs Style API
+  description: classy_paragraphs_style entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - classy_paragraphs_style
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-classy-paragraphs-style-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-comment-api
+  name: NAIC Comment API
+  description: Comment entities.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - comment
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-comment-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-comment-type-api
+  name: NAIC Comment Type API
+  description: comment_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - comment_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-comment-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-config-pages-api
+  name: NAIC Config Pages API
+  description: Site-wide configuration content, including the sitewide alert.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - config_pages
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-config-pages-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-config-pages-type-api
+  name: NAIC Config Pages Type API
+  description: config_pages_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - config_pages_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-config-pages-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-configurable-language-api
+  name: NAIC Configurable Language API
+  description: configurable_language entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - configurable_language
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-configurable-language-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-crop-api
+  name: NAIC Crop API
+  description: crop entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - crop
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-crop-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-crop-type-api
+  name: NAIC Crop Type API
+  description: crop_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - crop_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-crop-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-date-format-api
+  name: NAIC Date Format API
+  description: date_format entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - date_format
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-date-format-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-discovery-api
+  name: NAIC Discovery API
+  description: The JSON:API entry point.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-discovery-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-editor-api
+  name: NAIC Editor API
+  description: editor entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - editor
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-editor-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-embed-button-api
+  name: NAIC Embed Button API
+  description: embed_button entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - embed_button
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-embed-button-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-entity-browser-api
+  name: NAIC Entity Browser API
+  description: entity_browser entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - entity_browser
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-entity-browser-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-entity-extra-field-api
+  name: NAIC Entity Extra Field API
+  description: entity_extra_field entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - entity_extra_field
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-entity-extra-field-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-entity-form-display-api
+  name: NAIC Entity Form Display API
+  description: entity_form_display entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - entity_form_display
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-entity-form-display-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-entity-form-mode-api
+  name: NAIC Entity Form Mode API
+  description: entity_form_mode entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - entity_form_mode
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-entity-form-mode-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-entity-view-display-api
+  name: NAIC Entity View Display API
+  description: entity_view_display entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - entity_view_display
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-entity-view-display-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-entity-view-mode-api
+  name: NAIC Entity View Mode API
+  description: entity_view_mode entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - entity_view_mode
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-entity-view-mode-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-event-entity-api
+  name: NAIC Event Entity API
+  description: Event entities.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - event_entity
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-event-entity-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-feeds-feed-api
+  name: NAIC Feeds Feed API
+  description: Feeds importer configuration for state contacts, departments and meeting calendars.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - feeds_feed
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-feeds-feed-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-feeds-feed-type-api
+  name: NAIC Feeds Feed Type API
+  description: feeds_feed_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - feeds_feed_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-feeds-feed-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-feeds-subscription-api
+  name: NAIC Feeds Subscription API
+  description: feeds_subscription entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - feeds_subscription
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-feeds-subscription-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-field-config-api
+  name: NAIC Field Config API
+  description: field_config entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - field_config
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-field-config-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-field-storage-config-api
+  name: NAIC Field Storage Config API
+  description: field_storage_config entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - field_storage_config
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-field-storage-config-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-file-api
+  name: NAIC File API
+  description: Uploaded file entities backing the media entities.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - file
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-file-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-filter-format-api
+  name: NAIC Filter Format API
+  description: filter_format entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - filter_format
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-filter-format-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-image-style-api
+  name: NAIC Image Style API
+  description: image_style entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - image_style
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-image-style-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-imce-profile-api
+  name: NAIC Imce Profile API
+  description: imce_profile entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - imce_profile
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-imce-profile-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-language-content-settings-api
+  name: NAIC Language Content Settings API
+  description: language_content_settings entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - language_content_settings
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-language-content-settings-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-layout-builder-browser-block-api
+  name: NAIC Layout Builder Browser Block API
+  description: layout_builder_browser_block entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - layout_builder_browser_block
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-layout-builder-browser-block-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-layout-builder-browser-blockcat-api
+  name: NAIC Layout Builder Browser Blockcat API
+  description: layout_builder_browser_blockcat entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - layout_builder_browser_blockcat
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-layout-builder-browser-blockcat-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-linkit-profile-api
+  name: NAIC Linkit Profile API
+  description: linkit_profile entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - linkit_profile
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-linkit-profile-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-media-api
+  name: NAIC Media API
+  description: Media entities — documents (PDF publications, reports), images, video and audio.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - media
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-media-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-media-type-api
+  name: NAIC Media Type API
+  description: media_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - media_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-media-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-menu-api
+  name: NAIC Menu API
+  description: menu entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - menu
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-menu-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-menu-link-content-api
+  name: NAIC Menu Link Content API
+  description: Site navigation menu links.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - menu_link_content
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-menu-link-content-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-metatag-defaults-api
+  name: NAIC Metatag Defaults API
+  description: metatag_defaults entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - metatag_defaults
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-metatag-defaults-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-node-api
+  name: NAIC Node API
+  description: >-
+    Drupal content nodes — the NAIC's articles, committee pages, publications pages, state insurance department
+    contacts, newsletters, calendars and generic pages.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - node
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-node-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-node-type-api
+  name: NAIC Node Type API
+  description: node_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - node_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-node-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-paragraph-api
+  name: NAIC Paragraph API
+  description: Paragraph entities — the composable page building blocks.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - paragraph
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-paragraph-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-paragraphs-type-api
+  name: NAIC Paragraphs Type API
+  description: paragraphs_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - paragraphs_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-paragraphs-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-path-alias-api
+  name: NAIC Path Alias API
+  description: path_alias entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - path_alias
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-path-alias-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-pathauto-pattern-api
+  name: NAIC Pathauto Pattern API
+  description: pathauto_pattern entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - pathauto_pattern
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-pathauto-pattern-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-print-engine-api
+  name: NAIC Print Engine API
+  description: print_engine entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - print_engine
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-print-engine-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-rdf-mapping-api
+  name: NAIC Rdf Mapping API
+  description: rdf_mapping entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - rdf_mapping
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-rdf-mapping-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-redirect-api
+  name: NAIC Redirect API
+  description: redirect entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - redirect
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-redirect-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-rest-resource-config-api
+  name: NAIC Rest Resource Config API
+  description: rest_resource_config entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - rest_resource_config
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-rest-resource-config-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-search-api-index-api
+  name: NAIC Search API Index API
+  description: search_api_index entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - search_api_index
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-search-api-index-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-search-api-server-api
+  name: NAIC Search API Server API
+  description: search_api_server entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - search_api_server
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-search-api-server-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-search-api-task-api
+  name: NAIC Search API Task API
+  description: search_api_task entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - search_api_task
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-search-api-task-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-settings-api
+  name: NAIC Settings API
+  description: settings entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - settings
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-settings-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-shortcut-api
+  name: NAIC Shortcut API
+  description: shortcut entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - shortcut
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-shortcut-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-shortcut-set-api
+  name: NAIC Shortcut Set API
+  description: shortcut_set entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - shortcut_set
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-shortcut-set-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-simple-sitemap-api
+  name: NAIC Simple Sitemap API
+  description: simple_sitemap entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - simple_sitemap
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-simple-sitemap-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-simple-sitemap-engine-api
+  name: NAIC Simple Sitemap Engine API
+  description: simple_sitemap_engine entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - simple_sitemap_engine
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-simple-sitemap-engine-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-simple-sitemap-type-api
+  name: NAIC Simple Sitemap Type API
+  description: simple_sitemap_type entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - simple_sitemap_type
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-simple-sitemap-type-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-slick-api
+  name: NAIC Slick API
+  description: slick entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - slick
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-slick-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-taxonomy-term-api
+  name: NAIC Taxonomy Term API
+  description: >-
+    Controlled vocabularies — model laws, insurance types, states, committees, publications, research
+    topics and the rest of the NAIC's classification terms.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - taxonomy_term
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-taxonomy-term-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-taxonomy-vocabulary-api
+  name: NAIC Taxonomy Vocabulary API
+  description: taxonomy_vocabulary entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - taxonomy_vocabulary
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-taxonomy-vocabulary-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-toolbar-menu-element-api
+  name: NAIC Toolbar Menu Element API
+  description: toolbar_menu_element entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - toolbar_menu_element
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-toolbar-menu-element-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-user-api
+  name: NAIC User API
+  description: User entities (public fields only for anonymous callers).
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - user
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-user-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-user-role-api
+  name: NAIC User Role API
+  description: user_role entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - user_role
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-user-role-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-view-api
+  name: NAIC View API
+  description: view entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - view
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-view-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-webform-api
+  name: NAIC Webform API
+  description: webform entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - webform
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-webform-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-webform-options-api
+  name: NAIC Webform Options API
+  description: webform_options entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - webform_options
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-webform-options-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-webform-submission-api
+  name: NAIC Webform Submission API
+  description: webform_submission entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - webform_submission
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-webform-submission-api-openapi.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: Documentation
+    url: https://jsonapi.org/format/1.1/
+- aid: naic:naic-workflow-api
+  name: NAIC Workflow API
+  description: workflow entity resources exposed by the NAIC JSON:API.
+  humanURL: https://www.serff.com/
+  baseURL: https://services.serff.com/
+  tags:
+  - workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/naic-workflow-api-openapi.yml
   - type: Examples
     url: examples/_index.yml
   - type: Documentation
