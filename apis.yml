@@ -29,6 +29,18 @@ description: 'The National Association of Insurance Commissioners (NAIC) is the 
   publishes a first-party llms.txt declaring AI usage preferences, attribution requirements and
   crawl limits - so its stated contract with automated consumers is more explicit than its
   contract with API developers.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Insurance
