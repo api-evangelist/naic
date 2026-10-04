@@ -40,6 +40,15 @@ paths:
                 $ref: '#/components/schemas/ResourceIndex'
 components:
   schemas:
+    JsonApiObject:
+      type: object
+      description: The `jsonapi` top-level member, present on every response.
+      properties:
+        version:
+          type: string
+          const: '1.1'
+        meta:
+          type: object
     ResourceIndex:
       type: object
       required:
@@ -54,15 +63,6 @@ components:
         links:
           $ref: '#/components/schemas/Links'
           description: One entry per exposed resource type, keyed `entity--bundle`.
-    JsonApiObject:
-      type: object
-      description: The `jsonapi` top-level member, present on every response.
-      properties:
-        version:
-          type: string
-          const: '1.1'
-        meta:
-          type: object
     Links:
       type: object
       description: JSON:API links object. Collections carry `self` and, when more records exist, `next`/`prev`.
