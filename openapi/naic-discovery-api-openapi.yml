@@ -40,15 +40,6 @@ paths:
                 $ref: '#/components/schemas/ResourceIndex'
 components:
   schemas:
-    JsonApiObject:
-      type: object
-      description: The `jsonapi` top-level member, present on every response.
-      properties:
-        version:
-          type: string
-          const: '1.1'
-        meta:
-          type: object
     ResourceIndex:
       type: object
       required:
@@ -77,6 +68,15 @@ components:
               format: uri
             meta:
               type: object
+    JsonApiObject:
+      type: object
+      description: The `jsonapi` top-level member, present on every response.
+      properties:
+        version:
+          type: string
+          const: '1.1'
+        meta:
+          type: object
 externalDocs:
   description: JSON:API v1.1 specification
   url: https://jsonapi.org/format/1.1/
