@@ -92,6 +92,10 @@ apis:
   - Insurance
   - Rate and Form Filing
   - Regulatory Reporting
+  tags_raw:
+  - Insurance
+  - Rate and Form Filing
+  - Regulatory Reporting
   - Partner Gated
   properties:
   - type: Documentation
